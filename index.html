@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Haji Studio · AI 감정 오라클</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+KR:wght@400;500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#C9A84C;--gold2:#E8D28A;--bg:#05030d;--panel:#0E0824;--panel2:#160B34;
+  --txt:#F4EFE7;--muted:rgba(244,239,231,.58);--line:rgba(201,168,76,.18);
+  --violet:#7B4FBA;--pink:#D56B9A;--blue:#5275D9;--safe:#78D6B8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Noto Serif KR",Georgia,serif;color:var(--txt);background:
+  radial-gradient(circle at 50% -10%,rgba(123,79,186,.36),transparent 34%),
+  radial-gradient(circle at 10% 15%,rgba(201,168,76,.12),transparent 22%),
+  linear-gradient(180deg,#090516,#05030d 55%,#020106);
+  max-width:430px;margin:0 auto;min-height:100vh;overflow-x:hidden}
+button,input,select,textarea{font-family:inherit}
+.screen{display:none;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;padding:22px}
+.screen.show{display:flex}
+.small{font-size:10px;color:var(--muted);line-height:1.6}
+.gold{color:var(--gold2)}
+.hide{display:none!important}
+
+/* splash */
+.langbar{display:flex;gap:6px;margin-bottom:14px}
+.langbtn{border:1px solid var(--line);background:rgba(201,168,76,.06);color:var(--muted);border-radius:999px;padding:6px 11px;font-size:12px;cursor:pointer}
+.langbtn.on{background:rgba(201,168,76,.18);color:var(--gold2);border-color:var(--gold)}
+.crystal-wrap{position:relative;width:118px;height:128px;margin:0 auto 18px}
+.crystal{width:118px;height:118px;border-radius:50%;background:
+  radial-gradient(circle at 32% 28%,rgba(255,255,255,.94) 0%,rgba(232,210,138,.55) 10%,rgba(123,79,186,.68) 32%,rgba(40,13,116,.9) 68%,rgba(8,2,34,.98) 100%);
+  box-shadow:0 0 42px rgba(123,79,186,.72),0 0 92px rgba(201,168,76,.17),inset 7px 7px 18px rgba(255,255,255,.14),inset 0 -14px 26px rgba(0,0,0,.55);
+  animation:float 4s ease-in-out infinite,glow 3.6s ease-in-out infinite;position:relative;overflow:hidden}
+.crystal:before{content:"";position:absolute;top:9%;left:18%;width:26%;height:22%;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.9),transparent 70%);transform:rotate(-30deg)}
+.crystal:after{content:"";position:absolute;inset:0;border-radius:50%;background:
+  radial-gradient(ellipse at 63% 67%,rgba(201,168,76,.26),transparent 46%),
+  radial-gradient(ellipse at 34% 76%,rgba(213,107,154,.19),transparent 38%);animation:nebula 7s ease-in-out infinite alternate}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes glow{50%{box-shadow:0 0 62px rgba(145,96,244,.86),0 0 120px rgba(201,168,76,.22),inset 7px 7px 20px rgba(255,255,255,.2),inset 0 -14px 26px rgba(0,0,0,.55)}}
+@keyframes nebula{to{opacity:1;transform:rotate(18deg) scale(1.08)}}
+.crystal-shadow{width:80px;height:10px;margin:0 auto;border-radius:50%;background:radial-gradient(ellipse,rgba(123,79,186,.46),transparent 70%);animation:shadow 4s ease-in-out infinite}
+@keyframes shadow{50%{transform:scaleX(.64);opacity:.2}}
+.brand{font-family:Cinzel,serif;font-size:12px;letter-spacing:.25em;color:rgba(201,168,76,.54);margin-bottom:4px}
+.title{font-family:Cinzel,serif;font-weight:700;font-size:26px;letter-spacing:.1em;color:var(--gold);text-align:center}
+.subtitle{font-size:11px;color:rgba(201,168,76,.45);letter-spacing:.12em;text-align:center;margin:6px 0 18px}
+.disc-box{width:100%;max-width:350px;border:1px solid rgba(201,168,76,.24);background:rgba(201,168,76,.06);border-radius:18px;padding:17px 18px;margin-bottom:16px}
+.disc-main{font-size:13.5px;line-height:1.95;text-align:center;margin-bottom:12px}
+.disc-line{height:1px;background:rgba(201,168,76,.16);margin:12px 0}
+.safe-note{font-size:10.5px;line-height:1.75;color:rgba(232,210,138,.76);text-align:center}
+.btn{width:100%;max-width:350px;border:none;border-radius:13px;padding:15px 14px;background:linear-gradient(135deg,#C9A84C,#E8D28A);color:#07030f;font-weight:700;font-size:15px;cursor:pointer;transition:.18s;letter-spacing:.03em}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--gold2);border:1px solid rgba(201,168,76,.24)}
+.btn.purple{background:linear-gradient(135deg,#533AB7,#8E5AD8);color:white}
+.btn.blue{background:linear-gradient(135deg,#1A3870,#2A5AB0);color:white}
+.btn.dark{background:rgba(255,255,255,.05);color:var(--muted);border:1px solid rgba(255,255,255,.08)}
+.appnote{font-family:"Noto Sans KR",sans-serif;font-size:9.5px;color:rgba(201,168,76,.42);text-align:center;line-height:1.6;margin-top:10px}
+
+/* onboarding */
+.ob-wrap{width:100%;max-width:360px}
+.ob-title{font-family:Cinzel,serif;font-size:22px;color:var(--gold);font-weight:700;text-align:center;margin-bottom:6px}
+.ob-sub{text-align:center;color:var(--muted);font-size:11px;margin-bottom:18px}
+.label{display:block;font-family:"Noto Sans KR",sans-serif;font-size:10px;color:rgba(201,168,76,.68);letter-spacing:.08em;margin:11px 0 6px}
+.input,.select,.textarea{width:100%;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.22);border-radius:12px;color:var(--txt);padding:12px 13px;font-size:13px;outline:none}
+.textarea{height:70px;resize:none;line-height:1.55}
+.input:focus,.select:focus,.textarea:focus{border-color:rgba(201,168,76,.55)}
+.grid3{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:7px}
+.chipgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pick{background:rgba(255,255,255,.035);border:1px solid rgba(201,168,76,.13);border-radius:11px;color:var(--muted);padding:10px 6px;font-size:11px;text-align:center;cursor:pointer}
+.pick.on{background:rgba(201,168,76,.16);color:var(--gold2);border-color:var(--gold)}
+.policy-card{background:rgba(120,214,184,.08);border:1px solid rgba(120,214,184,.24);border-radius:13px;padding:12px;margin:12px 0;color:rgba(218,255,246,.9);font-size:10.5px;line-height:1.7}
+
+/* main */
+#screen-main{padding:0;justify-content:flex-start;align-items:stretch}
+.hdr{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,#12082A,#080414);border-bottom:1px solid rgba(201,168,76,.15);padding:12px 13px 10px}
+.hdr-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.logo{font-family:Cinzel,serif;font-weight:700;letter-spacing:.1em;color:var(--gold);font-size:13px}
+.hdr-sub{font-size:8.5px;color:rgba(201,168,76,.45);margin-top:2px}
+.hdr-btns{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.hbtn{background:rgba(201,168,76,.09);border:1px solid rgba(201,168,76,.2);color:var(--gold2);border-radius:999px;padding:5px 9px;font-size:9px;cursor:pointer}
+.hbtn.premium{background:rgba(123,79,186,.22);color:#CDBAFF;border-color:rgba(123,79,186,.45)}
+.userline{font-size:9px;color:rgba(201,168,76,.48);margin-top:5px;line-height:1.5}
+.body{padding:12px 12px 110px;overflow-y:auto}
+.section-title{font-family:Cinzel,serif;font-size:9px;color:rgba(201,168,76,.58);letter-spacing:.14em;text-transform:uppercase;margin:12px 0 7px}
+.quota{display:flex;align-items:center;gap:8px;background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.14);border-radius:12px;padding:10px 12px;font-size:10.5px;color:var(--muted);margin-bottom:10px}
+.qdots{display:flex;gap:4px;margin-left:auto}
+.qdot{width:8px;height:8px;border-radius:50%;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.28)}
+.qdot.ok{background:var(--gold);box-shadow:0 0 6px rgba(201,168,76,.45)}
+.qdot.used{background:rgba(226,75,74,.42);border-color:rgba(226,75,74,.55)}
+.ribbon{border:1px solid rgba(120,214,184,.2);background:rgba(120,214,184,.07);border-radius:13px;padding:10px 12px;font-size:10.5px;color:rgba(218,255,246,.86);line-height:1.65;margin-bottom:10px}
+.stog,.modegrid,.catgrid{display:grid;gap:6px}
+.stog{grid-template-columns:repeat(3,1fr)}
+.modegrid{grid-template-columns:repeat(2,1fr)}
+.catgrid{grid-template-columns:repeat(4,1fr)}
+.stbtn,.modebtn,.catbtn{border:1px solid rgba(201,168,76,.13);background:rgba(255,255,255,.035);border-radius:12px;color:var(--muted);cursor:pointer;transition:.18s;text-align:center}
+.stbtn{padding:9px 4px}
+.modebtn{padding:10px 6px;font-size:10px;line-height:1.35}
+.catbtn{padding:8px 2px;font-size:8.7px}
+.stbtn.on,.modebtn.on,.catbtn.on{background:rgba(201,168,76,.16);border-color:var(--gold);color:var(--gold2)}
+.si,.ci{display:block;font-size:15px;margin-bottom:2px}
+.sn{display:block;font-size:9.5px;font-weight:700}
+.ss{display:block;font-size:7.5px;color:rgba(201,168,76,.48);margin-top:1px}
+.event-card{position:relative;overflow:hidden;border:1px solid rgba(213,107,154,.22);background:
+  radial-gradient(circle at 12% 0%,rgba(213,107,154,.22),transparent 26%),
+  rgba(213,107,154,.06);border-radius:14px;padding:11px 12px;font-size:11px;line-height:1.65;color:rgba(255,229,240,.9);margin:10px 0}
+.event-card b{color:#FFD6E7}
+.deck-wrap{text-align:center;padding:12px 0 8px;cursor:pointer}
+.deck-stack{position:relative;width:92px;height:136px;margin:0 auto 10px;transition:.25s}
+.deck-wrap:hover .deck-stack{transform:translateY(-4px)}
+.dc{position:absolute;width:86px;height:132px;border-radius:10px;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.55)}
+.dc1{transform:rotate(-8deg) translateX(-16px)}
+.dc2{transform:rotate(-2deg) translateX(-4px)}
+.dc3{transform:rotate(5deg) translateX(9px)}
+.deck-hint{font-size:10px;color:rgba(201,168,76,.48)}
+.backsvg{width:100%;height:100%}
+.srow{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:11px 0}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:11px 0}
+.slot{display:flex;flex-direction:column;align-items:center;gap:4px}
+.card-outer{border-radius:9px;overflow:hidden;cursor:pointer;position:relative;box-shadow:0 0 0 1.5px var(--gold),0 0 18px rgba(201,168,76,.18),0 7px 20px rgba(0,0,0,.62);transition:.3s}
+.card-outer:not(.flipped-done):hover{transform:translateY(-5px) scale(1.03)}
+.card-outer.flipped-done{transform:translateY(-4px)}
+.size1{width:112px;height:176px}.size3{width:78px;height:124px}.size6{width:66px;height:104px}
+.cflip{width:100%;height:100%;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.cflip.flipped{transform:rotateY(180deg)}
+.cback,.cfront{position:absolute;inset:0;backface-visibility:hidden;border-radius:9px;overflow:hidden}
+.cfront{transform:rotateY(180deg)}
+.card-face{width:100%;height:100%;position:relative;background:linear-gradient(180deg,var(--c1),#090414);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7px}
+.card-face:before{content:"";position:absolute;inset:4px;border:1px solid rgba(232,210,138,.55);border-radius:7px}
+.card-face:after{content:"";position:absolute;inset:8px;border:1px dashed rgba(232,210,138,.18);border-radius:5px}
+.card-roman{position:absolute;top:8px;left:0;right:0;font-family:Cinzel,serif;font-size:8px;color:var(--gold2);letter-spacing:.08em;z-index:2}
+.card-emoji{font-size:26px;filter:drop-shadow(0 0 8px rgba(255,255,255,.18));z-index:2}
+.card-name{font-size:8.5px;color:var(--gold2);font-weight:700;line-height:1.25;margin-top:6px;z-index:2}
+.card-kw{font-size:6.8px;color:rgba(244,239,231,.65);margin-top:3px;z-index:2}
+.pos-lbl{font-family:Cinzel,serif;font-size:7.5px;color:var(--muted);text-align:center;line-height:1.25;max-width:70px}
+.fptxt{text-align:center;color:var(--muted);font-size:9px;margin:6px 0 2px}
+.fprow{display:flex;justify-content:center;gap:5px;margin-bottom:5px}
+.fpdot{width:6px;height:6px;border-radius:50%;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.28)}
+.fpdot.done{background:var(--gold);box-shadow:0 0 6px rgba(201,168,76,.5)}
+.result-card{background:rgba(14,8,36,.92);border:1px solid rgba(201,168,76,.22);border-radius:15px;padding:13px;margin:10px 0}
+.result-title{display:flex;align-items:center;gap:6px;font-family:Cinzel,serif;font-size:12px;color:var(--gold);margin-bottom:8px}
+.badge{margin-left:auto;border:1px solid rgba(201,168,76,.18);background:rgba(201,168,76,.08);color:var(--gold2);border-radius:999px;padding:3px 8px;font-size:8.5px;font-family:"Noto Sans KR",sans-serif}
+.result-text{font-size:12.5px;line-height:1.9;color:rgba(244,239,231,.92);word-break:keep-all}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.chip{font-size:9px;border:1px solid rgba(201,168,76,.16);background:rgba(201,168,76,.08);border-radius:999px;color:var(--gold2);padding:3px 8px}
+.memory-box{border:1px solid rgba(123,79,186,.25);background:rgba(123,79,186,.08);border-radius:13px;padding:11px 12px;margin-top:8px;font-size:10.5px;color:#D7C9FF;line-height:1.7}
+.story-box{border:1px solid rgba(213,107,154,.24);background:rgba(213,107,154,.08);border-radius:13px;padding:11px 12px;margin-top:8px;font-size:10.5px;color:#FFD6E7;line-height:1.7}
+.action-row{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.modal-bg{background:rgba(0,0,0,.72);border-radius:12px;display:flex;align-items:flex-start;justify-content:center;margin:8px 0;padding:7px}
+.paycard{background:linear-gradient(180deg,#0E0824,#130A2E);border:1px solid rgba(201,168,76,.28);border-radius:14px;padding:15px;width:100%}
+.paytitle{font-family:Cinzel,serif;font-size:14px;color:var(--gold);text-align:center;margin-bottom:4px}
+.paysub{text-align:center;font-size:9.5px;color:rgba(201,168,76,.5);margin-bottom:10px}
+.payamt{background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.2);border-radius:11px;padding:10px;text-align:center;margin-bottom:10px}
+.paynum{font-family:Cinzel,serif;font-weight:700;font-size:26px;color:var(--gold)}
+.payitems{margin:9px 0}
+.payrow{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid rgba(255,255,255,.06);padding:5px 0;font-size:10px;color:rgba(244,239,231,.65)}
+.payrow span:last-child{color:var(--gold2);white-space:nowrap}
+.hero{background:linear-gradient(180deg,#1A0840,#0E0824 55%,rgba(5,3,13,.96));border:1px solid rgba(201,168,76,.19);border-radius:16px;overflow:hidden;margin:8px 0;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 80% 45% at 50% 10%,rgba(123,79,186,.44),transparent 66%);pointer-events:none}
+.hero-cards{position:relative;z-index:1;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;padding:18px 10px 10px}
+.hero-slot{text-align:center}
+.hmini{width:58px;height:90px;border-radius:7px;overflow:hidden;border:1px solid var(--gold);box-shadow:0 0 16px rgba(201,168,76,.25);margin:auto}
+.hmini .card-emoji{font-size:20px}.hmini .card-name{font-size:6px}.hmini .card-kw{display:none}.hmini .card-roman{font-size:6px}
+.hcname{font-size:7px;color:var(--gold2);margin-top:4px;max-width:62px;line-height:1.2}
+.hero-title{position:relative;z-index:1;text-align:center;font-family:Cinzel,serif;font-size:18px;color:var(--gold);font-weight:700;padding:5px 10px 9px}
+.hero-msg{position:relative;z-index:1;font-size:12.5px;line-height:1.95;padding:13px 15px;background:rgba(0,0,0,.18);border-top:1px solid rgba(201,168,76,.12);border-bottom:1px solid rgba(201,168,76,.12)}
+.insight{margin:11px 14px;padding:11px 12px;border:1px solid rgba(201,168,76,.28);background:rgba(201,168,76,.08);border-radius:12px;text-align:center;position:relative;z-index:1}
+.insight-lbl{font-family:Cinzel,serif;color:rgba(201,168,76,.66);font-size:8.5px;letter-spacing:.12em;margin-bottom:4px}
+.insight-txt{font-size:12.5px;color:var(--gold2);line-height:1.7}
+.lucky{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 14px 12px;position:relative;z-index:1}
+.lk{background:rgba(14,8,36,.75);border:1px solid rgba(201,168,76,.16);border-radius:10px;padding:8px 4px;text-align:center}
+.lki{font-size:15px}.lkl{font-size:7px;color:var(--muted)}.lkv{font-size:11px;color:var(--gold2);font-weight:700}
+.accord{padding:0 14px 13px;position:relative;z-index:1}
+.acc{border:1px solid rgba(201,168,76,.12);border-radius:11px;margin-bottom:6px;overflow:hidden}
+.acc-h{display:flex;align-items:center;gap:6px;padding:9px;background:rgba(255,255,255,.035);cursor:pointer}
+.acc-p{font-family:Cinzel,serif;font-size:7px;color:var(--gold);background:rgba(201,168,76,.1);border-radius:999px;padding:2px 6px}
+.acc-n{font-size:10.5px;color:var(--gold2);flex:1}
+.acc-b{display:none;padding:0 9px 9px}
+.acc-b.open{display:block}
+.acc-sec{margin-top:7px}.acc-sl{font-family:Cinzel,serif;font-size:7.5px;color:var(--gold);margin-bottom:3px}.acc-st{font-size:10.5px;line-height:1.75;color:rgba(244,239,231,.85)}
+.share{padding:0 14px 13px;position:relative;z-index:1}
+.share-lbl{text-align:center;font-family:Cinzel,serif;font-size:8.5px;color:rgba(201,168,76,.5);letter-spacing:.13em;margin-bottom:7px}
+.share-btns{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(5,3,13,.92);backdrop-filter:blur(8px);border-top:1px solid rgba(201,168,76,.12);padding:8px 12px;text-align:center;font-size:9px;color:rgba(201,168,76,.46);line-height:1.55;z-index:40}
+
+/* sheet */
+.sub-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.82);display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(7px)}
+.sub-sheet{width:100%;max-width:430px;background:linear-gradient(180deg,#0E0824,#150A31);border-top:1px solid rgba(201,168,76,.3);border-radius:22px 22px 0 0;padding:21px 19px 32px;animation:slideUp .3s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}
+.sub-bar{width:34px;height:3px;background:rgba(255,255,255,.12);border-radius:2px;margin:0 auto 16px}
+.sub-ttl{font-family:Cinzel,serif;font-size:18px;color:var(--gold);text-align:center;font-weight:700;margin-bottom:4px}
+.sub-desc{text-align:center;font-size:10.5px;color:var(--muted);margin-bottom:15px}
+.plan{border:1px solid rgba(201,168,76,.18);background:rgba(255,255,255,.035);border-radius:14px;padding:12px 13px;margin-bottom:8px;cursor:pointer;position:relative}
+.plan.rec{border:1.5px solid var(--gold);background:rgba(201,168,76,.07)}
+.plan.rec:before{content:"추천";position:absolute;top:-9px;right:13px;background:var(--gold);color:#07030f;font-weight:700;font-size:9px;padding:2px 9px;border-radius:999px}
+.plan-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.plan-name{font-size:12.5px;font-weight:700}.plan-price{font-family:Cinzel,serif;font-size:16px;font-weight:700;color:var(--gold)}
+.plan-feat{font-size:10px;color:var(--muted);padding:2px 0}.plan-feat.ok{color:rgba(232,210,138,.9)}
+.toast{position:fixed;left:50%;bottom:82px;transform:translateX(-50%);z-index:500;background:rgba(14,8,36,.96);border:1px solid rgba(201,168,76,.28);border-radius:999px;padding:10px 14px;font-size:11px;color:var(--gold2);box-shadow:0 8px 30px rgba(0,0,0,.5);display:none}
+</style>
+</head>
+<body>
+<div id="toast" class="toast"></div>
+
+<section id="screen-disc" class="screen show">
+  <div class="langbar">
+    <button class="langbtn on" data-lang="ko">🇰🇷 한국어</button>
+    <button class="langbtn" data-lang="en">🇺🇸 EN</button>
+    <button class="langbtn" data-lang="zh">🇨🇳 中文</button>
+  </div>
+  <div class="crystal-wrap"><div class="crystal"></div><div class="crystal-shadow"></div></div>
+  <div class="brand">HAJI STUDIO</div>
+  <div class="title">AI EMOTION ORACLE</div>
+  <div class="subtitle">감정을 읽는 카드 · Beta v3.0</div>
+  <div class="disc-box">
+    <div class="disc-main">오늘의 감정을 카드로 정리하고<br><strong>나를 이해하는 작은 의식</strong>을 시작해보세요.</div>
+    <div class="disc-line"></div>
+    <div class="safe-note"><strong>오락·자기성찰 콘텐츠입니다.</strong><br>본 앱은 미래 예측, 운명 보장, 투자·의료·법률 판단을 제공하지 않습니다.</div>
+  </div>
+  <button class="btn" id="startBtn">✦ 감정 오라클 시작하기 ✦</button>
+  <div class="appnote">78장 카드 · 감정 기록 · 연속 스토리 · SNS 공유 · 안전 고지 강화</div>
+</section>
+
+<section id="screen-onboard" class="screen">
+  <div class="ob-wrap">
+    <div class="ob-title">Personal Ritual</div>
+    <div class="ob-sub">정보는 선택사항이며, 이 테스트 버전에서는 기기 안에만 저장됩니다.</div>
+    <label class="label">닉네임</label>
+    <input id="obName" class="input" maxlength="12" placeholder="예) 별빛, 하준아빠">
+    <label class="label">생년월일, 선택</label>
+    <div class="grid3">
+      <select id="obYear" class="select"></select>
+      <select id="obMonth" class="select"></select>
+      <select id="obDay" class="select"></select>
+    </div>
+    <label class="label">지금 감정</label>
+    <div class="chipgrid" id="moodPick"></div>
+    <label class="label">오늘의 고민, 선택</label>
+    <textarea id="obConcern" class="textarea" maxlength="80" placeholder="예) 요즘 방향을 잘 잡고 있는지 궁금해"></textarea>
+    <div class="policy-card">🛡️ 사행성 회피 설계: 결과는 확률·당첨·재물 보장 형태가 아니라, 감정 정리와 행동 가이드로만 제공합니다.</div>
+    <button class="btn" onclick="goMain()">오라클 열기 →</button>
+    <button class="btn ghost" style="margin-top:7px" onclick="goMain(true)">건너뛰기</button>
+  </div>
+</section>
+
+<section id="screen-main" class="screen">
+  <header class="hdr">
+    <div class="hdr-row">
+      <div>
+        <div class="logo">✦ HAJI ORACLE</div>
+        <div class="hdr-sub" id="eventLine">AI 감정 오라클</div>
+      </div>
+      <div class="hdr-btns">
+        <button class="hbtn" onclick="toggleSound()" id="sndBtn">🔊</button>
+        <button class="hbtn" onclick="showDiary()">📖 기록</button>
+        <button class="hbtn premium" onclick="showSub()">👑 Pro</button>
+      </div>
+    </div>
+    <div class="userline" id="userInfo"></div>
+  </header>
+  <main class="body">
+    <div class="quota"><span>🌙 오늘의 무료 감정 리딩</span><div class="qdots" id="qdots"></div></div>
+    <div class="ribbon" id="memoryRibbon">처음 방문하셨다면, 오늘의 감정을 하나 남겨보세요. 다음 리딩부터 흐름을 이어서 보여드립니다.</div>
+    <div class="event-card" id="timeEvent"></div>
+
+    <div class="section-title">Spread</div>
+    <div class="stog">
+      <button class="stbtn on" id="st1" onclick="setN(1)"><span class="si">🪞</span><span class="sn">1장</span><span class="ss">오늘 한줄</span></button>
+      <button class="stbtn" id="st3" onclick="setN(3)"><span class="si">🃏</span><span class="sn">3장</span><span class="ss">흐름 보기</span></button>
+      <button class="stbtn" id="st6" onclick="setN(6)"><span class="si">🎴</span><span class="sn">6장</span><span class="ss">Pro 심화</span></button>
+    </div>
+
+    <div class="section-title">Reading Tone</div>
+    <div class="modegrid" id="modegrid"></div>
+
+    <div class="section-title">Theme</div>
+    <div class="catgrid" id="catgrid"></div>
+
+    <div class="section-title">Draw</div>
+    <div class="deck-wrap" onclick="startSpread()">
+      <div class="deck-stack">
+        <div class="dc dc1" id="dk1"></div><div class="dc dc2" id="dk2"></div><div class="dc dc3" id="dk3"></div>
+      </div>
+      <div class="deck-hint" id="deckHint">덱을 눌러 카드 1장을 뽑으세요</div>
+    </div>
+    <div id="spreadArea"></div>
+    <div id="resultArea"></div>
+  </main>
+  <div class="footer">오락·자기성찰 목적 · 실제 미래를 예측하거나 결과를 보장하지 않습니다 · Haji Studio</div>
+</section>
+
+<div class="sub-overlay" id="subOverlay">
+  <div class="sub-sheet">
+    <div class="sub-bar"></div>
+    <div class="sub-ttl">Haji Oracle Pro</div>
+    <div class="sub-desc">수익화 테스트용 구독 화면입니다. 실제 결제 연동 전 데모로 동작합니다.</div>
+    <div class="plan" onclick="pickPlan('free')">
+      <div class="plan-row"><span class="plan-name">무료</span><span class="plan-price">₩0</span></div>
+      <div class="plan-feat ok">✓ 하루 3회 기본 리딩</div>
+      <div class="plan-feat">× 6장 심화·연속 리포트 제한</div>
+    </div>
+    <div class="plan rec" onclick="pickPlan('monthly')">
+      <div class="plan-row"><span class="plan-name">월간 Pro</span><span class="plan-price">₩4,900/월</span></div>
+      <div class="plan-feat ok">✓ 무제한 리딩 + 6장 심화</div>
+      <div class="plan-feat ok">✓ 감정 흐름 리포트 + SNS 템플릿</div>
+      <div class="plan-feat ok">✓ 심야·비오는 날·연애 특화 콘텐츠</div>
+    </div>
+    <div class="plan" onclick="pickPlan('yearly')">
+      <div class="plan-row"><span class="plan-name">연간 Pro</span><span class="plan-price">₩39,000/년</span></div>
+      <div class="plan-feat ok">✓ 월 3,250원 수준</div>
+      <div class="plan-feat ok">✓ 향후 한국어·영어·중국어 확장</div>
+    </div>
+    <button class="btn" id="subConfirmBtn" onclick="confirmSub()">월간 Pro 데모 활성화</button>
+    <button class="btn dark" style="margin-top:7px" onclick="hideSub()">나중에 하기</button>
+  </div>
+</div>
+
+<script>
+'use strict';
+
+/* ---------- AUDIO ---------- */
+var bgm={ctx:null,on:true,started:false,osc:[],init:function(){try{var AC=window.AudioContext||window.webkitAudioContext;if(!AC||this.ctx)return;this.ctx=new AC();}catch(e){}},start:function(){if(!this.ctx||this.started)return;this.started=true;try{var g=this.ctx.createGain();g.gain.value=.035;g.connect(this.ctx.destination);[110,220,329.6].forEach((f,i)=>{var o=this.ctx.createOscillator();o.type='sine';o.frequency.value=f;o.detune.value=i*3;o.connect(g);o.start();this.osc.push(o)});}catch(e){}},sfx:function(type){if(!this.on||!this.ctx)return;try{var notes=type==='deep'?[261.6,329.6,392,523.3]:[440,554.4,659.3];notes.forEach((f,i)=>{var o=this.ctx.createOscillator(),g=this.ctx.createGain(),t=this.ctx.currentTime+i*.08;o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.08,t+.03);g.gain.exponentialRampToValueAtTime(.001,t+.55);o.connect(g);g.connect(this.ctx.destination);o.start(t);o.stop(t+.7);});}catch(e){}},toggle:function(){this.on=!this.on;try{this.osc.forEach(o=>this.on?o.connect(this.ctx.destination):o.disconnect())}catch(e){};return this.on}};
+
+/* ---------- DATA ---------- */
+var MAJOR=[
+ ['광대','0','시작·모험','🌄','#1A3870'],['마법사','I','의지·창조','🪄','#6A1320'],['여사제','II','직관·비밀','🌙','#0D1E5A'],['황후','III','풍요·돌봄','🌺','#6B2B58'],
+ ['황제','IV','질서·책임','👑','#713B18'],['교황','V','믿음·규칙','🕯️','#3C2D68'],['연인','VI','선택·관계','💞','#8B2F62'],['전차','VII','추진·승리','🏆','#09275A'],
+ ['힘','VIII','용기·인내','🦁','#6F5A08'],['은둔자','IX','내면·거리두기','🧙','#20394A'],['운명의 바퀴','X','전환·흐름','🌀','#2B155C'],['정의','XI','균형·판단','⚖️','#6A1212'],
+ ['매달린 남자','XII','멈춤·관점','🪢','#25465A'],['죽음','XIII','끝맺음·전환','🦋','#101010'],['절제','XIV','조율·회복','🏺','#2F4F4F'],['악마','XV','집착·욕망','⛓️','#3A0819'],
+ ['탑','XVI','충격·해체','⚡','#210707'],['별','XVII','희망·치유','⭐','#08265A'],['달','XVIII','불안·직감','🌕','#071431'],['태양','XIX','활력·확신','☀️','#B87000'],
+ ['심판','XX','각성·재시작','📯','#113F68'],['세계','XXI','완성·통합','🌍','#2A174E']
+];
+var SUITS=[
+ ['컵','Cups','감정·관계','💧','#164D68'],['완드','Wands','열정·행동','🔥','#6A2A0F'],['펜타클','Pentacles','현실·자원','🌿','#285C35'],['소드','Swords','생각·결단','🗡️','#263D72']
+];
+var RANKS=[
+ ['A','새 시작'],['2','균형'],['3','확장'],['4','안정'],['5','갈등'],['6','회복'],['7','선택'],['8','움직임'],['9','성숙'],['10','완성'],
+ ['Page','소식'],['Knight','추진'],['Queen','돌봄'],['King','통제']
+];
+var CARDS=[];
+MAJOR.forEach(function(m){CARDS.push({n:m[0],r:m[1],kw:m[2],em:m[3],c:m[4],type:'major',suit:'메이저',emotion:m[2].split('·')[0],shadow:m[2].split('·')[1]||'그림자'});});
+SUITS.forEach(function(s){RANKS.forEach(function(r){CARDS.push({n:r[0]+' of '+s[1],kr:s[0]+' '+r[0],r:r[0],kw:s[2]+'·'+r[1],em:s[3],c:s[4],type:'minor',suit:s[0],emotion:s[2].split('·')[0],shadow:r[1]});});});
+var CATS=[
+ {i:'🪞',n:'감정정리',k:'emotion'},{i:'💕',n:'관계분석',k:'love'},{i:'💼',n:'일·성장',k:'work'},{i:'💰',n:'돈습관',k:'money'},
+ {i:'🌙',n:'심야리딩',k:'night'},{i:'🌧️',n:'비오는날',k:'rain'},{i:'🎯',n:'선택정리',k:'choice'},{i:'🌱',n:'회복루틴',k:'heal'}
+];
+var MODES=[
+ {i:'🌙',n:'감성 리딩',k:'soft',desc:'따뜻하게 정리'},
+ {i:'🪞',n:'현실 리딩',k:'real',desc:'차분한 팩트'},
+ {i:'🔥',n:'직관 리딩',k:'intuition',desc:'찔리는 통찰'},
+ {i:'💕',n:'관계 리딩',k:'relation',desc:'상대와 거리감'},
+ {i:'🌌',n:'심야 리딩',k:'midnight',desc:'깊은 감정'},
+ {i:'🛡️',n:'안전 리딩',k:'safe',desc:'자기돌봄 중심'}
+];
+var MOODS=['설렘','불안','지침','외로움','기대','답답함','감사','혼란','평온'];
+var POS={1:['오늘의 거울'],3:['감정의 시작','지금의 중심','다음 행동'],6:['현재 감정','반복 패턴','숨은 욕구','현실 변수','오늘의 조언','정리 메시지']};
+var user={name:'',month:0,day:0,zodiac:'',mood:'',concern:''};
+var selCat='emotion',selMode='soft',spreadN=1,drawn=[],flipped=0,allFlipped=false,quotaUsed=0,QUOTA=3,isPremium=false,selPlan='monthly',rdData=null;
+
+/* ---------- HELPERS ---------- */
+function $(id){return document.getElementById(id)}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a}
+function todayKey(){return new Date().toISOString().slice(0,10)}
+function storeGet(){try{return JSON.parse(localStorage.getItem('haji_oracle_v3')||'{"readings":[]}')}catch(e){return {readings:[]}}}
+function storeSet(s){localStorage.setItem('haji_oracle_v3',JSON.stringify(s))}
+function toast(msg){var t=$('toast');t.textContent=msg;t.style.display='block';setTimeout(function(){t.style.display='none'},2200)}
+function getCardName(c){return c.kr||c.n}
+function getPos(){return POS[spreadN]}
+function getCatName(){return (CATS.find(c=>c.k===selCat)||CATS[0]).n}
+function getModeName(){return (MODES.find(m=>m.k===selMode)||MODES[0]).n}
+function getPrice(){return spreadN===6?'₩1,500':spreadN===3?'₩700':'₩300'}
+function getZodiac(m,d){var z=[['물병자리',1,20,'♒'],['물고기자리',2,19,'♓'],['양자리',3,21,'♈'],['황소자리',4,20,'♉'],['쌍둥이자리',5,21,'♊'],['게자리',6,21,'♋'],['사자자리',7,23,'♌'],['처녀자리',8,23,'♍'],['천칭자리',9,23,'♎'],['전갈자리',10,23,'♏'],['사수자리',11,22,'♐'],['염소자리',12,22,'♑']];for(var i=0;i<z.length;i++){var cur=z[i],nx=z[(i+1)%12];if((m===cur[1]&&d>=cur[2])||(m===nx[1]&&d<nx[2]))return cur[3]+' '+cur[0];}return '';}
+function htmlEscape(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
+/* ---------- INIT ---------- */
+document.querySelectorAll('.langbtn').forEach(b=>b.onclick=function(){document.querySelectorAll('.langbtn').forEach(x=>x.classList.remove('on'));this.classList.add('on');toast('다국어 UI는 다음 버전에서 전체 확장 예정입니다')});
+$('startBtn').onclick=function(){showScreen('screen-onboard');setupOnboard();bgm.init();bgm.start();};
+function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('show'));$(id).classList.add('show');}
+function setupOnboard(){
+  var y=$('obYear'),m=$('obMonth'),d=$('obDay'),cur=new Date().getFullYear();
+  y.innerHTML='<option value="">년도</option>';for(var i=cur;i>=1940;i--)y.innerHTML+='<option value="'+i+'">'+i+'년</option>';
+  m.innerHTML='<option value="">월</option>';for(i=1;i<=12;i++)m.innerHTML+='<option value="'+i+'">'+i+'월</option>';
+  d.innerHTML='<option value="">일</option>';for(i=1;i<=31;i++)d.innerHTML+='<option value="'+i+'">'+i+'일</option>';
+  var mg=$('moodPick');mg.innerHTML='';MOODS.forEach(function(x,i){var b=document.createElement('button');b.className='pick';b.textContent=x;b.onclick=function(){document.querySelectorAll('#moodPick .pick').forEach(p=>p.classList.remove('on'));b.classList.add('on');user.mood=x;};mg.appendChild(b);});
+}
+function goMain(skip){
+  user.name=skip?'':$('obName').value.trim();
+  user.month=parseInt($('obMonth').value)||0;user.day=parseInt($('obDay').value)||0;user.zodiac=user.month&&user.day?getZodiac(user.month,user.day):'';
+  user.concern=skip?'':$('obConcern').value.trim();
+  showScreen('screen-main');initMain();
+}
+function initMain(){
+  var d=new Date(),w=['일','월','화','수','목','금','토'];
+  $('userInfo').textContent=d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate()+' '+w[d.getDay()]+' · '+(user.name?user.name+'님 · ':'')+(user.mood?'오늘 감정 '+user.mood:'감정 미입력')+(user.zodiac?' · '+user.zodiac:'');
+  renderQuota();renderModes();renderCats();renderDeck();renderMemory();renderEvent();
+}
+function renderDeck(){['dk1','dk2','dk3'].forEach(id=>$(id).innerHTML=BACK_SVG);}
+function renderQuota(){var c=$('qdots');c.innerHTML='';for(var i=0;i<QUOTA;i++){var d=document.createElement('div');d.className='qdot '+(i<quotaUsed?'used':'ok');c.appendChild(d);}}
+function renderModes(){var g=$('modegrid');g.innerHTML='';MODES.forEach(m=>{var b=document.createElement('button');b.className='modebtn '+(m.k===selMode?'on':'');b.innerHTML=m.i+' <b>'+m.n+'</b><br><span style="font-size:8px;color:rgba(201,168,76,.48)">'+m.desc+'</span>';b.onclick=function(){selMode=m.k;renderModes();};g.appendChild(b);});}
+function renderCats(){var g=$('catgrid');g.innerHTML='';CATS.forEach(c=>{var b=document.createElement('button');b.className='catbtn '+(c.k===selCat?'on':'');b.innerHTML='<span class="ci">'+c.i+'</span>'+c.n;b.onclick=function(){selCat=c.k;renderCats();renderEvent();};g.appendChild(b);});}
+function renderMemory(){
+  var s=storeGet(),r=s.readings||[],last=r[r.length-1],rep=getRepeatedCard(r);
+  if(!r.length){$('memoryRibbon').innerHTML='🧠 <b>기억형 오라클</b>이 켜져 있어요. 리딩 후 카드·감정·주제를 기기 안에 저장하고 다음 흐름을 이어줍니다.';return;}
+  var msg='🧠 지금까지 <b>'+r.length+'회</b>의 감정 기록이 쌓였어요.';
+  if(rep) msg+=' 최근 반복되는 카드는 <b>'+rep+'</b>입니다.';
+  if(last) msg+=' 지난 리딩의 감정은 <b>'+htmlEscape(last.mood||'미입력')+'</b>이었어요.';
+  $('memoryRibbon').innerHTML=msg;
+}
+function getRepeatedCard(r){var m={};r.slice(-7).forEach(x=>(x.cards||[]).forEach(n=>m[n]=(m[n]||0)+1));var best=Object.keys(m).sort((a,b)=>m[b]-m[a])[0];return best&&m[best]>=2?best:''}
+function renderEvent(){
+  var h=new Date().getHours(),txt='';
+  if(selCat==='rain')txt='🌧️ <b>Rain Oracle</b> · 비오는 날 모드는 감정의 잔향과 회복 루틴을 더 깊게 읽습니다.';
+  else if(h>=0&&h<5)txt='🌌 <b>심야 오라클 오픈</b> · 새벽에는 감정을 단정하지 않고, 조용히 정리하는 문장으로 안내합니다.';
+  else if([5,6].includes(new Date().getDay()))txt='✨ <b>주말 감정 체크</b> · 이번 주의 피로와 기대를 카드로 정리해보세요.';
+  else txt='🌙 <b>오늘의 감정 이벤트</b> · 결과는 예언이 아니라 지금 마음을 정리하는 콘텐츠입니다.';
+  $('timeEvent').innerHTML=txt;
+}
+
+/* ---------- CARD UI ---------- */
+var BACK_SVG='<svg class="backsvg" viewBox="0 0 86 132" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="132" rx="10" fill="#07041A"/><rect x="3" y="3" width="80" height="126" rx="8" fill="none" stroke="#C9A84C" stroke-width="1.4"/><rect x="8" y="8" width="70" height="116" rx="5" fill="none" stroke="#C9A84C" opacity=".38" stroke-dasharray="3 2"/><circle cx="43" cy="66" r="25" fill="none" stroke="#C9A84C" opacity=".34"/><circle cx="43" cy="66" r="15" fill="none" stroke="#C9A84C" opacity=".45"/><path d="M43 39 L47 62 L68 66 L47 70 L43 93 L39 70 L18 66 L39 62 Z" fill="#C9A84C" opacity=".14"/><circle cx="43" cy="66" r="4" fill="#C9A84C"/><text x="43" y="18" text-anchor="middle" font-family="Cinzel,serif" font-size="6" fill="#C9A84C" letter-spacing="2">HAJI</text><text x="43" y="119" text-anchor="middle" font-family="Cinzel,serif" font-size="6" fill="#C9A84C" letter-spacing="2">ORACLE</text></svg>';
+function setN(n){if(n===6&&!isPremium){showSub();return;}spreadN=n;[1,3,6].forEach(x=>$('st'+x).className='stbtn '+(x===n?'on':''));$('deckHint').textContent='덱을 눌러 카드 '+n+'장을 뽑으세요';resetGame(false);}
+function makeCardHTML(card,small){
+  return '<div class="card-face" style="--c1:'+card.c+'"><div class="card-roman">'+card.r+'</div><div class="card-emoji">'+card.em+'</div><div class="card-name">'+htmlEscape(getCardName(card))+'</div><div class="card-kw">'+htmlEscape(card.kw)+'</div></div>';
+}
+function startSpread(){
+  if(drawn.length)return;
+  if(quotaUsed>=QUOTA&&!isPremium){showSub();return;}
+  bgm.sfx('flip');
+  var idx=shuffle([...Array(CARDS.length).keys()]).slice(0,spreadN);
+  drawn=idx.map(i=>({idx:i}));flipped=0;allFlipped=false;
+  var pos=getPos(),S=spreadN===6,one=spreadN===1,cls=one?'size1':S?'size6':'size3',wrap=one?'srow':S?'sgrid':'srow';
+  var prog='<div class="fptxt">'+(S?'카드를 한 장씩 눌러 뒤집으세요 (0/'+spreadN+')':'카드를 눌러 뒤집어보세요')+'</div>'+(S?'<div class="fprow">'+Array(spreadN).fill('<div class="fpdot"></div>').join('')+'</div>':'');
+  var html='<div class="'+wrap+'">';
+  drawn.forEach(function(d,i){var card=CARDS[d.idx];html+='<div class="slot"><div class="card-outer '+cls+'" id="co'+i+'"><div class="cflip" id="cf'+i+'"><div class="cback">'+BACK_SVG+'</div><div class="cfront">'+makeCardHTML(card,S)+'</div></div></div><div class="pos-lbl">'+pos[i]+'</div></div>';});
+  html+='</div>';$('spreadArea').innerHTML=prog+html;$('resultArea').innerHTML='';
+  drawn.forEach((_,i)=>$('co'+i).onclick=function(){flipCard(i)});
+}
+function flipCard(i){
+  var co=$('co'+i),cf=$('cf'+i);if(co.classList.contains('flipped-done'))return;
+  bgm.sfx('flip');cf.classList.add('flipped');co.classList.add('flipped-done');flipped++;
+  if(spreadN===6){var dots=document.querySelectorAll('.fpdot');if(dots[i])dots[i].classList.add('done');var txt=document.querySelector('.fptxt');txt.textContent=flipped<spreadN?'카드를 한 장씩 눌러 뒤집으세요 ('+flipped+'/'+spreadN+')':'✦ '+spreadN+'장 완성';}
+  if(flipped===spreadN&&!allFlipped){allFlipped=true;quotaUsed++;renderQuota();setTimeout(function(){bgm.sfx('reveal');showFree();},550);}
+}
+
+/* ---------- READINGS ---------- */
+function toneSentence(){
+  var base={
+    soft:'지금 필요한 것은 정답보다 마음의 결을 부드럽게 정리하는 일입니다.',
+    real:'감정은 중요하지만, 오늘은 실제로 바꿀 수 있는 한 가지 행동에 집중하는 편이 좋습니다.',
+    intuition:'이미 알고 있었지만 미뤄둔 감정이 카드 위로 올라왔습니다.',
+    relation:'상대보다 먼저 확인해야 할 것은 내가 이 관계에서 지키고 싶은 선입니다.',
+    midnight:'밤의 생각은 커지기 쉽습니다. 그래서 오늘은 결론보다 기록이 먼저입니다.',
+    safe:'불안을 키우는 해석보다, 나를 보호하는 선택을 우선해도 괜찮습니다.'
+  };return base[selMode]||base.soft;
+}
+function categorySentence(){
+  var x={
+    emotion:'오늘의 핵심은 감정에 이름을 붙이는 것입니다.',
+    love:'관계는 상대의 마음을 맞히는 게임이 아니라, 나의 반응을 알아차리는 연습입니다.',
+    work:'성장은 더 많은 일을 하는 것이 아니라, 에너지를 어디에 둘지 고르는 일에서 시작됩니다.',
+    money:'돈의 흐름은 운보다 습관에 가깝습니다. 오늘은 작은 지출 하나를 살펴보세요.',
+    night:'새벽의 마음은 선명하지만 과장되기도 합니다. 내일 아침에도 남는 감정만 믿어보세요.',
+    rain:'비오는 날에는 오래 묵은 감정이 올라올 수 있습니다. 천천히 정리해도 충분합니다.',
+    choice:'선택의 핵심은 완벽한 답이 아니라 감당 가능한 방향입니다.',
+    heal:'회복은 드라마틱한 반전보다 작은 루틴에서 시작됩니다.'
+  };return x[selCat]||x.emotion;
+}
+function buildPreview(){
+  var cards=drawn.map(d=>CARDS[d.idx]),names=cards.map(getCardName),main=cards[0];
+  var text=(user.mood?user.mood+'이라는 감정 위에 ':'')+getCardName(main)+' 카드가 놓였습니다. '+toneSentence()+' '+categorySentence();
+  var chips=[getModeName(),getCatName(),main.emotion,main.shadow].filter(Boolean);
+  var mem=buildMemoryInsight(names);
+  var story=buildStoryTeaser(names);
+  $('resultArea').innerHTML='<div class="result-card"><div class="result-title">✨ 오늘의 감정 메시지 <span class="badge">무료 미리보기</span></div><div class="result-text">'+text+'</div><div class="chips">'+chips.map(c=>'<span class="chip">'+htmlEscape(c)+'</span>').join('')+'</div>'+mem+story+'</div><div class="action-row"><button class="btn purple" id="deepBtn">🔮 감정 심층 리포트 보기 <span style="font-size:10px;opacity:.7">· '+getPrice()+'</span></button><button class="btn ghost" id="retryBtn">다시 뽑기</button></div>';
+  $('deepBtn').onclick=showPay;$('retryBtn').onclick=function(){resetGame(true)};
+}
+function showFree(){buildPreview();}
+function buildMemoryInsight(names){
+  var r=storeGet().readings||[],rep=getRepeatedCard(r),last=r[r.length-1];
+  if(!r.length)return '<div class="memory-box">🧠 첫 기록입니다. 이번 리딩이 저장되면 다음부터 감정 흐름과 반복 카드를 이어서 보여드릴게요.</div>';
+  var msg='🧠 이전 기록과 연결하면, 지금의 주제는 완전히 새롭다기보다 쌓여온 감정의 다음 장면에 가깝습니다.';
+  if(rep)msg+=' 특히 <b>'+rep+'</b> 카드가 반복되어 같은 마음의 문을 다시 두드리고 있어요.';
+  if(last&&last.cat===selCat)msg+=' 같은 주제를 다시 선택한 것도 하나의 신호입니다. 마음이 아직 정리되지 않은 부분이 있을 수 있어요.';
+  return '<div class="memory-box">'+msg+'</div>';
+}
+function buildStoryTeaser(names){
+  var r=storeGet().readings||[],day=r.length+1;
+  if(day===1)return '<div class="story-box">📖 <b>오라클 다이어리 Day 1</b><br>오늘부터 감정의 연속 스토리가 시작됩니다. 첫 장의 제목은 “나를 다시 읽는 밤”입니다.</div>';
+  return '<div class="story-box">📖 <b>오라클 다이어리 Day '+day+'</b><br>이전 기록 위에 오늘의 카드가 이어졌습니다. 이번 장의 키워드는 “'+htmlEscape(names[0])+'”입니다.</div>';
+}
+function showPay(){
+  $('resultArea').insertAdjacentHTML('afterend','<div class="modal-bg" id="payWrap"><div class="paycard"><div class="paytitle">'+getCatName()+' · '+getModeName()+'</div><div class="paysub">예언이 아닌 감정 정리 리포트</div><div class="payamt"><div class="paynum">'+getPrice()+'</div><div class="small">1회 심층 콘텐츠 데모</div></div><div class="payitems"><div class="payrow"><span>78장 카드 기반 감정 해석</span><span>포함</span></div><div class="payrow"><span>기억형 AI 흐름 코멘트</span><span>포함</span></div><div class="payrow"><span>SNS 공유 이미지</span><span>포함</span></div><div class="payrow"><span>정책 안전 문구</span><span>강화</span></div></div><button class="btn" onclick="confirmPay()">데모 결제 후 보기</button><button class="btn dark" style="margin-top:6px" onclick="$(\'payWrap\').remove()">취소</button></div></div>');
+}
+function confirmPay(){var p=$('payWrap');if(p)p.remove();bgm.sfx('deep');var r=generateDeep();showDeep(r);saveReading(r);renderMemory();}
+function generateDeep(){
+  var cards=drawn.map(d=>CARDS[d.idx]),pos=getPos(),names=cards.map(getCardName),s=storeGet(),past=s.readings||[],rep=getRepeatedCard(past);
+  var story='이번 리딩은 '+names.join(', ')+' 카드가 하나의 감정선을 만들고 있습니다. '+toneSentence()+' '+categorySentence()+' ';
+  if(user.concern)story+='당신이 적어둔 고민은 “'+htmlEscape(user.concern)+'”이고, 카드는 그 고민을 당장 결론내기보다 작은 행동으로 쪼개보라고 말합니다. ';
+  if(rep)story+='최근 반복된 '+rep+'의 흔적은 같은 감정을 여러 번 다른 방식으로 마주하고 있다는 뜻처럼 보입니다. ';
+  story+='오늘은 큰 결론보다 한 문장 기록, 한 번의 정리, 한 가지 선택이면 충분합니다.';
+  var detail={story:story,key_insight:'지금 필요한 것은 미래를 맞히는 일이 아니라, 내 감정이 어디에서 반복되는지 알아차리는 일입니다.',action_today:'오늘 밤 자기 전, 가장 크게 남은 감정 하나를 메모하고 내일 할 수 있는 행동 하나만 정하세요.',growth_tip:'불안은 적이 아니라 신호일 수 있습니다. 다만 그 신호가 모든 결정을 대신하게 두지는 마세요.',lucky_color:['금색','남색','라벤더','아이보리','올리브'][Math.floor(Math.random()*5)],lucky_time:['오전 9~11시','오후 2~4시','저녁 8~10시','잠들기 전 10분'][Math.floor(Math.random()*4)],lucky_direction:['동쪽','남쪽','서쪽','북쪽','창가'][Math.floor(Math.random()*5)]};
+  cards.forEach(function(c,i){
+    detail['card'+(i+1)]={symbol:getCardName(c)+'은 '+c.kw+'의 상징을 가집니다. 이 카드는 상황을 단정하지 않고, 지금 감정의 색을 보여주는 거울처럼 작동합니다.',
+    psychology:'현재 마음은 '+c.emotion+' 쪽으로 기울어 있습니다. 동시에 '+c.shadow+'의 그림자도 있어, 생각보다 같은 장면을 여러 번 곱씹고 있을 수 있습니다.',
+    situation:getCatName()+' 관점에서 보면 이 카드는 “무엇을 맞힐까”보다 “무엇을 정리할까”에 가깝습니다. 급한 결론보다 작은 확인이 필요합니다.',
+    action:'오늘은 '+(i===0?'감정을 이름 붙이기':i===1?'상대나 상황보다 내 기준 적기':'실행 가능한 한 가지로 줄이기')+'를 해보세요. 선택은 작을수록 오래 갑니다.'};
+  });
+  return detail;
+}
+function showDeep(r){
+  rdData=r;var pos=getPos(),cards=drawn.map(d=>CARDS[d.idx]);
+  var heroCards=cards.map((c,i)=>'<div class="hero-slot"><div class="hmini">'+makeCardHTML(c,true)+'</div><div class="hcname">'+pos[i]+'<br>'+htmlEscape(getCardName(c))+'</div></div>').join('');
+  var acc=cards.map((c,i)=>{var cd=r['card'+(i+1)]||{};return '<div class="acc"><div class="acc-h" onclick="toggleAcc('+i+')"><span class="acc-p">'+pos[i]+'</span><span class="acc-n">'+htmlEscape(getCardName(c))+' · '+htmlEscape(c.kw)+'</span><span>▾</span></div><div class="acc-b" id="acc'+i+'"><div class="acc-sec"><div class="acc-sl">🎴 상징</div><div class="acc-st">'+cd.symbol+'</div></div><div class="acc-sec"><div class="acc-sl">🧠 심리</div><div class="acc-st">'+cd.psychology+'</div></div><div class="acc-sec"><div class="acc-sl">🎯 상황</div><div class="acc-st">'+cd.situation+'</div></div><div class="acc-sec"><div class="acc-sl">💡 행동</div><div class="acc-st">'+cd.action+'</div></div></div></div>';}).join('');
+  $('resultArea').insertAdjacentHTML('afterend','<div class="modal-bg" id="deepWrap"><div class="paycard"><div class="hero"><div class="hero-cards">'+heroCards+'</div><div class="hero-title">'+getCatName()+' 리포트</div><div class="hero-msg">'+r.story+'</div><div class="insight"><div class="insight-lbl">KEY INSIGHT</div><div class="insight-txt">'+r.key_insight+'</div></div><div class="insight"><div class="insight-lbl">TODAY ACTION</div><div class="insight-txt">'+r.action_today+'</div></div><div class="lucky"><div class="lk"><div class="lki">🎨</div><div class="lkl">색</div><div class="lkv">'+r.lucky_color+'</div></div><div class="lk"><div class="lki">⏰</div><div class="lkl">시간</div><div class="lkv">'+r.lucky_time+'</div></div><div class="lk"><div class="lki">🧭</div><div class="lkl">장소</div><div class="lkv">'+r.lucky_direction+'</div></div></div><div class="hero-msg" style="font-size:11px;color:rgba(232,210,138,.9)">'+r.growth_tip+'</div><div class="share"><div class="share-lbl">✦ SNS 공유 ✦</div><div class="share-btns"><button class="btn blue" onclick="shareImg()">📸 이미지 저장</button><button class="btn" onclick="shareText()">💬 문구 공유</button></div></div><div class="accord">'+acc+'</div></div><div class="action-row"><button class="btn dark" onclick="$(\'deepWrap\').remove()">닫기</button><button class="btn ghost" onclick="resetGame(true)">새로 뽑기</button></div></div></div>');
+  var first=$('acc0');if(first)first.classList.add('open');
+}
+function toggleAcc(i){document.querySelectorAll('.acc-b').forEach((b,idx)=>b.classList.toggle('open',idx===i&&!b.classList.contains('open')))}
+function saveReading(r){
+  var s=storeGet();s.readings=s.readings||[];
+  s.readings.push({date:new Date().toISOString(),mood:user.mood,cat:selCat,mode:selMode,cards:drawn.map(d=>getCardName(CARDS[d.idx])),story:(r.story||'').slice(0,180)});
+  if(s.readings.length>30)s.readings=s.readings.slice(-30);
+  storeSet(s);
+}
+function showDiary(){
+  var s=storeGet(),r=s.readings||[];
+  if(!r.length){toast('아직 저장된 감정 기록이 없습니다');return;}
+  var html='<div class="modal-bg" id="diaryWrap"><div class="paycard"><div class="paytitle">📖 오라클 다이어리</div><div class="paysub">기기 안에 저장된 최근 감정 흐름</div>';
+  r.slice(-8).reverse().forEach(function(x,i){html+='<div class="result-card" style="margin:7px 0"><div class="result-title">Day '+(r.length-i)+' <span class="badge">'+(x.mood||'감정 미입력')+'</span></div><div class="small">'+new Date(x.date).toLocaleString()+' · '+x.cards.join(', ')+'</div><div class="result-text" style="font-size:11px">'+htmlEscape(x.story)+'</div></div>';});
+  html+='<button class="btn dark" onclick="$(\'diaryWrap\').remove()">닫기</button><button class="btn ghost" style="margin-top:7px" onclick="clearDiary()">기록 초기화</button></div></div>';
+  document.body.insertAdjacentHTML('beforeend',html);
+}
+function clearDiary(){localStorage.removeItem('haji_oracle_v3');var d=$('diaryWrap');if(d)d.remove();renderMemory();toast('기록을 초기화했어요');}
+
+/* ---------- SHARE ---------- */
+function buildCanvas(){
+  return new Promise(function(resolve){
+    var W=1080,H=1920,cv=document.createElement('canvas'),ctx;cv.width=W;cv.height=H;ctx=cv.getContext('2d');
+    var grad=ctx.createLinearGradient(0,0,0,H);grad.addColorStop(0,'#1A0840');grad.addColorStop(.55,'#080414');grad.addColorStop(1,'#05030d');ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
+    for(var i=0;i<260;i++){ctx.fillStyle='rgba(255,255,255,'+(Math.random()*.55+.1)+')';ctx.beginPath();ctx.arc(Math.random()*W,Math.random()*H,Math.random()*2+1,0,Math.PI*2);ctx.fill();}
+    ctx.strokeStyle='#C9A84C';ctx.lineWidth=5;ctx.strokeRect(38,38,W-76,H-76);ctx.lineWidth=1;ctx.strokeStyle='rgba(201,168,76,.38)';ctx.strokeRect(60,60,W-120,H-120);
+    ctx.fillStyle='#C9A84C';ctx.textAlign='center';ctx.font='bold 54px Georgia';ctx.fillText('HAJI EMOTION ORACLE',W/2,150);
+    ctx.fillStyle='rgba(232,210,138,.78)';ctx.font='30px Georgia';ctx.fillText(getCatName()+' · '+getModeName(),W/2,205);
+    var cards=drawn.map(d=>CARDS[d.idx]),cw=spreadN===1?280:spreadN===3?220:150,ch=cw*1.58,gap=22,total=cards.length*cw+(cards.length-1)*gap,sx=(W-total)/2,cy=285;
+    cards.forEach(function(c,i){var x=sx+i*(cw+gap);ctx.fillStyle=c.c;round(ctx,x,cy,cw,ch,18);ctx.fill();ctx.strokeStyle='#C9A84C';ctx.lineWidth=3;round(ctx,x,cy,cw,ch,18);ctx.stroke();ctx.fillStyle='rgba(255,255,255,.92)';ctx.font=(cw*.25)+'px Arial';ctx.fillText(c.em,x+cw/2,cy+ch*.46);ctx.fillStyle='#E8D28A';ctx.font='bold '+(cw*.09)+'px Georgia';ctx.fillText(getCardName(c),x+cw/2,cy+ch*.74);ctx.fillStyle='rgba(244,239,231,.66)';ctx.font=(cw*.06)+'px Georgia';ctx.fillText(c.kw,x+cw/2,cy+ch*.84);});
+    var y=spreadN===6?620:760;ctx.fillStyle='rgba(244,239,231,.94)';ctx.font='36px Georgia';wrapText(ctx,rdData?rdData.key_insight:'오늘의 감정을 정리하는 카드입니다.',W/2,y,880,58);
+    ctx.fillStyle='rgba(232,210,138,.92)';ctx.font='32px Georgia';wrapText(ctx,rdData?rdData.action_today:'오늘 작은 행동 하나를 정해보세요.',W/2,y+230,880,52);
+    ctx.fillStyle='rgba(201,168,76,.5)';ctx.font='24px Georgia';ctx.fillText('오락·자기성찰 목적 · 미래를 보장하지 않습니다',W/2,H-110);
+    resolve(cv);
+  });
+}
+function round(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();}
+function wrapText(ctx,text,x,y,maxWidth,lineHeight){var words=String(text).split(''),line='';for(var n=0;n<words.length;n++){var test=line+words[n];if(ctx.measureText(test).width>maxWidth&&n>0){ctx.fillText(line,x,y);line=words[n];y+=lineHeight;}else line=test;}ctx.fillText(line,x,y);}
+function shareImg(){buildCanvas().then(function(cv){cv.toBlob(function(blob){var url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='haji-oracle-'+Date.now()+'.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000);toast('공유 이미지가 저장됐어요');});});}
+function shareText(){var txt='✦ Haji Emotion Oracle ✦\n'+(rdData?rdData.key_insight:'오늘의 감정을 카드로 정리했어요')+'\n\n오락·자기성찰 목적';if(navigator.share)navigator.share({title:'Haji Oracle',text:txt}).catch(()=>{});else{navigator.clipboard&&navigator.clipboard.writeText(txt);toast('공유 문구를 복사했어요');}}
+
+/* ---------- SUB ---------- */
+function showSub(){$('subOverlay').style.display='flex'}
+function hideSub(){$('subOverlay').style.display='none'}
+function pickPlan(p){selPlan=p;$('subConfirmBtn').textContent=p==='free'?'무료로 계속하기':p==='yearly'?'연간 Pro 데모 활성화':'월간 Pro 데모 활성화'}
+function confirmSub(){if(selPlan!=='free'){isPremium=true;toast('Pro 데모가 활성화됐어요');}hideSub();}
+
+/* ---------- ETC ---------- */
+function toggleSound(){var on=bgm.toggle();$('sndBtn').textContent=on?'🔊':'🔇';toast(on?'사운드 켜짐':'사운드 꺼짐')}
+function resetGame(clearDeep){drawn=[];flipped=0;allFlipped=false;rdData=null;$('spreadArea').innerHTML='';$('resultArea').innerHTML='';['deepWrap','payWrap'].forEach(id=>{var e=$(id);if(e)e.remove();});}
+</script>
+</body>
+</html>
