@@ -104,11 +104,12 @@ button{cursor:pointer}
 .ribbon{border:1px solid rgba(120,214,184,.2);background:rgba(120,214,184,.07);padding:10px 12px;font-size:10.5px;color:rgba(218,255,246,.86);line-height:1.65;margin-bottom:10px}
 .event-card{position:relative;overflow:hidden;border:1px solid rgba(213,107,154,.22);background:radial-gradient(circle at 12% 0%,rgba(213,107,154,.22),transparent 26%),rgba(213,107,154,.06);padding:11px 12px;font-size:11px;line-height:1.65;color:rgba(255,229,240,.9);margin:10px 0}
 .event-card b{color:#FFD6E7}
-.deckmode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.deckmode{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
 .deckmode-btn{border:1px solid rgba(201,168,76,.16);background:rgba(255,255,255,.035);color:var(--muted);border-radius:14px;padding:11px 8px;text-align:center}
 .deckmode-btn.on{color:var(--gold2);border-color:var(--gold);background:linear-gradient(135deg,rgba(201,168,76,.18),rgba(123,79,186,.15));box-shadow:0 0 18px rgba(201,168,76,.08) inset}
 .deckmode-btn b{display:block;font-size:12px;margin-bottom:3px}
 .deckmode-btn span{display:block;font-size:8.5px;color:rgba(232,210,138,.55);line-height:1.4}
+.deck-tip{font-size:10px;color:rgba(232,210,138,.68);text-align:center;margin:2px 0 10px}
 .guide-card{border:1px solid rgba(201,168,76,.22);background:radial-gradient(circle at 15% 0%,rgba(201,168,76,.12),transparent 32%),radial-gradient(circle at 90% 20%,rgba(123,79,186,.16),transparent 28%),rgba(14,8,36,.74);padding:13px;margin:12px 0}
 .guide-title{color:var(--gold);font-weight:700;font-size:13px;margin-bottom:9px;display:flex;justify-content:space-between;gap:8px;align-items:center}
 .guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -117,12 +118,12 @@ button{cursor:pointer}
 .guide-box p{color:rgba(244,239,231,.72);font-size:10px;line-height:1.65;margin-top:5px}
 .stog,.modegrid,.catgrid{display:grid;gap:6px}
 .stog{grid-template-columns:repeat(3,1fr)}
-.modegrid{grid-template-columns:repeat(2,1fr)}
-.catgrid{grid-template-columns:repeat(3,1fr)}
+.modegrid{grid-template-columns:repeat(3,1fr)}
+.catgrid{grid-template-columns:repeat(2,1fr)}
 .stbtn,.modebtn,.catbtn{border:1px solid rgba(201,168,76,.14);background:rgba(255,255,255,.035);border-radius:13px;color:var(--muted);transition:.16s;text-align:center}
-.stbtn{padding:9px 4px}
-.modebtn{padding:10px 6px;font-size:10px;line-height:1.35}
-.catbtn{padding:8px 2px;font-size:8.7px}
+.stbtn{padding:12px 4px}
+.modebtn{padding:11px 6px;font-size:10.5px;line-height:1.25}
+.catbtn{padding:12px 4px;font-size:10px}
 .stbtn.on,.modebtn.on,.catbtn.on{background:rgba(201,168,76,.16);border-color:var(--gold);color:var(--gold2)}
 .si,.ci{display:block;font-size:15px;margin-bottom:2px}.sn{display:block;font-size:9.5px;font-weight:700}.ss{display:block;font-size:7.5px;color:rgba(201,168,76,.48);margin-top:1px}
 .deck-wrap{text-align:center;padding:12px 0 8px}
@@ -191,10 +192,10 @@ button{cursor:pointer}
 .insight{margin:11px 14px;padding:11px 12px;border:1px solid rgba(201,168,76,.28);background:rgba(201,168,76,.08);border-radius:12px;text-align:center;position:relative;z-index:1}.insight-lbl{font-family:Cinzel,serif;color:rgba(201,168,76,.66);font-size:8.5px;letter-spacing:.12em;margin-bottom:4px}.insight-txt{font-size:12.5px;color:var(--gold2);line-height:1.7}
 .lucky{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:0 14px 12px;position:relative;z-index:1}.lk{background:rgba(14,8,36,.75);border:1px solid rgba(201,168,76,.16);border-radius:10px;padding:8px 4px;text-align:center}.lki{font-size:15px}.lkl{font-size:7px;color:var(--muted)}.lkv{font-size:11px;color:var(--gold2);font-weight:700}
 .accord{padding:0 14px 13px;position:relative;z-index:1}.acc{border:1px solid rgba(201,168,76,.12);border-radius:11px;margin-bottom:6px;overflow:hidden}.acc-h{display:flex;align-items:center;gap:6px;padding:9px;background:rgba(255,255,255,.035)}.acc-p{font-family:Cinzel,serif;font-size:7px;color:var(--gold);background:rgba(201,168,76,.1);border-radius:999px;padding:2px 6px}.acc-n{font-size:10.5px;color:var(--gold2);flex:1}.acc-b{display:none;padding:0 9px 9px}.acc-b.open{display:block}.acc-sec{margin-top:7px}.acc-sl{font-family:Cinzel,serif;font-size:7.5px;color:var(--gold);margin-bottom:3px}.acc-st{font-size:10.7px;line-height:1.8;color:rgba(244,239,231,.85)}
-.share{padding:0 14px 13px;position:relative;z-index:1}.share-lbl{text-align:center;font-family:Cinzel,serif;font-size:8.5px;color:rgba(201,168,76,.5);letter-spacing:.13em;margin-bottom:7px}.share-btns{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.share{padding:0 14px 13px;position:relative;z-index:1}.share-lbl{text-align:center;font-family:Cinzel,serif;font-size:8.5px;color:rgba(201,168,76,.5);letter-spacing:.13em;margin-bottom:7px}.share-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.share-btns .btn{padding-left:8px;padding-right:8px;font-size:11px}
 .footer{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(5,3,13,.92);backdrop-filter:blur(8px);border-top:1px solid rgba(201,168,76,.12);padding:8px 12px;text-align:center;font-size:9px;color:rgba(201,168,76,.46);line-height:1.55;z-index:40}
 .sub-overlay{position:fixed;inset:0;z-index:210;background:rgba(0,0,0,.82);display:none;align-items:flex-end;justify-content:center;backdrop-filter:blur(7px)}.sub-sheet{width:100%;max-width:430px;background:linear-gradient(180deg,#0E0824,#150A31);border-top:1px solid rgba(201,168,76,.3);border-radius:22px 22px 0 0;padding:21px 19px 32px;animation:slideUp .3s ease}@keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}.sub-bar{width:34px;height:3px;background:rgba(255,255,255,.12);border-radius:2px;margin:0 auto 16px}.sub-ttl{font-family:Cinzel,serif;font-size:18px;color:var(--gold);text-align:center;font-weight:700;margin-bottom:4px}.sub-desc{text-align:center;font-size:10.5px;color:var(--muted);margin-bottom:15px}.plan{border:1px solid rgba(201,168,76,.18);background:rgba(255,255,255,.035);border-radius:14px;padding:12px 13px;margin-bottom:8px}.plan.rec{border:1.5px solid var(--gold);background:rgba(201,168,76,.07)}.plan.rec:before{content:"추천";position:absolute;top:-9px;right:13px;background:var(--gold);color:#07030f;font-weight:700;font-size:9px;padding:2px 9px;border-radius:999px}.plan-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}.plan-name{font-size:12.5px;font-weight:700}.plan-price{font-family:Cinzel,serif;font-size:16px;font-weight:700;color:var(--gold)}.plan-feat{font-size:10px;color:var(--muted);padding:2px 0}.plan-feat.ok{color:rgba(232,210,138,.9)}
-@media (max-width:360px){.size1{width:164px;height:262px}.size3{width:94px;height:150px}.size6{width:88px;height:140px}.sgrid{gap:6px}.guide-grid{grid-template-columns:1fr}.catgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:360px){.size1{width:164px;height:262px}.size3{width:94px;height:150px}.size6{width:88px;height:140px}.sgrid{gap:6px}.modegrid{grid-template-columns:repeat(3,1fr)}.catgrid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -202,42 +203,38 @@ button{cursor:pointer}
 
 <section id="screen-disc" class="screen show">
   <div class="langbar">
-    <button class="langbtn on">🇰🇷 한국어</button><button class="langbtn">🇺🇸 EN</button><button class="langbtn">🇨🇳 中文</button>
+    <button class="langbtn on" data-lang="KO">🇰🇷 KO</button><button class="langbtn" data-lang="EN">🇺🇸 EN</button><button class="langbtn" data-lang="CN">🇨🇳 CN</button>
   </div>
   <div class="crystal-wrap"><div class="crystal"></div><div class="crystal-shadow"></div></div>
   <div class="brand">HAJI STUDIO</div>
   <div class="title">HAJI MOOD</div>
   <div class="subtitle">정교한 타로 카드 · 감정 메시지 · 명언 카드</div>
   <div class="disc-box">
-    <div class="disc-main">오늘의 감정을 카드로 정리하고<br><strong class="gold">나를 이해하는 작은 의식</strong>을 시작해보세요.</div>
+    <div class="disc-main" id="discMain">오늘의 감정을 카드로 정리하고<br><strong class="gold">나를 이해하는 작은 의식</strong>을 시작해보세요.</div>
     <div class="disc-line"></div>
-    <div class="safe-note"><strong>오락·자기성찰 콘텐츠입니다.</strong><br>본 앱은 미래 예측, 운명 보장, 투자·의료·법률 판단을 제공하지 않습니다.</div>
+    <div class="safe-note" id="safeNote"><strong>오락·자기성찰 콘텐츠입니다.</strong><br>본 앱은 미래 예측, 운명 보장, 투자·의료·법률 판단을 제공하지 않습니다.</div>
   </div>
   <button class="btn" id="startBtn">✦ 감정 오라클 시작하기 ✦</button>
   <div class="appnote" id="audioHint">화면을 한 번 터치하면 몽환 BGM이 시작됩니다.</div>
-  <div class="appnote">22장/78장 선택 · 실제 타로 카드 이미지 · 긴 메시지 · 명언 & 조언 카드 · SNS 공유</div>
+  <div class="appnote" id="featureNote">78장 전체 덱 · 실제 타로 카드 이미지 · 긴 메시지 · 명언 & 조언 카드 · SNS 공유</div>
 </section>
 
 <section id="screen-onboard" class="screen">
   <div class="ob-wrap">
     <div class="ob-title">Personal Ritual</div>
-    <div class="ob-sub">입력은 최소화했습니다. 생년월일은 선택이고, 기록은 이 기기 안에만 저장됩니다.</div>
-    <div class="quick-note">✨ 빠르게 테스트하려면 바로 <b>오라클 열기</b>를 눌러도 됩니다.</div>
-    <label class="label">닉네임, 선택</label>
+    <div class="ob-sub" id="obSub">정보 입력은 선택입니다. 기록은 이 기기 안에만 저장됩니다.</div>
+    <div class="quick-note" id="quickNote">닉네임을 넣으면 결과와 저장 포토카드에 이름이 들어갑니다.<br>고민을 적으면 그 문장을 중심으로 리딩 문장이 더 개인화됩니다.</div>
+    <label class="label" id="nameLabel">닉네임, 선택</label>
     <input id="obName" class="input" maxlength="12" placeholder="예) 별빛, 하준아빠">
-    <label class="label">생년월일, 선택</label>
-    <div class="grid3">
-      <select id="obYear" class="select"></select>
-      <select id="obMonth" class="select"></select>
-      <select id="obDay" class="select"></select>
-    </div>
-    <label class="label">지금 감정, 선택</label>
+    <div class="input-help" id="nameHelp">입력 시 포토카드에 “For 별빛”처럼 표시됩니다. 원치 않으면 비워두세요.</div>
+    <label class="label" id="moodLabel">지금 감정, 선택</label>
     <div class="chipgrid" id="moodPick"></div>
-    <label class="label">한 줄 고민, 선택</label>
-    <textarea id="obConcern" class="textarea" maxlength="60" placeholder="선택 입력 · 비워도 바로 시작됩니다"></textarea>
-    <div class="policy-card">🛡️ 사행성 회피 설계: 결과는 확률·당첨·재물 보장 형태가 아니라, 감정 정리와 행동 가이드로 제공합니다.</div>
-    <button class="btn" onclick="goMain()">오라클 열기 →</button>
-    <button class="btn ghost" style="margin-top:7px" onclick="goMain(true)">건너뛰기</button>
+    <label class="label" id="concernLabel">한 줄 고민, 선택</label>
+    <textarea id="obConcern" class="textarea" maxlength="80" placeholder="예) 이 관계를 계속 이어가도 괜찮을까?"></textarea>
+    <div class="input-help" id="concernHelp">현재 Beta는 입력한 고민을 결과 문장에 반영합니다. 실제 AI 상담 수준의 깊은 맞춤 분석은 다음 단계에서 연결 예정입니다.</div>
+    <div class="policy-card" id="policyCard">🛡️ 이 앱은 오락·자기성찰 콘텐츠입니다. 미래를 단정하거나 투자·의료·법률 판단을 제공하지 않습니다.</div>
+    <button class="btn" id="goMainBtn" onclick="goMain()">내 정보로 리딩 시작 →</button>
+    <button class="btn ghost" id="skipBtn" style="margin-top:7px" onclick="goMain(true)">정보 없이 바로 시작</button>
   </div>
 </section>
 
@@ -248,6 +245,7 @@ button{cursor:pointer}
       <div class="hdr-btns">
         <button class="hbtn" onclick="toggleSound()" id="sndBtn">🔊</button>
         <button class="hbtn" onclick="showDiary()">📖 기록</button>
+        <button class="hbtn" onclick="openFeedback()">📝 피드백</button>
         <button class="hbtn premium" onclick="showSub()">👑 Pro</button>
       </div>
     </div>
@@ -255,42 +253,30 @@ button{cursor:pointer}
   </header>
 
   <main class="body">
-    <div class="quota"><span>🌙 오늘의 무료 감정 리딩</span><div class="qdots" id="qdots"></div></div>
+    <div class="quota"><span>🌙 Real Reading Beta</span><div class="qdots" id="qdots"></div></div>
     <div class="ribbon" id="memoryRibbon">처음 방문하셨다면, 오늘의 감정을 하나 남겨보세요. 다음 리딩부터 흐름을 이어서 보여드립니다.</div>
     <div class="event-card" id="timeEvent"></div>
 
-    <div class="section-title">Card Deck</div>
-    <div class="deckmode">
-      <button class="deckmode-btn on" id="deck22" onclick="setDeckMode('22')"><b>22장 메이저</b><span>큰 흐름 · 전환점 · 상징 중심</span></button>
-      <button class="deckmode-btn" id="deck78" onclick="setDeckMode('78')"><b>78장 전체</b><span>일상 감정 · 세부 상황 · 관계 디테일</span></button>
-    </div>
+    <div class="section-title">무엇이 궁금한가요?</div>
+    <div class="catgrid" id="catgrid"></div>
 
-    <div class="guide-card">
-      <div class="guide-title">22장과 78장의 차이 <span style="font-size:10px;color:rgba(232,210,138,.55)">선택 가능</span></div>
-      <div class="guide-grid">
-        <div class="guide-box"><b>22장, 메이저 아르카나</b><p>인생의 큰 흐름, 중요한 변화, 강한 상징을 읽는 방식입니다. 짧고 굵은 메시지에 적합합니다.</p></div>
-        <div class="guide-box"><b>78장, 전체 타로</b><p>22장 메이저에 56장 마이너가 더해져 감정, 관계, 돈, 일상 상황을 더 세밀하게 읽습니다.</p></div>
-      </div>
-    </div>
-
-    <div class="section-title">Spread</div>
+    <div class="section-title">어떻게 볼까요?</div>
     <div class="stog">
-      <button class="stbtn on" id="st1" onclick="setN(1)"><span class="si">🪞</span><span class="sn">1장</span><span class="ss">오늘 한줄</span></button>
-      <button class="stbtn" id="st3" onclick="setN(3)"><span class="si">🃏</span><span class="sn">3장</span><span class="ss">흐름 보기</span></button>
-      <button class="stbtn" id="st6" onclick="setN(6)"><span class="si">🎴</span><span class="sn">6장</span><span class="ss">Pro 심화</span></button>
+      <button class="stbtn on" id="st1" onclick="setN(1)"><span class="si">🪞</span><span class="sn">오늘의 한 장</span><span class="ss">빠른 메시지</span></button>
+      <button class="stbtn" id="st3" onclick="setN(3)"><span class="si">🃏</span><span class="sn">3장 흐름</span><span class="ss">현재·흐름·조언</span></button>
+      <button class="stbtn" id="st6" onclick="setN(6)"><span class="si">🎴</span><span class="sn">6장 심층</span><span class="ss">리얼 리딩</span></button>
     </div>
 
-    <div class="section-title">Reading Tone</div><div class="modegrid" id="modegrid"></div>
-    <div class="section-title">Theme</div><div class="catgrid" id="catgrid"></div>
+    <div class="deck-tip" id="deckTip">기본은 실제 타로에 가까운 78장 전체 덱입니다. 결과에는 위로, 현실 지적, 그림자 메시지가 함께 반영됩니다.</div>
 
-    <div class="section-title">Draw</div>
+    <div class="section-title">카드 뽑기</div>
     <div class="deck-wrap" onclick="startSpread()">
       <div class="deck-stack"><div class="dc dc1" id="dk1"></div><div class="dc dc2" id="dk2"></div><div class="dc dc3" id="dk3"></div></div>
-      <div class="deck-hint" id="deckHint">덱을 눌러 카드 1장을 뽑으세요</div>
+      <div class="deck-hint" id="deckHint">카드를 뽑아 오늘의 메시지를 확인하세요</div>
     </div>
     <div id="spreadArea"></div><div id="resultArea"></div>
   </main>
-  <div class="footer">오락·자기성찰 목적 · 실제 미래를 예측하거나 결과를 보장하지 않습니다 · Haji Studio</div>
+  <div class="footer" id="footerNote">오락·자기성찰 목적 · 실제 미래를 예측하거나 결과를 보장하지 않습니다 · Haji Studio</div>
 </section>
 
 <div class="sub-overlay" id="subOverlay">
@@ -416,8 +402,19 @@ var CARDS=[];
 MAJOR.forEach(m=>CARDS.push({n:m[0],r:m[1],kw:m[2],em:m[3],c:m[4],type:'major',suit:'메이저',emotion:m[2].split('·')[0],shadow:m[2].split('·')[1]||'그림자',img:IMG_BASE+m[5]+'.jpg'}));
 SUITS.forEach(s=>RANKS.forEach(r=>CARDS.push({n:r[0]+' of '+s[1],kr:s[0]+' '+r[0],r:r[0],kw:s[2]+'·'+r[1],em:s[3],c:s[4],type:'minor',suit:s[0],emotion:s[2].split('·')[0],shadow:r[1],img:IMG_BASE+s[5]+r[2]+'.jpg'})));
 
-var CATS=[{i:'🪞',n:'오늘의 마음',k:'emotion'},{i:'💕',n:'연애·관계',k:'love'},{i:'💼',n:'일·커리어',k:'work'},{i:'💰',n:'돈·현실',k:'money'},{i:'🎯',n:'선택·결정',k:'choice'},{i:'🌱',n:'회복·자기돌봄',k:'heal'}];
-var MODES=[{i:'🌙',n:'감성 리딩',k:'soft',desc:'따뜻하게 정리'},{i:'🪞',n:'현실 리딩',k:'real',desc:'차분한 팩트'},{i:'🔥',n:'직관 리딩',k:'intuition',desc:'찔리는 통찰'},{i:'💕',n:'관계 리딩',k:'relation',desc:'상대와 거리감'},{i:'🌌',n:'심야 리딩',k:'midnight',desc:'깊은 감정'},{i:'🛡️',n:'안전 리딩',k:'safe',desc:'자기돌봄 중심'}];
+var MAJOR_EN={'광대':'The Fool','마법사':'The Magician','여사제':'The High Priestess','황후':'The Empress','황제':'The Emperor','교황':'The Hierophant','연인':'The Lovers','전차':'The Chariot','힘':'Strength','은둔자':'The Hermit','운명의 바퀴':'Wheel of Fortune','정의':'Justice','매달린 사람':'The Hanged Man','죽음':'Death','절제':'Temperance','악마':'The Devil','탑':'The Tower','별':'The Star','달':'The Moon','태양':'The Sun','심판':'Judgement','세계':'The World'};
+var MAJOR_CN={'광대':'愚者','마법사':'魔术师','여사제':'女祭司','황후':'皇后','황제':'皇帝','교황':'教皇','연인':'恋人','전차':'战车','힘':'力量','은둔자':'隐士','운명의 바퀴':'命运之轮','정의':'正义','매달린 사람':'倒吊人','죽음':'死神','절제':'节制','악마':'恶魔','탑':'高塔','별':'星星','달':'月亮','태양':'太阳','심판':'审判','세계':'世界'};
+var KW_EN={'시작':'beginning','모험':'adventure','의지':'willpower','창조':'creation','직관':'intuition','비밀':'mystery','풍요':'abundance','돌봄':'care','질서':'order','책임':'responsibility','믿음':'belief','규칙':'rules','선택':'choice','관계':'relationship','추진':'drive','승리':'victory','용기':'courage','인내':'patience','내면':'inner truth','거리두기':'distance','전환':'turning point','흐름':'flow','균형':'balance','판단':'judgement','희생':'pause','관점':'perspective','끝맺음':'ending','변화':'change','조율':'harmony','회복':'recovery','집착':'attachment','욕망':'desire','충격':'shock','해체':'collapse','희망':'hope','치유':'healing','불안':'anxiety','꿈':'dream','활력':'vitality','드러남':'revelation','부름':'calling','완성':'completion','통합':'integration','감정':'emotion','열정':'passion','행동':'action','현실':'reality','자원':'resources','생각':'thoughts','결단':'decision','새 시작':'new beginning','확장':'expansion','안정':'stability','갈등':'conflict','움직임':'movement','성숙':'maturity','소식':'message','통제':'control'};
+var KW_CN={'시작':'开始','모험':'冒险','의지':'意志','창조':'创造','직관':'直觉','비밀':'秘密','풍요':'丰盛','돌봄':'照顾','질서':'秩序','책임':'责任','믿음':'信念','규칙':'规则','선택':'选择','관계':'关系','추진':'推进','승리':'胜利','용기':'勇气','인내':'忍耐','내면':'内在','거리두기':'保持距离','전환':'转变','흐름':'流动','균형':'平衡','판단':'判断','희생':'暂停','관점':'视角','끝맺음':'结束','변화':'变化','조율':'调和','회복':'恢复','집착':'执着','욕망':'欲望','충격':'冲击','해체':'瓦解','희망':'希望','치유':'疗愈','불안':'不安','꿈':'梦境','활력':'活力','드러남':'显现','부름':'召唤','완성':'完成','통합':'整合','감정':'情感','열정':'热情','행동':'行动','현실':'现实','자원':'资源','생각':'想法','결단':'决断','새 시작':'新的开始','확장':'扩展','안정':'稳定','갈등':'冲突','움직임':'行动','성숙':'成熟','소식':'消息','통제':'掌控'};
+var SUIT_CN={'컵':'圣杯','완드':'权杖','펜타클':'星币','소드':'宝剑'};
+function transKW(kw){
+  var map=currentLang==='EN'?KW_EN:(currentLang==='CN'?KW_CN:null);
+  if(!map)return kw;
+  return String(kw||'').split('·').map(function(x){return map[x]||x}).join(currentLang==='CN'?'·':' · ');
+}
+
+var CATS=[{i:'🪞',n:'오늘의 마음',k:'emotion'},{i:'💕',n:'연애·관계',k:'love'},{i:'💼',n:'일·커리어',k:'work'},{i:'🎯',n:'선택·결정',k:'choice'}];
+var MODES=[{i:'🌙',n:'감성',k:'soft',desc:'부드럽게'},{i:'🪞',n:'현실',k:'real',desc:'현실적으로'},{i:'🔥',n:'직관',k:'intuition',desc:'날카롭게'}];
 var MOODS=['설렘','불안','지침','외로움','기대','답답함','감사','혼란','평온'];
 var POS={1:['오늘의 거울'],3:['감정의 시작','지금의 중심','다음 행동'],6:['현재 감정','반복 패턴','숨은 욕구','현실 변수','오늘의 조언','정리 메시지']};
 var QUOTES=[
@@ -431,7 +428,7 @@ var QUOTES=[
 ];
 
 var user={name:'',month:0,day:0,zodiac:'',mood:'',concern:''};
-var selCat='emotion',selMode='soft',deckMode='22',spreadN=1,drawn=[],flipped=0,allFlipped=false,quotaUsed=0,QUOTA=5,isPremium=false,selPlan='beta',rdData=null;
+var selCat='emotion',selMode='real',deckMode='78',spreadN=1,drawn=[],flipped=0,allFlipped=false,quotaUsed=0,QUOTA=5,isPremium=false,selPlan='beta',rdData=null,currentLang='KO';
 
 var BACK_SVG='<svg class="backsvg" viewBox="0 0 86 132" xmlns="http://www.w3.org/2000/svg"><rect width="86" height="132" rx="10" fill="#07041A"/><rect x="3" y="3" width="80" height="126" rx="8" fill="none" stroke="#C9A84C" stroke-width="1.4"/><rect x="8" y="8" width="70" height="116" rx="5" fill="none" stroke="#C9A84C" opacity=".38" stroke-dasharray="3 2"/><circle cx="43" cy="66" r="25" fill="none" stroke="#C9A84C" opacity=".34"/><circle cx="43" cy="66" r="15" fill="none" stroke="#C9A84C" opacity=".45"/><path d="M43 39 L47 62 L68 66 L47 70 L43 93 L39 70 L18 66 L39 62 Z" fill="#C9A84C" opacity=".14"/><circle cx="43" cy="66" r="4" fill="#C9A84C"/><text x="43" y="18" text-anchor="middle" font-family="Cinzel,serif" font-size="6" fill="#C9A84C" letter-spacing="2">HAJI</text><text x="43" y="119" text-anchor="middle" font-family="Cinzel,serif" font-size="6" fill="#C9A84C" letter-spacing="2">MOOD</text></svg>';
 
@@ -442,229 +439,513 @@ window.addEventListener('load', function(){ startAudio().catch(function(){}) });
 document.addEventListener('pointerdown', function(){ startAudio(); }, {once:true});
 document.addEventListener('touchstart', function(){ startAudio(); }, {once:true});
 
+
+function L(key){
+  var dict={
+    KO:{
+      sub:'정교한 타로 카드 · 감정 메시지 · 명언 카드',
+      disc:'오늘의 감정을 카드로 정리하고<br><strong class="gold">나를 이해하는 작은 의식</strong>을 시작해보세요.',
+      safe:'<strong>오락·자기성찰 콘텐츠입니다.</strong><br>본 앱은 미래 예측, 운명 보장, 투자·의료·법률 판단을 제공하지 않습니다.',
+      start:'✦ 감정 오라클 시작하기 ✦', audio:'화면을 한 번 터치하면 몽환 BGM이 시작됩니다.',
+      feature:'78장 전체 덱 · 실제 타로 카드 이미지 · 긴 메시지 · 명언 & 조언 카드 · SNS 공유',
+      personal:'Personal Ritual', obSub:'정보 입력은 선택입니다. 기록은 이 기기 안에만 저장됩니다.',
+      quick:'닉네임을 넣으면 결과와 저장 포토카드에 이름이 들어갑니다.<br>고민을 적으면 그 문장을 중심으로 리딩 문장이 더 개인화됩니다.',
+      name:'닉네임, 선택', namePh:'예) 별빛, 하준아빠', nameHelp:'입력 시 포토카드에 “For 별빛”처럼 표시됩니다. 원치 않으면 비워두세요.',
+      mood:'지금 감정, 선택', concern:'한 줄 고민, 선택', concernPh:'예) 이직을 해야 할지 모르겠어요',
+      concernHelp:'현재 Beta는 입력한 고민을 결과 문장에 반영합니다. 실제 AI 상담 수준의 깊은 맞춤 분석은 다음 단계에서 연결 예정입니다.',
+      policy:'🛡️ 이 앱은 오락·자기성찰 콘텐츠입니다. 미래를 단정하거나 투자·의료·법률 판단을 제공하지 않습니다.',
+      go:'내 정보로 리딩 시작 →', skip:'정보 없이 바로 시작',
+      record:'기록', feedback:'피드백', main:'무엇이 궁금한가요?', spread:'어떻게 볼까요?', draw:'카드 뽑기',
+      one:'오늘의 한 장', oneSub:'빠른 메시지', three:'3장 흐름', threeSub:'현재·흐름·조언', six:'6장 심층', sixSub:'리얼 리딩',
+      deckTip:'기본은 실제 타로에 가까운 78장 전체 덱입니다. 결과에는 위로, 현실 지적, 그림자 메시지가 함께 반영됩니다.',
+      deckHint:'카드를 뽑아 오늘의 메시지를 확인하세요', footer:'오락·자기성찰 목적 · 실제 미래를 예측하거나 결과를 보장하지 않습니다 · Haji Studio',
+      beta:'🌙 Real Reading Beta'
+    },
+    EN:{
+      sub:'Detailed tarot cards · emotional messages · quote cards',
+      disc:'Turn today’s feelings into cards<br><strong class="gold">and begin a small ritual of self-understanding.</strong>',
+      safe:'<strong>For entertainment and self-reflection.</strong><br>This app does not provide guaranteed predictions, destiny claims, investment, medical, or legal advice.',
+      start:'✦ Start Reading ✦', audio:'Tap once to start the dreamy BGM.',
+      feature:'Full 78-card deck · tarot imagery · long reading · quote & advice card · social sharing',
+      personal:'Personal Ritual', obSub:'All inputs are optional. Records are stored only on this device.',
+      quick:'Add a nickname to show it on saved photo cards.<br>Add a concern to personalize the reading around that question.',
+      name:'Nickname, optional', namePh:'e.g. Starlight, Haji', nameHelp:'If entered, the photo card will show “For Starlight.” Leave it blank if you prefer.',
+      mood:'Current feeling, optional', concern:'One-line concern, optional', concernPh:'e.g. Should I change jobs?',
+      concernHelp:'In this Beta, your concern is reflected in the reading text. Deeper AI-style counseling can be connected later.',
+      policy:'🛡️ This app is for entertainment and self-reflection. It does not guarantee the future or provide investment, medical, or legal advice.',
+      go:'Start with my info →', skip:'Start without info',
+      record:'Journal', feedback:'Feedback', main:'What do you want to ask?', spread:'Choose your reading', draw:'Draw your cards',
+      one:'One Card', oneSub:'Quick message', three:'3-Card Flow', threeSub:'Now · Flow · Advice', six:'6-Card Deep', sixSub:'Real reading',
+      deckTip:'The default is a full 78-card deck. Comfort, realistic reflection, and shadow messages are all included.',
+      deckHint:'Draw your cards to reveal today’s message', footer:'For entertainment and self-reflection · Does not predict or guarantee the future · Haji Studio',
+      beta:'🌙 Real Reading Beta'
+    },
+    CN:{
+      sub:'精致塔罗牌 · 情绪讯息 · 金句卡片',
+      disc:'用卡牌整理今天的情绪<br><strong class="gold">开启理解自己的小仪式。</strong>',
+      safe:'<strong>娱乐与自我觉察内容。</strong><br>本应用不提供未来保证、命运断言、投资、医疗或法律建议。',
+      start:'✦ 开始情绪塔罗 ✦', audio:'轻触屏幕后，梦幻背景音乐会开始。',
+      feature:'完整78张牌组 · 塔罗图像 · 长篇解读 · 金句与建议卡 · 社交分享',
+      personal:'个人仪式', obSub:'所有信息均为选填，记录只保存在本设备中。',
+      quick:'填写昵称后，保存的图片卡会显示名字。<br>填写烦恼后，解读会围绕该问题更个性化。',
+      name:'昵称，选填', namePh:'例）星光，Haji', nameHelp:'填写后图片卡会显示 “For 星光”。不想显示可留空。',
+      mood:'当前情绪，选填', concern:'一句话烦恼，选填', concernPh:'例）我该不该换工作？',
+      concernHelp:'当前 Beta 会把你的烦恼反映到解读文字中。更深度的 AI 咨询可在下一阶段连接。',
+      policy:'🛡️ 本应用为娱乐与自我觉察内容，不断言未来，也不提供投资、医疗或法律建议。',
+      go:'用我的信息开始 →', skip:'不填写，直接开始',
+      record:'记录', feedback:'反馈', main:'你想询问什么？', spread:'选择牌阵', draw:'抽取卡牌',
+      one:'一张牌', oneSub:'快速讯息', three:'三张牌', threeSub:'现在·流向·建议', six:'六张深度', sixSub:'深度解读',
+      deckTip:'默认使用接近真实塔罗的78张完整牌组。结果包含安慰、现实提醒与阴影讯息。',
+      deckHint:'抽取卡牌，查看今天的讯息', footer:'娱乐与自我觉察用途 · 不预测或保证真实未来 · Haji Studio',
+      beta:'🌙 Real Reading Beta'
+    }
+  };
+  return (dict[currentLang]&&dict[currentLang][key])||dict.KO[key]||key;
+}
+var CAT_NAMES={
+  KO:{emotion:'오늘의 마음',love:'연애·관계',work:'일·커리어',choice:'선택·결정'},
+  EN:{emotion:"Today's Mind",love:'Love & Relationship',work:'Work & Career',choice:'Choice & Decision'},
+  CN:{emotion:'今日心情',love:'恋爱·关系',work:'工作·事业',choice:'选择·决定'}
+};
+var MOOD_MAP={
+  KO:['설렘','불안','지침','외로움','기대','답답함','감사','혼란','평온'],
+  EN:['Excited','Anxious','Tired','Lonely','Hopeful','Stuck','Grateful','Confused','Calm'],
+  CN:['期待','不安','疲惫','孤独','盼望','郁闷','感谢','混乱','平静']
+};
+function catLabel(k){return (CAT_NAMES[currentLang]&&CAT_NAMES[currentLang][k])||CAT_NAMES.KO[k]||k}
+function setText(id,val,html){var e=$(id);if(e){if(html)e.innerHTML=val;else e.textContent=val}}
+function applyLang(){
+  setText('discMain',L('disc'),true); setText('safeNote',L('safe'),true);
+  var sub=document.querySelector('.subtitle'); if(sub)sub.textContent=L('sub');
+  setText('startBtn',L('start')); setText('audioHint',L('audio')); setText('featureNote',L('feature'));
+  var ob=document.querySelector('.ob-title'); if(ob)ob.textContent=L('personal');
+  setText('obSub',L('obSub')); setText('quickNote',L('quick'),true); setText('nameLabel',L('name'));
+  var name=$('obName'); if(name)name.placeholder=L('namePh');
+  setText('nameHelp',L('nameHelp')); setText('moodLabel',L('mood')); setText('concernLabel',L('concern'));
+  var con=$('obConcern'); if(con)con.placeholder=L('concernPh');
+  setText('concernHelp',L('concernHelp')); setText('policyCard',L('policy'));
+  setText('goMainBtn',L('go')); setText('skipBtn',L('skip'));
+  var rb=document.querySelector('[onclick="showDiary()"]'); if(rb)rb.textContent='📖 '+L('record');
+  var fb=document.querySelector('[onclick="openFeedback()"]'); if(fb)fb.textContent='📝 '+L('feedback');
+  var q=document.querySelector('.quota span'); if(q)q.textContent=L('beta');
+  var titles=document.querySelectorAll('.section-title');
+  if(titles[0])titles[0].textContent=L('main');
+  if(titles[1])titles[1].textContent=L('spread');
+  if(titles[2])titles[2].textContent=L('draw');
+  var st1=$('st1'),st3=$('st3'),st6=$('st6');
+  if(st1)st1.innerHTML='<span class="si">🪞</span><span class="sn">'+L('one')+'</span><span class="ss">'+L('oneSub')+'</span>';
+  if(st3)st3.innerHTML='<span class="si">🃏</span><span class="sn">'+L('three')+'</span><span class="ss">'+L('threeSub')+'</span>';
+  if(st6)st6.innerHTML='<span class="si">🎴</span><span class="sn">'+L('six')+'</span><span class="ss">'+L('sixSub')+'</span>';
+  setText('deckTip',L('deckTip')); setText('deckHint',L('deckHint')); setText('footerNote',L('footer'));
+  setupOnboard(); renderCats();
+}
+function setLang(lang){
+  currentLang=lang;
+  document.querySelectorAll('.langbtn').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-lang')===lang)});
+  applyLang();
+  toast(lang==='KO'?'한국어로 전환했어요':lang==='EN'?'Switched to English':'已切换为中文');
+}
+function LT(ko,en,cn){return currentLang==='EN'?en:(currentLang==='CN'?cn:ko)}
 function setupOnboard(){
-  var y=$('obYear'),m=$('obMonth'),d=$('obDay'),cur=new Date().getFullYear();
-  y.innerHTML='<option value="">년도</option>';for(var i=cur;i>=1940;i--)y.innerHTML+='<option value="'+i+'">'+i+'년</option>';
-  m.innerHTML='<option value="">월</option>';for(i=1;i<=12;i++)m.innerHTML+='<option value="'+i+'">'+i+'월</option>';
-  d.innerHTML='<option value="">일</option>';for(i=1;i<=31;i++)d.innerHTML+='<option value="'+i+'">'+i+'일</option>';
-  var mg=$('moodPick');mg.innerHTML='';MOODS.forEach(x=>{var b=document.createElement('button');b.className='pick';b.textContent=x;b.onclick=function(){document.querySelectorAll('#moodPick .pick').forEach(p=>p.classList.remove('on'));b.classList.add('on');user.mood=x};mg.appendChild(b)});
+  var mg=$('moodPick'); if(!mg)return; mg.innerHTML='';
+  (MOOD_MAP[currentLang]||MOOD_MAP.KO).forEach(function(x){
+    var b=document.createElement('button');
+    b.className='pick '+(user.mood===x?'on':'');
+    b.textContent=x;
+    b.onclick=function(){document.querySelectorAll('#moodPick .pick').forEach(function(p){p.classList.remove('on')});b.classList.add('on');user.mood=x};
+    mg.appendChild(b);
+  });
 }
 function getZodiac(m,d){var z=[['물병자리',1,20,'♒'],['물고기자리',2,19,'♓'],['양자리',3,21,'♈'],['황소자리',4,20,'♉'],['쌍둥이자리',5,21,'♊'],['게자리',6,21,'♋'],['사자자리',7,23,'♌'],['처녀자리',8,23,'♍'],['천칭자리',9,23,'♎'],['전갈자리',10,23,'♏'],['사수자리',11,22,'♐'],['염소자리',12,22,'♑']];for(var i=0;i<z.length;i++){var cur=z[i],nx=z[(i+1)%12];if((m===cur[1]&&d>=cur[2])||(m===nx[1]&&d<nx[2]))return cur[3]+' '+cur[0]}return ''}
 function goMain(skip){
-  user.name=skip?'':$('obName').value.trim();user.month=parseInt($('obMonth').value)||0;user.day=parseInt($('obDay').value)||0;user.zodiac=user.month&&user.day?getZodiac(user.month,user.day):'';user.concern=skip?'':$('obConcern').value.trim();
-  showScreen('screen-main');initMain()
+  user.name=skip?'':$('obName').value.trim();
+  user.month=0;user.day=0;user.zodiac='';
+  user.concern=skip?'':$('obConcern').value.trim();
+  showScreen('screen-main');initMain();
 }
 function initMain(){
   var d=new Date(),w=['일','월','화','수','목','금','토'];
   $('userInfo').textContent=d.getFullYear()+'.'+(d.getMonth()+1)+'.'+d.getDate()+' '+w[d.getDay()]+' · '+(user.name?user.name+'님 · ':'')+(user.mood?'오늘 감정 '+user.mood:'감정 미입력')+(user.zodiac?' · '+user.zodiac:'');
-  renderQuota();renderModes();renderCats();renderDeck();renderMemory();renderEvent()
+  renderQuota();renderCats();renderDeck();renderMemory();renderEvent()
 }
 function renderDeck(){['dk1','dk2','dk3'].forEach(id=>$(id).innerHTML=BACK_SVG)}
 function renderQuota(){var c=$('qdots');c.innerHTML='';for(var i=0;i<QUOTA;i++){var d=document.createElement('div');d.className='qdot '+(i<quotaUsed?'used':'ok');c.appendChild(d)}}
-function renderModes(){var g=$('modegrid');g.innerHTML='';MODES.forEach(m=>{var b=document.createElement('button');b.className='modebtn '+(m.k===selMode?'on':'');b.innerHTML=m.i+' <b>'+m.n+'</b><br><span style="font-size:8px;color:rgba(201,168,76,.48)">'+m.desc+'</span>';b.onclick=function(){selMode=m.k;renderModes()};g.appendChild(b)})}
-function renderCats(){var g=$('catgrid');g.innerHTML='';CATS.forEach(c=>{var b=document.createElement('button');b.className='catbtn '+(c.k===selCat?'on':'');b.innerHTML='<span class="ci">'+c.i+'</span>'+c.n;b.onclick=function(){selCat=c.k;renderCats();renderEvent()};g.appendChild(b)})}
-function renderMemory(){
-  var r=storeGet().readings||[],last=r[r.length-1],rep=getRepeatedCard(r);
-  if(!r.length){$('memoryRibbon').innerHTML='🧠 <b>기억형 오라클</b>이 켜져 있어요. 리딩 후 카드·감정·주제를 기기 안에 저장하고 다음 흐름을 이어줍니다.';return}
-  var msg='🧠 지금까지 <b>'+r.length+'회</b>의 감정 기록이 쌓였어요.';if(rep)msg+=' 최근 반복되는 카드는 <b>'+rep+'</b>입니다.';if(last)msg+=' 지난 리딩의 감정은 <b>'+htmlEscape(last.mood||'미입력')+'</b>이었어요.';$('memoryRibbon').innerHTML=msg
+function renderModes(){var g=$('modegrid');g.innerHTML='';MODES.forEach(function(m){var b=document.createElement('button');b.className='modebtn '+(m.k===selMode?'on':'');b.innerHTML='<span class="ci">'+m.i+'</span><span class="sn">'+m.n+'</span>';b.onclick=function(){selMode=m.k;renderModes()};g.appendChild(b)})}
+
+function renderCats(){
+  var g=$('catgrid');if(!g)return;g.innerHTML='';
+  CATS.forEach(function(c){
+    var b=document.createElement('button');
+    b.className='catbtn '+(c.k===selCat?'on':'');
+    b.innerHTML='<span class="topic-seal topic-'+c.k+'"></span><span class="sn">'+catLabel(c.k)+'</span>';
+    b.onclick=function(){selCat=c.k;renderCats();renderEvent();resetGame(false)};
+    g.appendChild(b);
+  });
 }
 function getRepeatedCard(r){var m={};r.slice(-7).forEach(x=>(x.cards||[]).forEach(n=>m[n]=(m[n]||0)+1));var best=Object.keys(m).sort((a,b)=>m[b]-m[a])[0];return best&&m[best]>=2?best:''}
 function renderEvent(){var h=new Date().getHours(),txt='';if(h>=0&&h<5)txt='🌌 <b>심야 오라클 오픈</b> · 새벽에는 감정을 단정하지 않고, 조용히 정리하는 문장으로 안내합니다.';else txt='🌙 <b>오늘의 감정 체크</b> · 결과는 저주나 예언이 아니라, 지금 마음의 패턴을 비추는 자기성찰 콘텐츠입니다.';$('timeEvent').innerHTML=txt}
-function getCardName(c){return c.kr||c.n}function getPos(){return POS[spreadN]}function getCatName(){return (CATS.find(c=>c.k===selCat)||CATS[0]).n}function getModeName(){return (MODES.find(m=>m.k===selMode)||MODES[0]).n}function getPrice(){return 'Beta 무료'}function pickQuote(cards){var seed=(cards||[]).map(getCardName).join('').length+new Date().getDate();return QUOTES[seed%QUOTES.length]}function getDeckCards(){return deckMode==='22'?CARDS.filter(c=>c.type==='major'):CARDS}
-function setDeckMode(mode){deckMode=mode;$('deck22').className='deckmode-btn '+(mode==='22'?'on':'');$('deck78').className='deckmode-btn '+(mode==='78'?'on':'');resetGame(false);toast(mode==='22'?'22장 메이저 카드로 설정했어요':'78장 전체 카드로 설정했어요')}
-function setN(n){if(n===6&&!isPremium){showSub();return}spreadN=n;[1,3,6].forEach(x=>$('st'+x).className='stbtn '+(x===n?'on':''));$('deckHint').textContent='덱을 눌러 카드 '+n+'장을 뽑으세요';resetGame(false)}
-function makeCardHTML(card){
-  var name=htmlEscape(getCardName(card)),kw=htmlEscape(card.kw);
-  return '<div class="card-face" style="--c1:'+card.c+'"><img class="tarot-img" src="'+card.img+'" alt="'+name+'" loading="eager" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';"><div class="tarot-fallback" style="display:none;--c1:'+card.c+'"><div class="card-roman">'+card.r+'</div><div class="card-emoji">'+card.em+'</div><div class="card-name">'+name+'</div><div class="card-kw">'+kw+'</div></div><div class="card-caption"><div class="card-name">'+name+'</div><div class="card-kw">'+kw+'</div></div></div>'
+function getCardName(c){
+  if(currentLang==='EN'){
+    if(c.type==='major')return MAJOR_EN[c.n]||c.n;
+    return c.n||c.kr;
+  }
+  if(currentLang==='CN'){
+    if(c.type==='major')return MAJOR_CN[c.n]||c.n;
+    return (SUIT_CN[c.suit]||c.suit)+' '+c.r;
+  }
+  return c.kr||c.n;
+}function getPos(){var P={KO:{1:['오늘의 거울'],3:['감정의 시작','지금의 중심','다음 행동'],6:['현재 감정','반복 패턴','숨은 욕구','현실 변수','오늘의 조언','정리 메시지']},EN:{1:['Today’s Mirror'],3:['Emotional Start','Current Center','Next Action'],6:['Current Feeling','Repeating Pattern','Hidden Need','Reality Factor','Today’s Advice','Closing Message']},CN:{1:['今日之镜'],3:['情绪起点','当下核心','下一步行动'],6:['当前情绪','重复模式','隐藏需求','现实变量','今日建议','整理讯息']}};return (P[currentLang]||P.KO)[spreadN]}
+function getCatName(){return catLabel(selCat)}
+function getModeName(){return currentLang==='EN'?'Realistic':(currentLang==='CN'?'现实':'현실')}
+function getPrice(){return currentLang==='EN'?'Beta Free':(currentLang==='CN'?'Beta 免费':'Beta 무료')}function pickQuote(cards){var seed=(cards||[]).map(getCardName).join('').length+new Date().getDate();return QUOTES[seed%QUOTES.length]}function getDeckCards(){return deckMode==='22'?CARDS.filter(c=>c.type==='major'):CARDS}
+function setDeckMode(mode){deckMode=mode;$('deck22').className='deckmode-btn '+(mode==='22'?'on':'');$('deck78').className='deckmode-btn '+(mode==='78'?'on':'');resetGame(false);toast(mode==='22'?'22장 메이저 덱으로 변경했어요':'78장 전체 덱으로 변경했어요')}
+
+function setN(n){
+  spreadN=n;[1,3,6].forEach(function(x){var el=$('st'+x);if(el)el.className='stbtn '+(x===n?'on':'')});
+  var hint=$('deckHint');if(hint)hint.textContent=LT('카드 '+n+'장을 뽑아 리딩을 시작하세요','Draw '+n+' card'+(n>1?'s':'')+' to begin your reading','抽取 '+n+' 张牌，开始解读');
+  resetGame(false)
 }
 function startSpread(){
   if(drawn.length)return;if(quotaUsed>=QUOTA&&!isPremium){showSub();return}
   bgm.sfx('flip');var deck=getDeckCards();var idx=shuffle([...Array(deck.length).keys()]).slice(0,spreadN);drawn=idx.map(i=>({idx:CARDS.indexOf(deck[i])}));flipped=0;allFlipped=false;
   var pos=getPos(),S=spreadN===6,one=spreadN===1,cls=one?'size1':S?'size6':'size3',wrap=one?'srow':S?'sgrid':'srow';
-  var prog='<div class="fptxt">'+(S?'카드를 한 장씩 눌러 뒤집으세요 (0/'+spreadN+')':'카드를 눌러 뒤집어보세요')+'</div>'+(S?'<div class="fprow">'+Array(spreadN).fill('<div class="fpdot"></div>').join('')+'</div>':'');
+  var prog='<div class="fptxt">'+(S?LT('카드를 한 장씩 눌러 뒤집으세요 (0/'+spreadN+')','Tap each card to reveal it (0/'+spreadN+')','逐张点击翻开卡牌 (0/'+spreadN+')'):LT('카드를 눌러 뒤집어보세요','Tap the card to reveal it','点击卡牌翻开'))+'</div>'+(S?'<div class="fprow">'+Array(spreadN).fill('<div class="fpdot"></div>').join('')+'</div>':'');
   var html='<div class="'+wrap+'">';drawn.forEach(function(d,i){var card=CARDS[d.idx];html+='<div class="slot"><div class="card-outer '+cls+'" id="co'+i+'"><div class="cflip" id="cf'+i+'"><div class="cback">'+BACK_SVG+'</div><div class="cfront">'+makeCardHTML(card)+'</div></div></div><div class="pos-lbl">'+pos[i]+'</div></div>'});html+='</div>';$('spreadArea').innerHTML=prog+html;$('resultArea').innerHTML='';drawn.forEach((_,i)=>$('co'+i).onclick=function(){flipCard(i)})
 }
-function flipCard(i){var co=$('co'+i),cf=$('cf'+i);if(co.classList.contains('flipped-done'))return;bgm.sfx('flip');cf.classList.add('flipped');co.classList.add('flipped-done');flipped++;if(spreadN===6){var dots=document.querySelectorAll('.fpdot');if(dots[i])dots[i].classList.add('done');var txt=document.querySelector('.fptxt');txt.textContent=flipped<spreadN?'카드를 한 장씩 눌러 뒤집으세요 ('+flipped+'/'+spreadN+')':'✦ '+spreadN+'장 완성'}if(flipped===spreadN&&!allFlipped){allFlipped=true;quotaUsed++;renderQuota();setTimeout(function(){bgm.sfx('deep');showFree()},550)}}
-function toneSentence(){var base={soft:'지금 필요한 것은 위로만 받는 일이 아니라, 마음이 왜 같은 자리에서 멈추는지 인정하는 일입니다.',real:'감정은 중요하지만, 오늘은 핑계와 실제 문제를 분리해야 합니다. 바꿀 수 없는 것보다 바꿀 수 있는 행동 하나가 더 중요합니다.',intuition:'이미 알고 있었지만 미뤄둔 감정이 카드 위로 올라왔습니다. 불편한 진실을 외면할수록 같은 장면은 반복될 수 있습니다.',relation:'상대의 마음을 맞히기 전에, 내가 이 관계에서 어떤 대우를 당연하게 받아들이고 있었는지 봐야 합니다.',midnight:'밤의 생각은 커지기 쉽습니다. 지금 떠오른 결론이 진심인지 피로인지 구분할 시간이 필요합니다.',safe:'불안을 키우는 해석보다, 나를 보호하는 선택이 먼저입니다. 다만 보호와 회피가 섞여 있지는 않은지도 살펴야 합니다.'};return base[selMode]||base.soft}
-function categorySentence(){var x={emotion:'오늘의 핵심은 감정에 이름을 붙이는 것입니다. 이름을 붙이지 못한 감정은 행동을 흐리게 만듭니다.',love:'관계는 상대의 마음을 맞히는 게임이 아니라, 내가 반복해서 참는 지점을 알아차리는 연습입니다.',work:'성장은 더 많은 일을 하는 것이 아니라, 그만둬야 할 방식과 계속할 방식을 나누는 일에서 시작됩니다.',money:'돈의 흐름은 운보다 습관에 가깝습니다. 오늘은 작은 지출보다 그 지출을 부른 감정을 살펴보세요.',choice:'선택의 핵심은 완벽한 답이 아니라 감당 가능한 방향입니다. 지금 망설임은 정보 부족보다 책임의 무게일 수 있습니다.',heal:'회복은 드라마틱한 반전보다 작은 루틴에서 시작됩니다. 다만 쉬는 척하면서 계속 자신을 몰아붙이지는 않아야 합니다.'};return x[selCat]||x.emotion}
+function flipCard(i){var co=$('co'+i),cf=$('cf'+i);if(co.classList.contains('flipped-done'))return;bgm.sfx('flip');cf.classList.add('flipped');co.classList.add('flipped-done');flipped++;if(spreadN===6){var dots=document.querySelectorAll('.fpdot');if(dots[i])dots[i].classList.add('done');var txt=document.querySelector('.fptxt');txt.textContent=flipped<spreadN?LT('카드를 한 장씩 눌러 뒤집으세요 ('+flipped+'/'+spreadN+')','Tap each card to reveal it ('+flipped+'/'+spreadN+')','逐张点击翻开卡牌 ('+flipped+'/'+spreadN+')'):LT('✦ '+spreadN+'장 완성','✦ '+spreadN+' cards revealed','✦ '+spreadN+' 张完成')}if(flipped===spreadN&&!allFlipped){allFlipped=true;quotaUsed++;renderQuota();setTimeout(function(){bgm.sfx('deep');showFree()},550)}}
+function calcSeed(cards){cards=cards||drawn.map(d=>CARDS[d.idx]);var seed=(user.concern||'').length+(user.mood||'').length+spreadN*13+selCat.length*7;cards.forEach(function(c,i){seed+=(getCardName(c).length+c.kw.length+c.shadow.length)*(i+1)});return seed}
+function pickStable(arr,seed){return arr[Math.abs(seed)%arr.length]}
+function detectConcernType(){
+  var q=(user.concern||'').toLowerCase();
+  if(/이직|퇴사|회사|직장|커리어|직무|상사|연봉|면접|취업|일자리|전직|移职|离职|跳槽|工作|career|job|quit|resign/.test(q))return 'work';
+  if(/연애|사랑|상대|남친|여친|이별|재회|관계|썸|결혼|恋爱|关系|love|relationship/.test(q))return 'love';
+  if(/선택|결정|고민|해야|말아|갈까|할까|选择|决定|choice|decision/.test(q))return 'choice';
+  return '';
+}
+function concernHook(){
+  if(!user.concern)return '';
+  var q=htmlEscape(user.concern),t=detectConcernType()||selCat;
+  if(currentLang==='EN'){
+    if(t==='work')return 'Your concern, “'+q+'”, includes a job change, resignation, or career decision. The key is not simply whether to leave or stay, but whether your fatigue is temporary or structural, and whether the next step is avoidance or growth. ';
+    if(t==='love')return 'Your concern, “'+q+'”, is less about guessing the other person’s hidden feelings and more about what you have been tolerating in this relationship. ';
+    if(t==='choice')return 'Your concern, “'+q+'”, asks you to look at what consequences you can actually carry, rather than searching for a perfect answer. ';
+    return 'Your concern, “'+q+'”, points to why this feeling keeps repeating, not just how to explain it. ';
+  }
+  if(currentLang==='CN'){
+    if(t==='work')return '你写下的烦恼“'+q+'”包含换工作、离职或职业选择的问题。重点不只是离开还是留下，而是确认现在的疲惫是暂时的还是结构性的，以及下一步是逃避还是成长。 ';
+    if(t==='love')return '你写下的烦恼“'+q+'”与其猜测对方的心意，不如看见自己在这段关系中一直忍受了什么。 ';
+    if(t==='choice')return '你写下的烦恼“'+q+'”提醒你，与其寻找完美答案，不如判断自己能承担哪一种结果。 ';
+    return '你写下的烦恼“'+q+'”不是为了单纯解释情绪，而是为了看见这个情绪为何反复出现。 ';
+  }
+  if(t==='work')return '당신이 적은 고민 “'+q+'”은 이직·퇴사·직장 선택의 문제를 포함하고 있습니다. 지금 핵심은 당장 떠날지 남을지가 아니라, 안정감과 소진감 중 무엇이 더 크게 나를 움직이고 있는지 확인하는 일입니다. ';
+  if(t==='love')return '당신이 적은 고민 “'+q+'”은 상대의 마음을 맞히기보다, 이 관계 안에서 내가 무엇을 참고 있는지 보게 합니다. ';
+  if(t==='choice')return '당신이 적은 고민 “'+q+'”은 정답 찾기보다 어떤 결과를 감당할 수 있는지 따져야 한다는 신호입니다. ';
+  return '당신이 적은 고민 “'+q+'”은 감정을 설명하는 것보다, 그 감정이 계속 반복되는 이유를 바라보게 합니다. ';
+}
+function toneSentence(){var base={soft:['지금 필요한 것은 기분 좋은 위로보다, 마음이 왜 같은 자리를 맴도는지 차분히 인정하는 일입니다.','조급하게 결론을 내리기보다 감정의 결을 세밀하게 읽는 편이 더 정확합니다.'],real:['오늘의 카드는 상황을 낭만적으로 포장하기보다, 이미 드러난 사실을 어떻게 다룰지 묻고 있습니다.','감정은 중요하지만 지금은 느낌과 현실을 분리해서 보지 않으면 같은 장면이 반복될 수 있습니다.'],intuition:['이미 알고 있었지만 미뤄둔 감정이 카드 위로 올라왔습니다. 불편하더라도 핵심은 꽤 분명합니다.','직감은 힌트를 주고 있습니다. 다만 그 힌트를 계속 모르는 척할수록 마음의 피로는 더 커집니다.']};var pool=base[selMode]||base.real;return pickStable(pool,calcSeed())}
+function categorySentence(){var packs={emotion:['오늘의 핵심은 감정을 없애는 것이 아니라, 지금 마음을 가장 크게 흔드는 장면을 정확히 집어내는 데 있습니다.','지금은 감정의 크기를 줄이는 것보다, 그 감정이 언제 반복되는지 알아차리는 편이 훨씬 도움이 됩니다.'],love:['관계의 답은 상대의 숨은 마음보다, 내가 어떤 태도를 반복해서 허용하고 있는지에서 먼저 드러납니다.','연애·관계 리딩의 포인트는 사랑의 강도보다 관계 안에서 내가 잃고 있는 균형을 보는 것입니다.'],work:['일·커리어의 핵심은 더 열심히 하는 것이 아니라, 계속 버티는 방식이 나를 갉아먹고 있지는 않은지 확인하는 일입니다.','지금 필요한 것은 성실함의 양이 아니라 방향 점검입니다. 계속할 것과 끊어낼 방식을 나눠야 합니다.'],choice:['선택의 핵심은 완벽한 답을 찾는 것이 아니라, 어느 쪽의 후회를 더 감당할 수 있는지 보는 데 있습니다.','망설임이 길어질수록 가능성은 많아 보이지만 실제 에너지는 줄어듭니다. 지금은 한 걸음의 기준을 세워야 합니다.']};return pickStable(packs[selCat]||packs.emotion,calcSeed()+3)}
 function shadowLine(card){
-  var name=getCardName(card), key=(card.kw||'')+' '+name;
+  if(currentLang==='EN')return 'The shadow is avoidance. Even when you pretend not to know the answer, your mind may already be holding an important clue.';
+  if(currentLang==='CN')return '今天的阴影是回避。即使你假装不知道答案，内心可能已经握着重要线索。';
+  var name=getCardName(card), key=(card.kw||'')+' '+name+' '+(card.shadow||'');
   if(/악마|집착|욕망/.test(key))return '지금 가장 조심할 것은 원하는 마음 자체가 아니라, 그 마음을 이유로 스스로의 기준을 낮추는 패턴입니다.';
   if(/탑|충격|해체/.test(key))return '이미 흔들리던 구조를 계속 괜찮다고 말하고 있었을 수 있습니다. 불편한 신호를 너무 늦게 인정하지 마세요.';
   if(/죽음|끝맺음|전환/.test(key))return '끝이 무조건 나쁜 것은 아니지만, 끝난 것을 붙잡느라 새 흐름을 늦추고 있지는 않은지 봐야 합니다.';
   if(/달|불안|직감/.test(key))return '감정이 커질수록 사실과 상상이 섞일 수 있습니다. 오늘은 추측을 결론처럼 다루지 않는 것이 중요합니다.';
+  if(/연인|관계|컵/.test(key))return '애정과 서운함이 섞인 상태에서는 작은 신호를 크게 해석하기 쉽습니다. 좋아하는 마음과 지켜야 할 기준을 분리하세요.';
+  if(/펜타클|현실|자원/.test(key))return '현실 문제를 감정 문제로만 해석하면 해결이 늦어질 수 있습니다. 숫자와 사실을 같이 확인하세요.';
   if(/소드|갈등|검/.test(key))return '생각이 날카로워질수록 말도 날카로워질 수 있습니다. 오늘은 판단보다 확인을 먼저 하세요.';
-  if(/컵|감정/.test(key))return '좋아하는 마음이나 서운함이 판단을 흐릴 수 있습니다. 감정은 인정하되 모든 선택의 운전대를 맡기지는 마세요.';
-  if(/펜타클|현실|자원/.test(key))return '현실적인 문제를 감정 문제로만 해석하면 해결이 늦어질 수 있습니다. 숫자와 사실을 같이 확인하세요.';
   return '오늘의 그림자는 미루는 습관입니다. 답을 모르는 척하는 순간에도 마음은 이미 중요한 힌트를 알고 있을 수 있습니다.';
 }
 function cautionLine(){
-  var x={emotion:'감정을 해석하는 데 오래 머무르다가 실제 행동을 미루지 마세요.',love:'상대의 작은 반응을 지나치게 크게 해석하거나, 내 기준을 계속 뒤로 미루지 마세요.',work:'해야 할 일을 더 늘리기보다, 지금 버려야 할 방식 하나를 먼저 정리하세요.',money:'기분을 달래기 위한 지출과 필요한 지출을 분리해서 보세요.',choice:'완벽한 확신을 기다리다 선택의 타이밍을 놓치지 마세요.',heal:'쉬는 척하면서 마음속으로 계속 자신을 재촉하고 있지는 않은지 확인하세요.'};
-  return x[selCat]||x.emotion;
+  if(currentLang==='EN'){
+    var e={emotion:['Do not stay too long interpreting feelings while delaying action.'],love:['Do not overread small reactions or keep pushing your standards backward.'],work:['Do not add more tasks. First decide one work pattern to stop.'],choice:['Do not wait for perfect certainty until the timing passes.']};return pickStable(e[selCat]||e.emotion,calcSeed()+5);
+  }
+  if(currentLang==='CN'){
+    var c={emotion:['不要只停留在解释情绪，而继续推迟行动。'],love:['不要过度解读对方的小反应，也不要一直后退自己的标准。'],work:['不要继续增加任务，先决定一个要停止的工作模式。'],choice:['不要为了等待完美确定感而错过时机。']};return pickStable(c[selCat]||c.emotion,calcSeed()+5);
+  }
+  var x={emotion:['감정을 해석하는 데 오래 머무르다가 실제 행동을 또 미루지 마세요.','마음이 복잡할수록 결론부터 내리기보다, 내 감정을 키우는 장면을 먼저 끊어내세요.'],love:['상대의 작은 반응을 지나치게 크게 해석하거나, 내 기준을 계속 뒤로 미루지 마세요.','불안해서 확인을 반복할수록 관계의 밀도보다 피로만 커질 수 있습니다.'],work:['해야 할 일을 더 늘리기보다, 지금 버려야 할 방식 하나를 먼저 정리하세요.','버티는 힘만으로 해결하려고 하면 소진 신호를 놓치기 쉽습니다.'],choice:['완벽한 확신을 기다리다 선택의 타이밍을 놓치지 마세요.','더 생각하면 명확해질 거라고 믿지만, 실제로는 책임이 두려워 미루고 있을 수도 있습니다.']};return pickStable(x[selCat]||x.emotion,calcSeed()+5);
 }
 function truthLine(){
-  var pool=[
-    '지금 당신은 답을 몰라서 멈춘 것이 아니라, 이미 알고 있는 결론을 인정하기 싫어서 미루고 있을 수 있습니다.',
-    '가장 피곤한 부분은 상황 자체보다, 그 상황을 계속 이해하려고 애쓰는 습관일 수 있습니다.',
-    '좋은 사람이 되려는 마음이 때로는 나를 지키는 선을 흐리게 만들 수 있습니다.',
-    '기다림이 배려인지 회피인지 구분해야 할 때입니다.',
-    '지금 필요한 것은 더 많은 신호가 아니라, 이미 받은 신호를 어떻게 다룰지 정하는 일입니다.'
-  ];
-  return pool[(new Date().getDate()+selCat.length+selMode.length)%pool.length];
+  if(currentLang==='EN'){
+    var p={emotion:['You may not be overwhelmed by too many feelings. You may be blurring the one feeling that truly matters.'],love:['The bigger issue may be how far you have pushed yourself back while waiting.'],work:['You may not lack ability. You may be covering exhaustion with diligence.'],choice:['You may not be stuck because you do not know the answer, but because you already know which answer hurts.']};return pickStable(p[selCat]||p.emotion,calcSeed()+9);
+  }
+  if(currentLang==='CN'){
+    var c={emotion:['你可能不是情绪太多，而是在模糊真正核心的那个情绪。'],love:['更大的问题可能不是等待本身，而是你在等待中把自己退后了多少。'],work:['可能不是能力不足，而是你用认真掩盖了疲惫。'],choice:['你可能不是不知道答案，而是已经知道哪个答案更痛。']};return pickStable(c[selCat]||c.emotion,calcSeed()+9);
+  }
+  var pools={emotion:['지금 당신은 감정이 너무 많아서 힘든 것이 아니라, 무엇이 진짜 핵심 감정인지 계속 흐리고 있을 수 있습니다.','가장 피곤한 부분은 상황 자체보다, 그 상황을 계속 이해하려고 애쓰는 습관일 수 있습니다.'],love:['상대를 기다리는 시간보다, 그 기다림 속에서 나 자신을 얼마나 뒤로 미뤄왔는지가 더 큰 문제일 수 있습니다.','관계를 놓치기 싫은 마음이, 이미 불편한 장면을 정상처럼 받아들이게 만들고 있을 수 있습니다.'],work:['능력이 부족해서가 아니라, 소진된 상태를 성실함으로 덮고 있어서 더 지치는 것일 수 있습니다.','안정적이라는 이유만으로 계속 버티고 있다면, 그 안정은 보호가 아니라 지연일 수 있습니다.'],choice:['지금 당신은 답을 몰라서 멈춘 것이 아니라, 어떤 결론이 더 아픈지 이미 알고 있어서 미루고 있을 수 있습니다.','선택지를 비교하는 척하면서 사실은 어떤 책임도 지지 않는 상태를 유지하고 있을 가능성이 있습니다.']};return pickStable(pools[selCat]||pools.emotion,calcSeed()+9);
 }
-
+function makeCategoryPack(cards){
+  var forced=detectConcernType(),seed=calcSeed(cards);
+  if(currentLang==='EN'){
+    var packs={
+      emotion:{key:['The key is not to erase the feeling, but to notice exactly where it grows.','The point is not how sensitive you are, but what keeps repeating the sensitivity.'],action:['Write down one feeling that remains the strongest and one scene that made it bigger.','Before sleep, write “the thought draining me most” and “one action I will stop tomorrow.”'],advice:['Do not hold only the pleasant sentence. Keep the sentence that stings a little. It may be the real advice.']},
+      love:{key:['The relationship is less about the other person’s hidden mind and more about what you keep allowing.','This reading points to where your standards are being shaken inside the relationship.'],action:['Write down what behavior is acceptable to you and where it becomes uncomfortable.','Before waiting for another message, list three things you have been tolerating.'],advice:['Do not spend all your energy guessing someone else. Return some of it to your own standard.']},
+      work:{key:['This reading shows that energy management matters more than ability right now.','The issue is not simply working harder, but seeing how much the current method is wearing you down.'],action:['Instead of adding more tasks, decide one work pattern you will stop repeating.','Separate what must be solved now from what should be judged this week.'],advice:['Diligence is useful, but it should not become an excuse to ignore exhaustion.']},
+      choice:{key:['The key is not a perfect answer, but which responsibility you can actually carry.','Your hesitation may be less about missing information and more about the burden after deciding.'],action:['Write the realistic cost of each option, not only the possible benefit.','Choose one direction that feels manageable, not perfect.'],advice:['Not deciding is also a decision. Waiting forever can quietly choose for you.']}
+    };var p=packs[forced||selCat]||packs.emotion;return {key_insight:pickStable(p.key,seed+11), action_today:pickStable(p.action,seed+13), advice:pickStable(p.advice,seed+17)};
+  }
+  if(currentLang==='CN'){
+    var packsCN={
+      emotion:{key:['重点不是消除情绪，而是看见它在哪里变大。','真正重要的不是你太敏感，而是什么让这种敏感反复出现。'],action:['写下今天最强烈的一个情绪，以及让它变大的一个场景。','睡前写下“最消耗我的想法”和“明天要停止的一个行动”。'],advice:['不要只抓住好听的话，留下那句有点刺痛你的句子，它可能才是真正的建议。']},
+      love:{key:['关系的重点不只是对方的心意，而是你一直允许了什么。','这次解读指向你在关系中被动摇的标准。'],action:['写下什么态度你可以接受，哪里开始让你不舒服。','在继续等待之前，先写下你一直忍受的三件事。'],advice:['不要把全部能量用来猜测别人，把一部分还给自己的标准。']},
+      work:{key:['现在比能力更重要的是能量管理。','问题不只是更努力，而是目前的方式正在消耗你多少。'],action:['不要增加更多任务，先决定一个不再重复的工作模式。','把必须马上处理的事和本周需要判断的事分开。'],advice:['认真是优点，但不应该变成忽略疲惫的借口。']},
+      choice:{key:['重点不是完美答案，而是你能承担哪一种责任。','你的犹豫可能不是信息不足，而是害怕决定之后的重量。'],action:['写下每个选择最现实的代价，而不只是好处。','选择一个能承担的方向，而不是完美方向。'],advice:['不决定也是一种决定，拖太久会让时间替你选择。']}
+    };var pc=packsCN[forced||selCat]||packsCN.emotion;return {key_insight:pickStable(pc.key,seed+11), action_today:pickStable(pc.action,seed+13), advice:pickStable(pc.advice,seed+17)};
+  }
+  var packs={
+    emotion:{key:['지금 필요한 것은 감정을 없애는 일이 아니라, 감정이 커지는 정확한 지점을 알아차리는 일입니다.','마음이 예민한 상태라는 사실보다, 무엇이 그 예민함을 반복시키는지 발견하는 것이 이번 리딩의 핵심입니다.'],action:['오늘은 가장 크게 남는 감정 하나와 그 감정을 키운 장면 하나를 적어보세요. 감정이 구체화되면 선택도 선명해집니다.','자기 전 5분만 써서 “지금 나를 가장 지치게 하는 생각”과 “내일 멈출 행동 하나”를 적어보세요.'],advice:['좋은 말만 붙잡지 말고, 오늘 가장 찔렸던 문장 하나를 남겨두세요. 그 문장이 지금의 진짜 조언일 가능성이 큽니다.','감정을 빨리 정리하려 하지 말고, 반복되는 패턴에 이름을 붙여보세요. 이름 붙인 감정은 덜 휘두릅니다.']},
+    love:{key:['관계의 핵심은 상대의 속마음보다, 내가 어떤 태도를 계속 허용하고 있는지에 더 가깝습니다.','이번 리딩은 사랑의 유무보다 관계 안에서 내 기준이 흔들리고 있는 부분을 더 강하게 보여줍니다.'],action:['오늘은 상대를 분석하기보다 “나는 어떤 말과 태도까지는 괜찮고, 어디부터는 불편한가”를 문장으로 적어보세요.','연락을 더 기다릴지 정하기 전에, 이 관계에서 내가 계속 참아온 지점 세 가지를 먼저 적어보세요.'],advice:['누군가의 마음을 추측하는 데 에너지를 다 쓰지 마세요. 그 에너지 일부를 나를 지키는 기준으로 돌려야 합니다.','다정함과 불확실함은 함께 올 수 있습니다. 하지만 불확실함이 계속될수록 기준은 더 분명해져야 합니다.']},
+    work:{key:['이번 리딩은 실력보다 에너지 관리가 더 중요한 문제로 올라와 있음을 보여줍니다.','일·커리어에서 핵심은 더 버티는 것이 아니라, 지금 방식이 나를 얼마나 깎고 있는지 확인하는 데 있습니다.'],action:['오늘은 해야 할 일 목록보다, 더 이상 같은 방식으로 하지 않을 일 하나를 먼저 정리해보세요.','내일을 위해 “지금 바로 해결할 일”과 “이번 주 안에 판단할 일”을 나눠 쓰세요. 일이 아니라 기준을 정리하는 것이 먼저입니다.'],advice:['성실함은 장점이지만, 소진을 무시하는 변명이 되면 오래가지 못합니다. 버티는 힘과 회복하는 기준을 같이 세워야 합니다.','이직이든 잔류든 중요한 것은 도망이 아니라 방향입니다. 방향을 보려면 먼저 지금의 피로를 인정해야 합니다.']},
+    choice:{key:['선택·결정 리딩의 핵심은 정답 찾기가 아니라, 어느 방향의 책임을 감당할 수 있는지 보는 것입니다.','지금 망설임은 정보 부족보다 결론 이후의 부담이 두려운 상태에 더 가깝습니다.'],action:['오늘은 두 선택지를 비교하기보다, 각 선택 뒤에 따라오는 가장 현실적인 비용 하나씩을 적어보세요.','정답을 찾으려 하지 말고 “내가 실제로 감당 가능한 방향” 하나를 오늘 안에 문장으로 정리해보세요.'],advice:['미루는 동안에도 선택은 진행되고 있습니다. 결정하지 않는 상태 역시 하나의 결정이라는 점을 잊지 마세요.','확신이 100% 생길 때까지 기다리기보다, 60%의 납득으로 움직일 수 있는지 보는 편이 현실적입니다.']}
+  };
+  var p=packs[forced||selCat]||packs.emotion;
+  return {key_insight:pickStable(p.key,seed+11), action_today:pickStable(p.action,seed+13), advice:pickStable(p.advice,seed+17)};
+}
 function showFree(){
-  var cards=drawn.map(d=>CARDS[d.idx]),names=cards.map(getCardName),main=cards[0],quote=pickQuote(cards);
-  var text=(user.mood?user.mood+'이라는 감정 위에 ':'')+getCardName(main)+' 카드가 놓였습니다. '+toneSentence()+' '+categorySentence();
-  var longer='이 카드는 좋은 말만 건네기보다 지금의 불편한 패턴을 조용히 짚습니다. 반복되는 감정, 미뤄둔 선택, 내가 알면서도 외면한 기준을 함께 보여줍니다. 결과를 맞히는 것보다 중요한 것은 지금 내가 어떤 핑계로 같은 자리에 머무는지 확인하는 것입니다. '+(deckMode==='22'?'22장 메이저 리딩은 큰 흐름과 전환점에 집중합니다.':'78장 전체 리딩은 감정과 일상의 세부 상황까지 더 촘촘하게 살펴봅니다.');
-  var chips=[getModeName(),getCatName(),deckMode+'장',main.emotion,main.shadow].filter(Boolean);
-  var q='<div class="quote-card"><div class="quote-head">★ 오늘의 명언 카드</div><div class="quote-txt">“'+quote.q+'”</div><div class="quote-author">- '+quote.a+'</div></div>';
-  var advice='<div class="advice-card">🍃 <b>오늘의 조언</b><br>좋은 쪽으로만 해석하지 말고, 지금 가장 찔리는 문장 하나를 적어보세요. 그 문장이 오늘 바꿀 수 있는 첫 번째 행동이 될 수 있습니다.</div>';
-  var warning='<div class="warning-card">⚠️ <b>오늘의 주의점</b><br>'+cautionLine()+'</div>';
-  var shadow='<div class="shadow-card">🌑 <b>그림자 메시지</b><br>'+shadowLine(main)+'</div>';
-  $('resultArea').innerHTML='<div class="result-card"><div class="result-title">✨ 오늘의 감정 메시지 <span class="badge">무료 미리보기</span></div><div class="result-text">'+text+'</div><div class="result-long">'+longer+'</div><div class="chips">'+chips.map(c=>'<span class="chip">'+htmlEscape(c)+'</span>').join('')+'</div>'+q+advice+warning+shadow+buildMemoryInsight(names)+buildStoryTeaser(names)+'</div><div class="action-row"><button class="btn purple" id="deepBtn">🔮 감정 심층 리포트 보기 <span style="font-size:10px;opacity:.7">· '+getPrice()+'</span></button><button class="btn ghost" id="retryBtn">다시 뽑기</button></div>';
+  var cards=drawn.map(d=>CARDS[d.idx]),names=cards.map(getCardName),main=cards[0],quote=pickQuote(cards),pack=makeCategoryPack(cards);
+  var text,longer,adviceTitle,warningTitle,shadowTitle,resultTitle,deepTxt,retryTxt,previewTxt;
+  if(currentLang==='EN'){
+    text=(user.mood?user.mood+' is present, and ':'')+getCardName(main)+' appears in this reading. '+concernHook()+ 'This card asks you to separate emotion from reality and notice the pattern you may be repeating.';
+    longer='Rather than giving only comforting words, this reading points to the uncomfortable pattern behind the situation. It asks where the feeling grows, what decision is being delayed, and what small action could shift the flow today.';
+    resultTitle='✨ Today’s Emotional Message'; adviceTitle='🍃 Today’s Advice'; warningTitle='⚠️ Caution'; shadowTitle='🌑 Shadow Message'; deepTxt='🔮 Open Deep Emotional Report'; retryTxt='Draw Again'; previewTxt='Free Preview';
+  }else if(currentLang==='CN'){
+    text=(user.mood?user.mood+' 的情绪中，':'')+getCardName(main)+' 出现在这次解读里。'+concernHook()+'这张牌提醒你，把情绪和现实分开，看见自己正在重复的模式。';
+    longer='这次解读不只给安慰，而是指出隐藏在情况背后的不舒服模式。它会帮助你看见情绪在哪里变大、哪个决定被推迟，以及今天可以改变流向的小行动。';
+    resultTitle='✨ 今日情绪讯息'; adviceTitle='🍃 今日建议'; warningTitle='⚠️ 今日提醒'; shadowTitle='🌑 阴影讯息'; deepTxt='🔮 查看深度情绪报告'; retryTxt='重新抽牌'; previewTxt='免费预览';
+  }else{
+    text=(user.mood?user.mood+'이라는 감정이 올라온 상태에서 ':'')+getCardName(main)+' 카드가 놓였습니다. '+toneSentence()+' '+categorySentence()+' '+concernHook();
+    longer='이 카드는 좋은 말만 건네기보다 지금 반복되는 패턴을 조용히 짚습니다. 지금의 불편함이 어디에서 커지는지, 내가 무엇을 알면서도 미루고 있는지, 그리고 오늘 어떤 작은 행동을 시작해야 흐름이 달라질 수 있는지를 보여줍니다.';
+    resultTitle='✨ 오늘의 감정 메시지'; adviceTitle='🍃 오늘의 조언'; warningTitle='⚠️ 오늘의 주의점'; shadowTitle='🌑 그림자 메시지'; deepTxt='🔮 감정 심층 리포트 보기'; retryTxt='다시 뽑기'; previewTxt='무료 미리보기';
+  }
+  var chips=[getCatName(),main.emotion,main.shadow].filter(Boolean);
+  var q='<div class="quote-card"><div class="quote-head">★ '+LT('오늘의 명언 카드','Today’s Quote Card','今日金句卡')+'</div><div class="quote-txt">“'+quote.q+'”</div><div class="quote-author">- '+quote.a+'</div></div>';
+  var advice='<div class="advice-card"><b>'+adviceTitle+'</b><br>'+pack.advice+'</div>';
+  var warning='<div class="warning-card"><b>'+warningTitle+'</b><br>'+cautionLine()+'</div>';
+  var shadow='<div class="shadow-card"><b>'+shadowTitle+'</b><br>'+shadowLine(main)+'</div>';
+  $('resultArea').innerHTML='<div class="result-card"><div class="result-title">'+resultTitle+' <span class="badge">'+previewTxt+'</span></div><div class="result-text">'+text+'</div><div class="result-long">'+longer+'</div><div class="chips">'+chips.map(c=>'<span class="chip">'+htmlEscape(c)+'</span>').join('')+'</div>'+q+advice+warning+shadow+buildMemoryInsight(names)+buildStoryTeaser(names)+'</div><div class="action-row"><button class="btn purple" id="deepBtn">'+deepTxt+' <span style="font-size:10px;opacity:.7">· '+getPrice()+'</span></button><button class="btn ghost" id="retryBtn">'+retryTxt+'</button></div>';
   $('deepBtn').onclick=showPay;$('retryBtn').onclick=function(){resetGame(true)}
 }
-function buildMemoryInsight(names){var r=storeGet().readings||[],rep=getRepeatedCard(r),last=r[r.length-1];if(!r.length)return '<div class="memory-box">🧠 첫 기록입니다. 이번 리딩이 저장되면 다음부터 감정 흐름과 반복 카드를 이어서 보여드릴게요.</div>';var msg='🧠 이전 기록과 연결하면, 지금의 주제는 완전히 새롭다기보다 쌓여온 감정의 다음 장면에 가깝습니다.';if(rep)msg+=' 특히 <b>'+rep+'</b> 카드가 반복되어 같은 마음의 문을 다시 두드리고 있어요.';if(last&&last.cat===selCat)msg+=' 같은 주제를 다시 선택한 것도 하나의 신호입니다. 마음이 아직 정리되지 않은 부분이 있을 수 있어요.';return '<div class="memory-box">'+msg+'</div>'}
-function buildStoryTeaser(names){var r=storeGet().readings||[],day=r.length+1;if(day===1)return '<div class="story-box">📖 <b>오라클 다이어리 Day 1</b><br>오늘부터 감정의 연속 스토리가 시작됩니다. 첫 장의 제목은 “나를 다시 읽는 밤”입니다.</div>';return '<div class="story-box">📖 <b>오라클 다이어리 Day '+day+'</b><br>이전 기록 위에 오늘의 카드가 이어졌습니다. 이번 장의 키워드는 “'+htmlEscape(names[0])+'”입니다.</div>'}
+function buildMemoryInsight(names){
+  var r=storeGet().readings||[],rep=getRepeatedCard(r),last=r[r.length-1];
+  if(!r.length)return '<div class="memory-box">'+LT('🧠 첫 기록입니다. 이번 리딩이 저장되면 다음부터 감정 흐름과 반복 카드를 이어서 보여드릴게요.','🧠 This is your first record. After this reading is saved, future readings can connect your emotional flow and repeated cards.','🧠 这是第一条记录。保存本次解读后，下次会连接你的情绪流向和重复出现的牌。')+'</div>';
+  var msg=LT('🧠 이전 기록과 연결하면, 지금의 주제는 완전히 새롭다기보다 쌓여온 감정의 다음 장면에 가깝습니다.','🧠 Connected with past records, this theme feels less like something new and more like the next scene of an accumulated feeling.','🧠 与之前记录连接来看，现在的主题并不是全新的，更像是累积情绪的下一幕。');
+  if(rep)msg+=' '+LT('특히 ','Especially ','尤其是 ')+'<b>'+rep+'</b>'+LT(' 카드가 반복되어 같은 마음의 문을 다시 두드리고 있어요.',' repeats, knocking on the same emotional door again.',' 这张牌反复出现，像是在再次敲响同一扇心门。');
+  if(last&&last.cat===selCat)msg+=' '+LT('같은 주제를 다시 선택한 것도 하나의 신호입니다. 마음이 아직 정리되지 않은 부분이 있을 수 있어요.','Choosing the same topic again is also a signal. Something may still be unresolved.','再次选择同一主题也是一种信号，心里可能还有未整理的部分。');
+  return '<div class="memory-box">'+msg+'</div>'
+}
+function buildStoryTeaser(names){
+  var r=storeGet().readings||[],day=r.length+1;
+  if(day===1)return '<div class="story-box">📖 <b>'+LT('오라클 다이어리 Day 1','Oracle Diary Day 1','神谕日记 Day 1')+'</b><br>'+LT('오늘부터 감정의 연속 스토리가 시작됩니다. 첫 장의 제목은 “나를 다시 읽는 밤”입니다.','Your emotional story begins today. The first chapter is “The Night I Read Myself Again.”','从今天开始，情绪的连续故事展开。第一章叫“重新读懂自己的夜晚”。')+'</div>';
+  return '<div class="story-box">📖 <b>'+LT('오라클 다이어리 Day ','Oracle Diary Day ','神谕日记 Day ')+day+'</b><br>'+LT('이전 기록 위에 오늘의 카드가 이어졌습니다. 이번 장의 키워드는 “','Today’s card continues from previous records. This chapter’s keyword is “','今天的卡牌延续在之前的记录之上。本章关键词是“')+htmlEscape(names[0])+'”</div>'
+}
 function showPay(){
   closeModal('payWrap');
-  var html='<div class="modal-bg" id="payWrap"><div class="paycard"><div class="paytitle">'+getCatName()+' · '+getModeName()+'</div><div class="paysub">예언이 아닌 감정 정리 리포트</div><div class="payamt"><div class="paynum">'+getPrice()+'</div><div class="small">Beta 시즌 무료 심층 콘텐츠</div></div><div class="payrow"><span>정교한 카드 이미지 기반 리딩</span><span>포함</span></div><div class="payrow"><span>긴 감정 메시지 + 조언</span><span>포함</span></div><div class="payrow"><span>그림자 메시지 + 오늘의 주의점</span><span>포함</span></div><div class="payrow"><span>명언 카드 + SNS 저장</span><span>포함</span></div><button class="btn" style="margin-top:12px" onclick="confirmPay()">무료로 심층 리포트 보기</button><button class="btn dark" style="margin-top:6px" onclick="closeModal(\'payWrap\')">취소</button></div></div>';
+  var title=getCatName()+' · '+getModeName();
+  var html='<div class="modal-bg" id="payWrap"><div class="paycard"><div class="paytitle">'+title+'</div><div class="paysub">'+LT('예언이 아닌 감정 정리 리포트','An emotional reflection report, not a prediction','这不是预言，而是情绪整理报告')+'</div><div class="payamt"><div class="paynum">'+getPrice()+'</div><div class="small">'+LT('Beta 시즌 무료 심층 콘텐츠','Free deep content during Beta','Beta 期间免费深度内容')+'</div></div><div class="payrow"><span>'+LT('정교한 카드 이미지 기반 리딩','Reading based on detailed tarot imagery','基于精致塔罗图像的解读')+'</span><span>'+LT('포함','Included','包含')+'</span></div><div class="payrow"><span>'+LT('긴 감정 메시지 + 조언','Long emotional message + advice','长篇情绪讯息 + 建议')+'</span><span>'+LT('포함','Included','包含')+'</span></div><div class="payrow"><span>'+LT('그림자 메시지 + 오늘의 주의점','Shadow message + today’s caution','阴影讯息 + 今日提醒')+'</span><span>'+LT('포함','Included','包含')+'</span></div><div class="payrow"><span>'+LT('명언 카드 + SNS 저장','Quote card + social saving','金句卡 + 社交保存')+'</span><span>'+LT('포함','Included','包含')+'</span></div><button class="btn" style="margin-top:12px" onclick="confirmPay()">'+LT('무료로 심층 리포트 보기','Open deep report for free','免费查看深度报告')+'</button><button class="btn dark" style="margin-top:6px" onclick="closeModal(\'payWrap\')">'+LT('취소','Cancel','取消')+'</button></div></div>';
   document.body.insertAdjacentHTML('beforeend',html)
 }
 function generateDeep(){
-  var cards=drawn.map(d=>CARDS[d.idx]),names=cards.map(getCardName),rep=getRepeatedCard(storeGet().readings||[]),quote=pickQuote(cards);
-  var story='이번 리딩은 '+names.join(', ')+' 카드가 하나의 감정선을 만들고 있습니다. '+toneSentence()+' '+categorySentence()+' ';
-  if(user.concern)story+='당신이 적어둔 고민은 “'+htmlEscape(user.concern)+'”입니다. 이 고민은 당장 하나의 정답으로 닫기보다, 지금 가능한 행동으로 작게 나눌 때 더 안전하게 정리됩니다. ';
-  if(rep)story+='최근 반복된 '+rep+'의 흔적은 같은 감정을 여러 번 다른 방식으로 마주하고 있다는 뜻처럼 보입니다. ';
-  story+='오늘의 카드는 미래를 확정하지 않습니다. 대신 지금의 마음이 어디에서 흔들리고, 어떤 핑계로 결정을 미루고, 어디에서 힘을 회복할 수 있는지 보여주는 감정 지도에 가깝습니다.';
-  var detail={story:story,key_insight:'지금 필요한 것은 미래를 맞히는 일이 아니라, 내 감정이 어디에서 반복되는지 알아차리는 일입니다. 같은 감정이 반복된다면, 그것은 단순한 우연이 아니라 내가 아직 정리하지 못한 선택의 흔적일 수 있습니다.',action_today:'오늘 밤 자기 전, 가장 크게 남은 감정 하나와 내가 피하고 있는 행동 하나를 같이 적으세요. 내일은 그중 가장 작은 것 하나만 실행하세요.',growth_tip:'불안은 적이 아니라 신호일 수 있습니다. 하지만 불안을 이유로 아무것도 선택하지 않는다면, 상황은 그대로 남습니다. 감정을 인정하되 선택권까지 넘기지는 마세요.',shadow_msg:shadowLine(cards[0]),caution_msg:cautionLine(),truth_msg:truthLine(),quote:quote.q,quote_author:quote.a,advice:'오늘은 결론을 크게 내리지 말고, “내가 좋은 말로 포장하고 있는 불편한 사실 하나”를 적어보세요. 적는 순간 감정은 조금 작아지고, 선택은 조금 선명해집니다.',lucky_color:['금색','남색','라벤더','아이보리','올리브'][Math.floor(Math.random()*5)],lucky_time:['오전 9~11시','오후 2~4시','저녁 8~10시','잠들기 전 10분'][Math.floor(Math.random()*4)],lucky_direction:['동쪽','남쪽','서쪽','북쪽','창가'][Math.floor(Math.random()*5)]};
-  cards.forEach(function(c,i){detail['card'+(i+1)]={symbol:getCardName(c)+'은 '+c.kw+'의 상징을 가집니다. 이 카드는 상황을 단정하지 않고, 지금 감정의 색을 보여주는 거울처럼 작동합니다. '+(c.type==='major'?'메이저 카드는 큰 흐름과 전환점을 비추기 때문에, 지금의 선택이 마음의 방향을 바꿀 수 있음을 알려줍니다.':'마이너 카드는 일상의 작은 장면을 비춥니다. 그래서 이 카드는 지금 당장 바꿀 수 있는 습관과 반응을 살피게 합니다.'),psychology:'현재 마음은 '+c.emotion+' 쪽으로 기울어 있습니다. 동시에 '+c.shadow+'의 그림자도 있어, 생각보다 같은 장면을 여러 번 곱씹고 있을 수 있습니다. 이 감정을 억누르기보다, 왜 반복되는지와 내가 얻고 있는 익숙한 회피가 무엇인지 적어보는 것이 도움이 됩니다.',situation:getCatName()+' 관점에서 보면 이 카드는 “무엇을 맞힐까”보다 “무엇을 정리할까”에 가깝습니다. 급한 결론보다 작은 확인이 필요합니다. 지금은 모든 답을 한 번에 얻기보다, 다음 행동 하나를 정해야 흐름이 실제로 바뀝니다.',action:'오늘은 '+(i===0?'감정을 이름 붙이기':i===1?'상대나 상황보다 내 기준 적기':'실행 가능한 한 가지로 줄이기')+'를 해보세요. 선택은 작을수록 오래 갑니다. 무리하게 확신을 만들지 말고, 내가 지킬 수 있는 약속 하나부터 시작하세요. 단, 또 미룰 핑계를 만들고 있지는 않은지 확인하세요.'}})
+  var cards=drawn.map(d=>CARDS[d.idx]),names=cards.map(getCardName),rep=getRepeatedCard(storeGet().readings||[]),quote=pickQuote(cards),pack=makeCategoryPack(cards),main=cards[0],seed=calcSeed(cards);
+  var story;
+  if(currentLang==='EN'){
+    story='This reading connects '+names.join(', ')+' into one emotional storyline. '+concernHook()+'The cards do not decide your future. They help you see where your mind is shaken, what decision is being delayed, and where a realistic standard is needed.';
+    if(detectConcernType()==='work')story+=' For a job-change concern, the key is to check whether your exhaustion is temporary or structural, and whether the next move is avoidance or growth.';
+  }else if(currentLang==='CN'){
+    story='这次解读把 '+names.join(', ')+' 连接成一条情绪线索。'+concernHook()+'牌并不是决定未来，而是帮助你看见内心在哪里动摇、哪个决定被推迟，以及哪里需要现实标准。';
+    if(detectConcernType()==='work')story+=' 如果是换工作的问题，重点是判断疲惫是暂时的还是结构性的，以及下一步是逃避还是成长。';
+  }else{
+    story='이번 리딩은 '+names.join(', ')+' 카드가 하나의 감정선을 만들고 있습니다. '+toneSentence()+' '+categorySentence()+' '+concernHook();
+    if(rep)story+='최근 반복된 '+rep+'의 흔적은 같은 감정을 여러 번 다른 방식으로 마주하고 있다는 뜻처럼 보입니다. ';
+    story+='오늘의 카드는 미래를 단정하지 않습니다. 대신 지금의 마음이 어디에서 흔들리고, 어떤 이유로 결정을 미루며, 어디에서 현실적인 기준을 세워야 하는지를 보여주는 감정 지도에 가깝습니다.'; if(detectConcernType()==='work')story+=' 이직 고민이라면 오늘의 판단 기준은 “좋은 회사냐 나쁜 회사냐”보다, 지금의 피로가 일시적인지 구조적인지, 그리고 다음 선택이 회피인지 성장인지 구분하는 데 있습니다.';
+  }
+  var growths=currentLang==='EN'?['Do not try to erase anxiety first. Read the boundary and need behind it.','A small break in a repeated pattern can create a stronger shift than solving everything at once.','This reading says standards should come before certainty. When standards appear, emotional noise gets quieter.']:(currentLang==='CN'?['先不要急着消除不安，而要读懂它背后的边界和需求。','切断一个重复的小模式，比一次解决所有问题更有力量。','这次解读提醒你，标准要先于确定感。标准出现后，情绪噪音会变小。']:['불안을 없애려 하기보다, 불안이 알려주는 경계와 필요를 읽는 쪽이 더 현실적입니다.','문제를 크게 풀려고 하기보다 반복되는 장면 하나를 끊는 편이 훨씬 강한 변화가 됩니다.','지금의 리딩은 확신보다 기준이 먼저라는 메시지를 줍니다. 기준이 생기면 감정의 소음도 줄어듭니다.']);
+  var detail={story:story,key_insight:pack.key_insight,action_today:pack.action_today,growth_tip:pickStable(growths,seed+21),shadow_msg:shadowLine(main),caution_msg:cautionLine(),truth_msg:truthLine(),quote:quote.q,quote_author:quote.a,advice:pack.advice,lucky_color:['금색','남색','라벤더','아이보리','올리브'][seed%5],lucky_time:['오전 9~11시','오후 2~4시','저녁 8~10시','잠들기 전 10분'][seed%4],lucky_direction:['동쪽','남쪽','서쪽','북쪽','창가'][seed%5]};
+  cards.forEach(function(c,i){detail['card'+(i+1)]={symbol:getCardName(c)+' '+LT('카드는 현재 흐름의 상징입니다.','symbolizes the current emotional flow.','象征着当前的情绪流向。'),psychology:LT('현재 마음은 '+c.emotion+' 쪽으로 기울어 있습니다. 동시에 '+c.shadow+'의 그림자도 함께 살펴야 합니다.','Your mind leans toward '+c.emotion+'. At the same time, the shadow of '+c.shadow+' should also be noticed.','现在的内心倾向于 '+c.emotion+'，同时也需要看见 '+c.shadow+' 的阴影。'),situation:LT(getCatName()+' 관점에서 보면 이 카드는 지금 정리해야 할 기준을 보여줍니다.','From the perspective of '+getCatName()+', this card shows the standard you need to clarify now.','从 '+getCatName()+' 的角度看，这张牌显示现在需要整理的标准。'),action:LT('오늘은 실행 가능한 한 가지로 줄여보세요. 선택은 작을수록 오래 갑니다.','Reduce it to one doable action today. The smaller the choice, the longer it lasts.','今天把它缩小成一个可以执行的行动。选择越小，越容易持续。')}})
   return detail
 }
 function confirmPay(){closeModal('payWrap');bgm.sfx('deep');var r=generateDeep();showDeep(r);saveReading(r);renderMemory()}
 function showDeep(r){
   rdData=r;var pos=getPos(),cards=drawn.map(d=>CARDS[d.idx]);
-  var heroCards=cards.map((c,i)=>'<div class="hero-slot"><div class="hmini">'+makeCardHTML(c)+'</div><div class="hcname">'+pos[i]+'<br>'+htmlEscape(getCardName(c))+'</div></div>').join('');
-  var acc=cards.map((c,i)=>{var cd=r['card'+(i+1)]||{};return '<div class="acc"><div class="acc-h" onclick="toggleAcc('+i+')"><span class="acc-p">'+pos[i]+'</span><span class="acc-n">'+htmlEscape(getCardName(c))+' · '+htmlEscape(c.kw)+'</span><span>▾</span></div><div class="acc-b" id="acc'+i+'"><div class="acc-sec"><div class="acc-sl">🎴 상징</div><div class="acc-st">'+cd.symbol+'</div></div><div class="acc-sec"><div class="acc-sl">🧠 심리</div><div class="acc-st">'+cd.psychology+'</div></div><div class="acc-sec"><div class="acc-sl">🎯 상황</div><div class="acc-st">'+cd.situation+'</div></div><div class="acc-sec"><div class="acc-sl">🌑 그림자</div><div class="acc-st">'+shadowLine(c)+'</div></div><div class="acc-sec"><div class="acc-sl">💡 행동</div><div class="acc-st">'+cd.action+'</div></div></div></div>'}).join('');
-  var html='<div class="modal-bg" id="deepWrap"><div class="paycard"><div class="hero"><div class="hero-cards">'+heroCards+'</div><div class="hero-title">'+getCatName()+' 리포트</div><div class="hero-msg">'+r.story+'</div><div class="insight"><div class="insight-lbl">KEY INSIGHT</div><div class="insight-txt">'+r.key_insight+'</div></div><div class="insight"><div class="insight-lbl">TODAY ACTION</div><div class="insight-txt">'+r.action_today+'</div></div><div class="lucky"><div class="lk"><div class="lki">🎨</div><div class="lkl">색</div><div class="lkv">'+r.lucky_color+'</div></div><div class="lk"><div class="lki">⏰</div><div class="lkl">시간</div><div class="lkv">'+r.lucky_time+'</div></div><div class="lk"><div class="lki">🧭</div><div class="lkl">장소</div><div class="lkv">'+r.lucky_direction+'</div></div></div><div class="hero-msg" style="font-size:11px;color:rgba(232,210,138,.9)">'+r.growth_tip+'</div><div style="margin:11px 14px"><div class="warning-card">⚠️ <b>오늘의 주의점</b><br>'+r.caution_msg+'</div><div class="shadow-card">🌑 <b>불편한 진실</b><br>'+r.truth_msg+'<br><br><b>그림자 메시지</b><br>'+r.shadow_msg+'</div></div><div style="margin:11px 14px"><div class="quote-card"><div class="quote-head">★ 명언 & 조언 카드</div><div class="quote-txt">“'+r.quote+'”</div><div class="quote-author">- '+r.quote_author+'</div></div><div class="advice-card">🪶 <b>조언</b><br>'+r.advice+'</div></div><div class="share"><div class="share-lbl">✦ SNS 공유 ✦</div><div class="share-btns"><button class="btn purple" onclick="shareImg()">📸 이미지 저장</button><button class="btn" onclick="shareText()">🪶 명언 카드 저장</button></div></div><div class="accord">'+acc+'</div></div><div class="action-row"><button class="btn dark" onclick="closeModal(\'deepWrap\')">닫기</button><button class="btn ghost" onclick="resetGame(true)">새로 뽑기</button></div></div></div>';
+  var heroCards=cards.map(function(c,i){return '<div class="hero-slot"><div class="hmini">'+makeCardHTML(c)+'</div><div class="hcname">'+pos[i]+'<br>'+htmlEscape(getCardName(c))+'</div></div>'}).join('');
+  var labels={symbol:LT('🎴 상징','🎴 Symbol','🎴 象征'),psych:LT('🧠 심리','🧠 Psychology','🧠 心理'),sit:LT('🎯 상황','🎯 Situation','🎯 情况'),shadow:LT('🌑 그림자','🌑 Shadow','🌑 阴影'),act:LT('💡 행동','💡 Action','💡 行动')};
+  var acc=cards.map(function(c,i){var cd=r['card'+(i+1)]||{};return '<div class="acc"><div class="acc-h" onclick="toggleAcc('+i+')"><span class="acc-p">'+pos[i]+'</span><span class="acc-n">'+htmlEscape(getCardName(c))+' · '+htmlEscape(transKW(c.kw))+'</span><span>▾</span></div><div class="acc-b" id="acc'+i+'"><div class="acc-sec"><div class="acc-sl">'+labels.symbol+'</div><div class="acc-st">'+cd.symbol+'</div></div><div class="acc-sec"><div class="acc-sl">'+labels.psych+'</div><div class="acc-st">'+cd.psychology+'</div></div><div class="acc-sec"><div class="acc-sl">'+labels.sit+'</div><div class="acc-st">'+cd.situation+'</div></div><div class="acc-sec"><div class="acc-sl">'+labels.shadow+'</div><div class="acc-st">'+shadowLine(c)+'</div></div><div class="acc-sec"><div class="acc-sl">'+labels.act+'</div><div class="acc-st">'+cd.action+'</div></div></div></div>'}).join('');
+  var html='<div class="modal-bg" id="deepWrap"><div class="paycard"><div class="hero"><div class="hero-cards">'+heroCards+'</div><div class="hero-title">'+getCatName()+' '+LT('리포트','Report','报告')+'</div><div class="hero-msg">'+r.story+'</div><div class="insight"><div class="insight-lbl">KEY INSIGHT</div><div class="insight-txt">'+r.key_insight+'</div></div><div class="insight"><div class="insight-lbl">TODAY ACTION</div><div class="insight-txt">'+r.action_today+'</div></div><div class="lucky"><div class="lk"><div class="lki">🎨</div><div class="lkl">'+LT('색','Color','颜色')+'</div><div class="lkv">'+r.lucky_color+'</div></div><div class="lk"><div class="lki">⏰</div><div class="lkl">'+LT('시간','Time','时间')+'</div><div class="lkv">'+r.lucky_time+'</div></div><div class="lk"><div class="lki">🧭</div><div class="lkl">'+LT('장소','Place','地点')+'</div><div class="lkv">'+r.lucky_direction+'</div></div></div><div class="hero-msg" style="font-size:11px;color:rgba(232,210,138,.9)">'+r.growth_tip+'</div><div style="margin:11px 14px"><div class="warning-card">⚠️ <b>'+LT('오늘의 주의점','Today’s Caution','今日提醒')+'</b><br>'+r.caution_msg+'</div><div class="shadow-card">🌑 <b>'+LT('불편한 진실','Uncomfortable Truth','不舒服的真相')+'</b><br>'+r.truth_msg+'<br><br><b>'+LT('그림자 메시지','Shadow Message','阴影讯息')+'</b><br>'+r.shadow_msg+'</div></div><div style="margin:11px 14px"><div class="quote-card"><div class="quote-head">★ '+LT('명언 & 조언 카드','Quote & Advice Card','金句与建议卡')+'</div><div class="quote-txt">“'+r.quote+'”</div><div class="quote-author">- '+r.quote_author+'</div></div><div class="advice-card">🪶 <b>'+LT('조언','Advice','建议')+'</b><br>'+r.advice+'</div></div><div class="share"><div class="share-lbl">✦ '+LT('SNS 공유','Share','分享')+' ✦</div><div class="share-btns"><button class="btn purple" onclick="shareImg()">📸 '+LT('인스타','Instagram','图卡')+'</button><button class="btn" onclick="shareText()">🪶 '+LT('명언','Quote','金句')+'</button><button class="btn ghost" onclick="shareKakao()">💬 '+LT('카카오','Square','方形')+'</button></div></div><div class="accord">'+acc+'</div></div><div class="action-row"><button class="btn dark" onclick="closeModal(\'deepWrap\')">'+LT('닫기','Close','关闭')+'</button><button class="btn ghost" onclick="resetGame(true)">'+LT('새로 뽑기','Draw Again','重新抽牌')+'</button></div></div></div>';
   closeModal('deepWrap');document.body.insertAdjacentHTML('beforeend',html);var first=$('acc0');if(first)first.classList.add('open')
 }
 function toggleAcc(i){document.querySelectorAll('.acc-b').forEach((b,idx)=>b.classList.toggle('open',idx===i&&!b.classList.contains('open')))}
 function saveReading(r){var s=storeGet();s.readings=s.readings||[];s.readings.push({date:new Date().toISOString(),mood:user.mood,cat:selCat,mode:selMode,cards:drawn.map(d=>getCardName(CARDS[d.idx])),story:(r.story||'').slice(0,180)});if(s.readings.length>30)s.readings=s.readings.slice(-30);storeSet(s)}
-function showDiary(){var r=(storeGet().readings||[]);if(!r.length){toast('아직 저장된 감정 기록이 없습니다');return}var html='<div class="modal-bg" id="diaryWrap"><div class="paycard"><div class="paytitle">📖 오라클 다이어리</div><div class="paysub">기기 안에 저장된 최근 감정 흐름</div>';r.slice(-8).reverse().forEach(function(x,i){html+='<div class="result-card" style="margin:7px 0"><div class="result-title">Day '+(r.length-i)+' <span class="badge">'+(x.mood||'감정 미입력')+'</span></div><div class="small">'+new Date(x.date).toLocaleString()+' · '+x.cards.join(', ')+'</div><div class="result-text" style="font-size:11px">'+htmlEscape(x.story)+'</div></div>'});html+='<button class="btn dark" onclick="closeModal(\'diaryWrap\')">닫기</button><button class="btn ghost" style="margin-top:7px" onclick="clearDiary()">기록 초기화</button></div></div>';document.body.insertAdjacentHTML('beforeend',html)}
-function clearDiary(){localStorage.removeItem('haji_mood_v35');closeModal('diaryWrap');renderMemory();toast('기록을 초기화했어요')}
+function showDiary(){
+  var r=(storeGet().readings||[]);
+  if(!r.length){toast(LT('아직 저장된 감정 기록이 없습니다','No emotional records saved yet','还没有保存的情绪记录'));return}
+  var html='<div class="modal-bg" id="diaryWrap"><div class="paycard"><div class="paytitle">📖 '+LT('오라클 다이어리','Oracle Diary','神谕日记')+'</div><div class="paysub">'+LT('기기 안에 저장된 최근 감정 흐름','Recent emotional flow saved on this device','保存在本设备中的近期情绪流向')+'</div>';
+  r.slice(-8).reverse().forEach(function(x,i){html+='<div class="result-card" style="margin:7px 0"><div class="result-title">Day '+(r.length-i)+' <span class="badge">'+(x.mood||LT('감정 미입력','No mood','未填写情绪'))+'</span></div><div class="small">'+new Date(x.date).toLocaleString()+' · '+x.cards.join(', ')+'</div><div class="result-text" style="font-size:11px">'+htmlEscape(x.story)+'</div></div>'});
+  html+='<button class="btn dark" onclick="closeModal(\'diaryWrap\')">'+LT('닫기','Close','关闭')+'</button><button class="btn ghost" style="margin-top:7px" onclick="clearDiary()">'+LT('기록 초기화','Clear Records','清除记录')+'</button></div></div>';
+  document.body.insertAdjacentHTML('beforeend',html)
+}
+function clearDiary(){localStorage.removeItem('haji_mood_v35');closeModal('diaryWrap');renderMemory();toast(LT('기록을 초기화했어요','Records cleared','记录已清除'))}
 function closeModal(id){var e=$(id);if(e)e.remove()}
 function resetGame(){drawn=[];flipped=0;allFlipped=false;rdData=null;$('spreadArea').innerHTML='';$('resultArea').innerHTML='';['deepWrap','payWrap','diaryWrap'].forEach(closeModal)}
-function showSub(){$('subOverlay').style.display='flex'}function hideSub(){$('subOverlay').style.display='none'}function pickPlan(p){selPlan=p;$('subConfirmBtn').textContent=p==='monthly'?'월간 Pro 예정 가격 확인':'Beta 무료로 열기'}function confirmSub(){isPremium=true;toast('Beta 무료 체험이 열렸어요');hideSub();setN(6)}
+
+/* ---------- FEEDBACK ---------- */
+var FEEDBACK_URL = ''; // 구글폼을 만든 뒤 이곳에 링크를 넣으면 Beta 피드백이 구글시트에 저장됩니다.
+function openFeedback(){
+  if(FEEDBACK_URL){window.open(FEEDBACK_URL,'_blank');return}
+  var old=$('feedbackWrap'); if(old) old.remove();
+  var html='<div class="modal-bg" id="feedbackWrap"><div class="paycard"><div class="paytitle">Beta '+LT('피드백','Feedback','反馈')+'</div><div class="paysub">'+LT('구글폼 링크를 연결하면 테스트 의견을 구글시트로 모을 수 있어요.','Connect a Google Form link to collect test feedback in Google Sheets.','连接 Google Form 链接后，可以把测试反馈收集到表格中。')+'</div><div class="result-card"><div class="result-title">📝 '+LT('추천 질문 6개','6 suggested questions','推荐的6个问题')+'</div><div class="result-text" style="font-size:11.5px">'+LT('1. 결과가 내 상황과 비슷하게 느껴졌나요?<br>2. 메시지가 현실적으로 느껴졌나요?<br>3. 카드 이미지가 저장하고 싶을 만큼 예뻤나요?<br>4. 다시 방문해서 또 해보고 싶나요?<br>5. 유료라면 어느 가격까지 괜찮나요?<br>6. 가장 아쉬운 점은 무엇인가요?','1. Did the result feel relevant to your situation?<br>2. Did the message feel realistic?<br>3. Was the card image worth saving?<br>4. Would you visit again?<br>5. What price would feel acceptable?<br>6. What felt lacking?','1. 结果是否贴近你的情况？<br>2. 讯息是否现实？<br>3. 图片卡是否值得保存？<br>4. 是否想再次使用？<br>5. 如果收费，能接受什么价格？<br>6. 最遗憾的地方是什么？')+'</div></div><button class="btn" onclick="closeModal(\'feedbackWrap\')">'+LT('확인','OK','确认')+'</button></div></div>';
+  document.body.insertAdjacentHTML('beforeend',html);
+}
+
+function showSub(){$('subOverlay').style.display='flex'}
+function hideSub(){$('subOverlay').style.display='none'}
+function pickPlan(p){selPlan=p;$('subConfirmBtn').textContent=p==='monthly'?LT('월간 Pro 예정 가격 확인','Check planned monthly Pro price','确认月度 Pro 预定价格'):LT('Beta 무료로 열기','Open Beta for free','免费开启 Beta')}
+function confirmSub(){isPremium=true;toast(LT('Beta 무료 체험이 열렸어요','Beta free trial opened','Beta 免费体验已开启'));hideSub();setN(6)}
 
 /* share image */
 function round(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath()}
-function wrapText(ctx,text,x,y,maxWidth,lineHeight){var words=String(text).split(''),line='';for(var n=0;n<words.length;n++){var test=line+words[n];if(ctx.measureText(test).width>maxWidth&&n>0){ctx.fillText(line,x,y);line=words[n];y+=lineHeight}else line=test}ctx.fillText(line,x,y)}
+function panel(ctx,x,y,w,h,r,fill,stroke){ctx.save();round(ctx,x,y,w,h,r);ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=2;ctx.stroke()}ctx.restore()}
+function lineWrap(ctx,text,maxWidth){var chars=String(text||'').split(''),lines=[],line='';chars.forEach(function(ch){var test=line+ch;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=ch}else line=test});if(line)lines.push(line);return lines}
+function drawTextBlock(ctx,text,x,y,maxWidth,lineHeight,align,maxLines,color){ctx.save();ctx.fillStyle=color||ctx.fillStyle;ctx.textAlign=align||'left';var lines=lineWrap(ctx,text,maxWidth);if(maxLines&&lines.length>maxLines){lines=lines.slice(0,maxLines);var last=lines[lines.length-1];while(ctx.measureText(last+'…').width>maxWidth&&last.length>1){last=last.slice(0,-1)}lines[lines.length-1]=last+'…'}lines.forEach(function(line,i){ctx.fillText(line,x,y+i*lineHeight)});ctx.restore();return lines.length}
+function drawStarField(ctx,W,H,count){for(var i=0;i<count;i++){var a=Math.random()*0.46+0.06,s=Math.random()*2.2+0.45;ctx.fillStyle='rgba(255,255,255,'+a+')';ctx.beginPath();ctx.arc(Math.random()*W,Math.random()*H,s,0,Math.PI*2);ctx.fill()}}
+function drawGlow(ctx,x,y,r,color,alpha){var g=ctx.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,'rgba('+color+','+alpha+')');g.addColorStop(1,'rgba('+color+',0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill()}
+function drawOrnament(ctx,W,y){ctx.save();ctx.strokeStyle='rgba(201,168,76,.45)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(160,y);ctx.lineTo(420,y);ctx.moveTo(660,y);ctx.lineTo(920,y);ctx.stroke();ctx.beginPath();ctx.arc(W/2,y,30,Math.PI*.18,Math.PI*1.82);ctx.stroke();ctx.fillStyle='rgba(232,210,138,.92)';ctx.beginPath();ctx.arc(W/2,y,8,0,Math.PI*2);ctx.fill();ctx.restore()}
 function loadCardImages(cards, done){
   var imgs=new Array(cards.length), left=cards.length;
   if(!left){done(imgs);return}
-  cards.forEach(function(c,i){
-    var img=new Image();
-    img.crossOrigin='anonymous';
-    img.onload=function(){imgs[i]=img;if(--left===0)done(imgs)};
-    img.onerror=function(){imgs[i]=null;if(--left===0)done(imgs)};
-    img.src=c.img;
-  });
+  cards.forEach(function(c,i){var img=new Image();img.crossOrigin='anonymous';img.onload=function(){imgs[i]=img;if(--left===0)done(imgs)};img.onerror=function(){imgs[i]=null;if(--left===0)done(imgs)};img.src=c.img});
+}
+function drawFallbackArt(ctx,c,x,y,cw,ch){
+  ctx.save();
+  var g=ctx.createLinearGradient(x,y,x,y+ch);g.addColorStop(0,'#23345d');g.addColorStop(.45,c.c||'#4d2e78');g.addColorStop(1,'#120817');ctx.fillStyle=g;ctx.fillRect(x,y,cw,ch);
+  for(var i=0;i<20;i++){ctx.fillStyle='rgba(255,244,190,'+(0.18+Math.random()*0.42)+')';ctx.beginPath();ctx.arc(x+18+Math.random()*(cw-36),y+20+Math.random()*(ch*.34),Math.random()*1.7+0.7,0,Math.PI*2);ctx.fill()}
+  var moonX=x+cw*.5, moonY=y+ch*.28;ctx.strokeStyle='rgba(255,228,160,.62)';ctx.lineWidth=2;ctx.beginPath();ctx.arc(moonX,moonY,cw*.14,0,Math.PI*2);ctx.stroke();
+  ctx.fillStyle='rgba(255,228,160,.16)';ctx.beginPath();ctx.arc(moonX,moonY,cw*.1,0,Math.PI*2);ctx.fill();
+  ctx.fillStyle='rgba(8,7,20,.5)';ctx.beginPath();ctx.moveTo(x+10,y+ch*.74);ctx.lineTo(x+cw*.24,y+ch*.54);ctx.lineTo(x+cw*.43,y+ch*.72);ctx.lineTo(x+cw*.63,y+ch*.49);ctx.lineTo(x+cw-10,y+ch*.76);ctx.lineTo(x+cw-10,y+ch-10);ctx.lineTo(x+10,y+ch-10);ctx.closePath();ctx.fill();
+  ctx.fillStyle='rgba(247,231,182,.96)';ctx.font='bold '+Math.max(26,cw*.18)+'px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(c.em||'✦',x+cw/2,y+ch*.52);
+  ctx.restore()
 }
 function drawRichCard(ctx,c,x,y,cw,ch,img){
   ctx.save();
-  var cg=ctx.createLinearGradient(x,y,x,y+ch);
-  cg.addColorStop(0,c.c);cg.addColorStop(.55,'#14122a');cg.addColorStop(1,'#070411');
-  ctx.fillStyle=cg;round(ctx,x,y,cw,ch,18);ctx.fill();
-  if(img){
-    try{ctx.drawImage(img,x+8,y+8,cw-16,ch-16);}catch(e){img=null}
-  }
-  if(!img){
-    ctx.save();
-    ctx.beginPath();round(ctx,x+10,y+10,cw-20,ch-20,12);ctx.clip();
-    var sky=ctx.createLinearGradient(x,y,x,y+ch);
-    sky.addColorStop(0,'#1e2444');sky.addColorStop(.55,'#7f6a3a');sky.addColorStop(1,'#2d1d12');
-    ctx.fillStyle=sky;ctx.fillRect(x+10,y+10,cw-20,ch-20);
-    for(var k=0;k<22;k++){ctx.fillStyle='rgba(255,235,160,'+(0.25+Math.random()*0.55)+')';ctx.beginPath();ctx.arc(x+18+Math.random()*(cw-36),y+18+Math.random()*(ch*.36),Math.random()*2+0.8,0,Math.PI*2);ctx.fill()}
-    ctx.fillStyle='rgba(7,8,22,.55)';
-    ctx.beginPath();ctx.moveTo(x+10,y+ch*.62);ctx.lineTo(x+cw*.28,y+ch*.42);ctx.lineTo(x+cw*.48,y+ch*.62);ctx.lineTo(x+cw*.65,y+ch*.48);ctx.lineTo(x+cw-10,y+ch*.66);ctx.lineTo(x+cw-10,y+ch-10);ctx.lineTo(x+10,y+ch-10);ctx.closePath();ctx.fill();
-    ctx.strokeStyle='rgba(232,210,138,.55)';ctx.lineWidth=1.2;
-    ctx.beginPath();ctx.arc(x+cw*.5,y+ch*.36,cw*.13,0,Math.PI*2);ctx.stroke();
-    for(var r=0;r<12;r++){var a=r*Math.PI/6;ctx.beginPath();ctx.moveTo(x+cw*.5+Math.cos(a)*cw*.17,y+ch*.36+Math.sin(a)*cw*.17);ctx.lineTo(x+cw*.5+Math.cos(a)*cw*.26,y+ch*.36+Math.sin(a)*cw*.26);ctx.stroke()}
-    ctx.fillStyle='rgba(232,210,138,.28)';ctx.beginPath();ctx.arc(x+cw*.5,y+ch*.36,cw*.09,0,Math.PI*2);ctx.fill();
-    ctx.fillStyle='rgba(245,226,170,.9)';ctx.font='bold '+(cw*.18)+'px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(c.em,x+cw/2,y+ch*.53);
-    ctx.restore();
-  }
-  ctx.strokeStyle='#C9A84C';ctx.lineWidth=4;round(ctx,x,y,cw,ch,18);ctx.stroke();
-  ctx.strokeStyle='rgba(232,210,138,.52)';ctx.lineWidth=1.3;round(ctx,x+12,y+12,cw-24,ch-24,10);ctx.stroke();
-  ctx.fillStyle='rgba(0,0,0,.72)';round(ctx,x+15,y+ch-76,cw-30,55,10);ctx.fill();
-  ctx.fillStyle='#E8D28A';ctx.font='bold '+Math.max(17,cw*.075)+'px Georgia';ctx.textAlign='center';ctx.textBaseline='alphabetic';ctx.fillText(getCardName(c),x+cw/2,y+ch-42);
-  ctx.fillStyle='rgba(244,239,231,.78)';ctx.font=Math.max(12,cw*.048)+'px Georgia';ctx.fillText(c.kw,x+cw/2,y+ch-21);
+  ctx.shadowColor='rgba(0,0,0,.38)';ctx.shadowBlur=34;ctx.shadowOffsetY=18;
+  var frame=ctx.createLinearGradient(x,y,x,y+ch);frame.addColorStop(0,'#f1df9f');frame.addColorStop(.08,'#8f732d');frame.addColorStop(.16,'#13091f');frame.addColorStop(1,'#07030d');
+  round(ctx,x,y,cw,ch,28);ctx.fillStyle=frame;ctx.fill();ctx.shadowColor='transparent';
+  panel(ctx,x+10,y+10,cw-20,ch-20,20,'rgba(255,255,255,.035)','rgba(232,210,138,.38)');
+  ctx.save();round(ctx,x+20,y+20,cw-40,ch-126,16);ctx.clip();
+  if(img){try{ctx.drawImage(img,x+20,y+20,cw-40,ch-126)}catch(e){img=null}}
+  if(!img)drawFallbackArt(ctx,c,x+20,y+20,cw-40,ch-126);
   ctx.restore();
+  panel(ctx,x+20,y+ch-94,cw-40,60,14,'rgba(6,4,13,.84)','rgba(232,210,138,.22)');
+  ctx.fillStyle='#EEDB9A';ctx.font='bold '+Math.max(18,cw*.07)+'px Georgia';ctx.textAlign='center';ctx.fillText(getCardName(c),x+cw/2,y+ch-58);
+  ctx.fillStyle='rgba(244,239,231,.82)';ctx.font=Math.max(12,cw*.044)+'px Georgia';drawTextBlock(ctx,transKW(c.kw)||'',x+cw/2,y+ch-34,cw-74,16,'center',1,'rgba(244,239,231,.82)');
+  ctx.restore()
+}
+function drawMiniSeal(ctx,c,x,y,r){
+  ctx.save();var g=ctx.createRadialGradient(x-r*.25,y-r*.35,0,x,y,r);g.addColorStop(0,'rgba(255,255,255,.28)');g.addColorStop(.38,'rgba(232,210,138,.22)');g.addColorStop(1,'rgba(15,8,35,.96)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.strokeStyle='rgba(232,210,138,.58)';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='#E8D28A';ctx.font='bold '+(r*.78)+'px Georgia';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(c.em||'✦',x,y+1);ctx.restore()
 }
 function buildCanvas(useImages){return new Promise(function(resolve){
   if(useImages===undefined)useImages=true;
-  var W=1080,H=1920,cv=document.createElement('canvas'),ctx;cv.width=W;cv.height=H;ctx=cv.getContext('2d');
-  var cards=drawn.map(d=>CARDS[d.idx]);
+  var W=1080,H=1350,cv=document.createElement('canvas');cv.width=W;cv.height=H;var ctx=cv.getContext('2d');
+  var cards=drawn.map(function(d){return CARDS[d.idx]}),displayName=(user.name||'').trim();
   function paint(imgs){
-    var grad=ctx.createLinearGradient(0,0,0,H);grad.addColorStop(0,'#1A0840');grad.addColorStop(.55,'#080414');grad.addColorStop(1,'#05030d');ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
-    for(var i=0;i<340;i++){ctx.fillStyle='rgba(255,255,255,'+(Math.random()*.55+.1)+')';ctx.beginPath();ctx.arc(Math.random()*W,Math.random()*H,Math.random()*2+1,0,Math.PI*2);ctx.fill()}
-    ctx.strokeStyle='#C9A84C';ctx.lineWidth=5;ctx.strokeRect(38,38,W-76,H-76);ctx.lineWidth=1;ctx.strokeStyle='rgba(201,168,76,.38)';ctx.strokeRect(60,60,W-120,H-120);
-    ctx.fillStyle='#C9A84C';ctx.textAlign='center';ctx.font='bold 54px Georgia';ctx.fillText('HAJI STUDIO',W/2,130);
-    ctx.fillStyle='rgba(232,210,138,.78)';ctx.font='30px Georgia';ctx.fillText(getCatName()+' · '+getModeName()+' · '+deckMode+' Cards',W/2,185);
-    var cw=spreadN===1?340:spreadN===3?260:165,ch=cw*1.6,gap=26,total=cards.length*cw+(cards.length-1)*gap,sx=(W-total)/2,cy=250;
-    cards.forEach(function(c,i){drawRichCard(ctx,c,sx+i*(cw+gap),cy,cw,ch,imgs&&imgs[i])});
-    var y=spreadN===6?570:820;
-    ctx.fillStyle='rgba(244,239,231,.94)';ctx.font='34px Georgia';wrapText(ctx,rdData?rdData.key_insight:'오늘의 감정을 정리하는 카드입니다.',W/2,y,880,56);
-    ctx.fillStyle='rgba(232,210,138,.92)';ctx.font='30px Georgia';wrapText(ctx,rdData?rdData.action_today:'오늘 작은 행동 하나를 정해보세요.',W/2,y+220,880,50);
-    var q=rdData&&rdData.quote?rdData.quote:pickQuote(cards).q,qa=rdData&&rdData.quote_author?rdData.quote_author:pickQuote(cards).a;
-    ctx.fillStyle='rgba(201,168,76,.18)';round(ctx,120,y+430,840,230,24);ctx.fill();ctx.strokeStyle='rgba(201,168,76,.45)';ctx.lineWidth=2;round(ctx,120,y+430,840,230,24);ctx.stroke();
-    ctx.fillStyle='#C9A84C';ctx.font='bold 28px Georgia';ctx.fillText('QUOTE & ADVICE CARD',W/2,y+480);
-    ctx.fillStyle='rgba(244,239,231,.94)';ctx.font='32px Georgia';wrapText(ctx,'“'+q+'”',W/2,y+540,740,46);
-    ctx.fillStyle='rgba(232,210,138,.72)';ctx.font='24px Georgia';ctx.fillText('- '+qa,W/2,y+670);
-    ctx.fillStyle='rgba(201,168,76,.5)';ctx.font='24px Georgia';ctx.fillText('오락·자기성찰 목적 · 미래를 보장하지 않습니다',W/2,H-110);
+    var bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#211040');bg.addColorStop(.46,'#090617');bg.addColorStop(1,'#030109');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+    drawGlow(ctx,160,170,300,'123,79,186',0.30);drawGlow(ctx,900,260,340,'201,168,76',0.16);drawGlow(ctx,520,1120,360,'88,60,180',0.16);drawStarField(ctx,W,H,220);
+    ctx.strokeStyle='rgba(201,168,76,.58)';ctx.lineWidth=3;ctx.strokeRect(34,34,W-68,H-68);ctx.strokeStyle='rgba(201,168,76,.22)';ctx.lineWidth=1;ctx.strokeRect(56,56,W-112,H-112);
+    drawOrnament(ctx,W,102);
+    ctx.textAlign='center';ctx.fillStyle='#F1DEA0';ctx.font='bold 42px Georgia';ctx.fillText('HAJI MOOD TAROT',W/2,150);
+    ctx.fillStyle='rgba(244,239,231,.78)';ctx.font='23px Georgia';ctx.fillText(displayName?'For '+displayName:getCatName()+' · '+LT('Real Reading','Real Reading','真实解读'),W/2,184);
+    ctx.fillStyle='rgba(232,210,138,.68)';ctx.font='20px Georgia';ctx.fillText(getCatName()+' · '+(spreadN===1?L('one'):spreadN===3?L('three'):L('six')),W/2,215);
+
+    panel(ctx,82,238,916,spreadN===1?548:spreadN===3?468:438,32,'rgba(255,255,255,.035)','rgba(232,210,138,.18)');
+    if(spreadN===1){
+      drawRichCard(ctx,cards[0],360,278,360,576,imgs&&imgs[0]);
+    }else if(spreadN===3){
+      var cw=250,ch=400,gap=36,sx=(W-(3*cw+2*gap))/2,sy=282;
+      cards.forEach(function(c,i){drawRichCard(ctx,c,sx+i*(cw+gap),sy,cw,ch,imgs&&imgs[i])});
+    }else{
+      var cw=178,ch=285,gapX=26,gapY=26,sx=(W-(3*cw+2*gapX))/2,sy=270;
+      cards.forEach(function(c,i){var row=Math.floor(i/3),col=i%3;drawRichCard(ctx,c,sx+col*(cw+gapX),sy+row*(ch+gapY),cw,ch,imgs&&imgs[i])});
+    }
+
+    var msgY=spreadN===1?825:spreadN===3?750:720;
+    panel(ctx,86,msgY,908,218,26,'rgba(7,8,22,.72)','rgba(232,210,138,.22)');
+    ctx.textAlign='left';ctx.fillStyle='#E9D792';ctx.font='bold 20px Georgia';ctx.fillText('KEY MESSAGE',126,msgY+45);
+    ctx.fillStyle='rgba(244,239,231,.96)';ctx.font='28px Georgia';drawTextBlock(ctx,rdData?rdData.key_insight:'오늘의 감정을 정리하는 카드입니다.',126,msgY+90,828,41,'left',3,'rgba(244,239,231,.96)');
+
+    var qY=msgY+250;
+    panel(ctx,86,qY,908,220,26,'rgba(255,255,255,.05)','rgba(232,210,138,.18)');
+    ctx.fillStyle='#C9A84C';ctx.font='bold 20px Georgia';ctx.fillText('QUOTE & SHADOW NOTE',126,qY+44);
+    var q=rdData&&rdData.quote?rdData.quote:pickQuote(cards).q, qa=rdData&&rdData.quote_author?rdData.quote_author:pickQuote(cards).a;
+    ctx.fillStyle='rgba(244,239,231,.96)';ctx.font='30px Georgia';drawTextBlock(ctx,'“'+q+'”',126,qY+88,828,40,'left',3,'rgba(244,239,231,.96)');
+    ctx.fillStyle='rgba(232,210,138,.78)';ctx.font='22px Georgia';ctx.fillText('- '+qa,126,qY+196);
+    ctx.fillStyle='rgba(244,239,231,.82)';ctx.font='20px Georgia';drawTextBlock(ctx,rdData?rdData.shadow_msg:'좋은 말만 붙잡기보다, 지금 피하고 싶은 감정을 함께 바라보세요.',126,qY+230,828,28,'left',2,'rgba(244,239,231,.82)');
+
+    ctx.textAlign='center';ctx.fillStyle='rgba(201,168,76,.58)';ctx.font='20px Georgia';ctx.fillText(LT('Save this reading · Haji Studio','Save this reading · Haji Studio','保存这次解读 · Haji Studio'),W/2,H-78);
     resolve(cv);
   }
   if(useImages)loadCardImages(cards,paint);else paint([]);
 })}
 function buildQuoteCanvas(){return new Promise(function(resolve){
-  var W=1080,H=1350,cv=document.createElement('canvas'),ctx;cv.width=W;cv.height=H;ctx=cv.getContext('2d');
-  var cards=drawn.map(d=>CARDS[d.idx]),main=cards[0]||CARDS[0],q=rdData&&rdData.quote?rdData.quote:pickQuote(cards).q,qa=rdData&&rdData.quote_author?rdData.quote_author:pickQuote(cards).a,ad=rdData&&rdData.advice?rdData.advice:(rdData?rdData.action_today:'오늘의 감정을 하나만 기록해보세요.');
-  var grad=ctx.createLinearGradient(0,0,0,H);grad.addColorStop(0,'#1A0840');grad.addColorStop(.55,'#080414');grad.addColorStop(1,'#05030d');ctx.fillStyle=grad;ctx.fillRect(0,0,W,H);
-  for(var i=0;i<220;i++){ctx.fillStyle='rgba(255,255,255,'+(Math.random()*.5+.08)+')';ctx.beginPath();ctx.arc(Math.random()*W,Math.random()*H,Math.random()*2+1,0,Math.PI*2);ctx.fill()}
-  ctx.strokeStyle='#C9A84C';ctx.lineWidth=5;ctx.strokeRect(38,38,W-76,H-76);ctx.lineWidth=1;ctx.strokeStyle='rgba(201,168,76,.38)';ctx.strokeRect(62,62,W-124,H-124);
-  ctx.fillStyle='#C9A84C';ctx.textAlign='center';ctx.font='bold 46px Georgia';ctx.fillText('QUOTE & ADVICE CARD',W/2,135);
-  drawRichCard(ctx,main,390,190,300,480,null);
-  ctx.fillStyle='rgba(201,168,76,.16)';round(ctx,115,735,850,365,28);ctx.fill();ctx.strokeStyle='rgba(201,168,76,.46)';ctx.lineWidth=2;round(ctx,115,735,850,365,28);ctx.stroke();
-  ctx.fillStyle='rgba(244,239,231,.96)';ctx.font='34px Georgia';wrapText(ctx,'“'+q+'”',W/2,815,730,54);
-  ctx.fillStyle='rgba(232,210,138,.72)';ctx.font='25px Georgia';ctx.fillText('- '+qa,W/2,1015);
-  ctx.fillStyle='rgba(218,255,246,.92)';ctx.font='28px Georgia';wrapText(ctx,'오늘의 조언: '+ad,W/2,1140,820,45);
-  ctx.fillStyle='rgba(201,168,76,.52)';ctx.font='22px Georgia';ctx.fillText('Haji Mood · 오락·자기성찰 목적',W/2,H-80);
+  var W=1080,H=1350,cv=document.createElement('canvas');cv.width=W;cv.height=H;var ctx=cv.getContext('2d');
+  var cards=drawn.map(function(d){return CARDS[d.idx]}),main=cards[0]||CARDS[0],q=rdData&&rdData.quote?rdData.quote:pickQuote(cards).q,qa=rdData&&rdData.quote_author?rdData.quote_author:pickQuote(cards).a,ad=rdData&&rdData.advice?rdData.advice:(rdData?rdData.action_today:'오늘의 감정을 하나만 기록해보세요.'),displayName=(user.name||'').trim();
+  var bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#1d0e39');bg.addColorStop(.5,'#090514');bg.addColorStop(1,'#030109');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  drawGlow(ctx,220,160,280,'123,79,186',0.28);drawGlow(ctx,840,320,330,'201,168,76',0.14);drawStarField(ctx,W,H,180);
+  ctx.strokeStyle='rgba(201,168,76,.54)';ctx.lineWidth=3;ctx.strokeRect(36,36,W-72,H-72);ctx.strokeStyle='rgba(201,168,76,.22)';ctx.lineWidth=1;ctx.strokeRect(58,58,W-116,H-116);
+  drawOrnament(ctx,W,102);
+  ctx.textAlign='center';ctx.fillStyle='#F1DEA0';ctx.font='bold 42px Georgia';ctx.fillText('QUOTE CARD',W/2,150);
+  ctx.fillStyle='rgba(244,239,231,.76)';ctx.font='23px Georgia';ctx.fillText(displayName?'For '+displayName:getCatName()+' · '+getCardName(main),W/2,186);
+
+  panel(ctx,120,245,840,420,30,'rgba(255,255,255,.04)','rgba(232,210,138,.18)');
+  drawRichCard(ctx,main,390,280,300,480,null);
+
+  panel(ctx,96,760,888,430,30,'rgba(255,255,255,.055)','rgba(232,210,138,.2)');
+  ctx.textAlign='center';ctx.fillStyle='#C9A84C';ctx.font='bold 20px Georgia';ctx.fillText('TODAY QUOTE',W/2,812);
+  ctx.fillStyle='rgba(244,239,231,.96)';ctx.font='36px Georgia';drawTextBlock(ctx,'“'+q+'”',W/2,878,738,50,'center',4,'rgba(244,239,231,.96)');
+  ctx.fillStyle='rgba(232,210,138,.78)';ctx.font='23px Georgia';ctx.fillText('- '+qa,W/2,1078);
+  ctx.fillStyle='rgba(165,240,227,.95)';ctx.font='bold 20px Georgia';ctx.fillText('TODAY ADVICE',W/2,1134);
+  ctx.fillStyle='rgba(221,255,248,.94)';ctx.font='27px Georgia';drawTextBlock(ctx,ad,W/2,1182,760,38,'center',3,'rgba(221,255,248,.94)');
+  ctx.fillStyle='rgba(201,168,76,.58)';ctx.font='20px Georgia';ctx.fillText('Haji Mood · keep this feeling',W/2,H-78);
   resolve(cv);
 })}
 function downloadCanvas(cv,filename,successMsg){
-  try{
-    cv.toBlob(function(blob){
-      if(!blob){toast('이미지 저장에 실패해 다시 생성합니다');return}
-      var url=URL.createObjectURL(blob),a=document.createElement('a');
-      a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();
-      setTimeout(()=>URL.revokeObjectURL(url),2000);toast(successMsg);
-    },'image/png');
-  }catch(e){throw e}
+  try{cv.toBlob(function(blob){if(!blob){toast('이미지 저장에 실패해 다시 생성합니다');return}var url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},2000);toast(successMsg)},'image/png')}catch(e){throw e}
 }
-function shareImg(){
-  if(!rdData){toast('심층 리포트 후 저장할 수 있어요');return}
-  buildCanvas(true).then(function(cv){
-    try{downloadCanvas(cv,'haji-mood-'+Date.now()+'.png','공유 이미지가 저장됐어요')}
-    catch(e){buildCanvas(false).then(function(cv2){downloadCanvas(cv2,'haji-mood-'+Date.now()+'.png','공유 이미지가 저장됐어요')})}
-  });
-}
-function shareText(){
-  if(!rdData){toast('심층 리포트 후 명언 카드를 만들 수 있어요');return}
-  buildQuoteCanvas().then(function(cv){downloadCanvas(cv,'haji-quote-card-'+Date.now()+'.png','명언 조언 포토카드가 저장됐어요')});
-}
-document.querySelectorAll('.langbtn').forEach(b=>b.onclick=function(){document.querySelectorAll('.langbtn').forEach(x=>x.classList.remove('on'));this.classList.add('on');toast('다국어 UI는 다음 버전에서 전체 확장 예정입니다')});
+function buildKakaoCanvas(){return new Promise(function(resolve){
+  var W=1080,H=1080,cv=document.createElement('canvas');cv.width=W;cv.height=H;var ctx=cv.getContext('2d');
+  var cards=drawn.map(function(d){return CARDS[d.idx]}),main=cards[0]||CARDS[0],displayName=(user.name||'').trim(),q=rdData&&rdData.quote?rdData.quote:pickQuote(cards).q;
+  var bg=ctx.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#1d0f39');bg.addColorStop(.52,'#090514');bg.addColorStop(1,'#04020a');ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  drawGlow(ctx,160,180,260,'123,79,186',0.28);drawGlow(ctx,890,220,280,'201,168,76',0.12);drawStarField(ctx,W,H,150);
+  ctx.strokeStyle='rgba(201,168,76,.54)';ctx.lineWidth=3;ctx.strokeRect(34,34,W-68,H-68);ctx.strokeStyle='rgba(201,168,76,.18)';ctx.lineWidth=1;ctx.strokeRect(58,58,W-116,H-116);drawOrnament(ctx,W,90);
+  ctx.textAlign='center';ctx.fillStyle='#F1DEA0';ctx.font='bold 36px Georgia';ctx.fillText('HAJI MOOD CARD',W/2,136);
+  ctx.fillStyle='rgba(244,239,231,.74)';ctx.font='20px Georgia';ctx.fillText(displayName?'For '+displayName:getCatName(),W/2,168);
+
+  if(spreadN===1){
+    drawRichCard(ctx,main,86,220,320,512,null);
+  }else if(spreadN===3){
+    var cw=162,ch=260,gap=18,sx=72,sy=258;
+    cards.forEach(function(c,i){drawRichCard(ctx,c,sx+i*(cw+gap),sy,cw,ch,null)});
+  }else{
+    var cw=122,ch=195,gx=14,gy=14,sx=76,sy=238;
+    cards.forEach(function(c,i){var row=Math.floor(i/3),col=i%3;drawRichCard(ctx,c,sx+col*(cw+gx),sy+row*(ch+gy),cw,ch,null)});
+  }
+
+  var boxX=spreadN===1?452:86, boxY=spreadN===1?230:640, boxW=spreadN===1?540:908, boxH=spreadN===1?278:178;
+  panel(ctx,boxX,boxY,boxW,boxH,26,'rgba(255,255,255,.05)','rgba(232,210,138,.18)');
+  ctx.textAlign='left';ctx.fillStyle='#E9D792';ctx.font='bold 18px Georgia';ctx.fillText('KEY MESSAGE',boxX+34,boxY+42);
+  ctx.fillStyle='rgba(244,239,231,.96)';ctx.font='26px Georgia';drawTextBlock(ctx,rdData&&rdData.key_insight?rdData.key_insight:'오늘의 감정을 정리하는 카드입니다.',boxX+34,boxY+88,boxW-68,36,'left',spreadN===1?4:3,'rgba(244,239,231,.96)');
+
+  var actionX=spreadN===1?452:86, actionY=spreadN===1?534:840, actionW=spreadN===1?540:908, actionH=spreadN===1?196:116;
+  panel(ctx,actionX,actionY,actionW,actionH,24,'rgba(255,255,255,.04)','rgba(232,210,138,.18)');
+  ctx.fillStyle='#C9A84C';ctx.font='bold 18px Georgia';ctx.fillText('TODAY ACTION',actionX+34,actionY+40);
+  ctx.fillStyle='rgba(221,255,248,.94)';ctx.font='23px Georgia';drawTextBlock(ctx,rdData&&rdData.action_today?rdData.action_today:'오늘 작은 행동 하나를 정해보세요.',actionX+34,actionY+78,actionW-68,32,'left',spreadN===1?3:2,'rgba(221,255,248,.94)');
+
+  ctx.textAlign='center';ctx.fillStyle='rgba(244,239,231,.92)';ctx.font='25px Georgia';drawTextBlock(ctx,'“'+q+'”',W/2,990,790,34,'center',2,'rgba(244,239,231,.92)');
+  ctx.fillStyle='rgba(201,168,76,.6)';ctx.font='18px Georgia';ctx.fillText(LT('카카오톡용 정사각 포토카드','Square photo card for chat sharing','适合聊天分享的方形图卡'),W/2,H-36);
+  resolve(cv)
+})}
+function shareKakao(){if(!rdData){toast('심층 리포트 후 저장할 수 있어요');return}buildKakaoCanvas().then(function(cv){downloadCanvas(cv,'haji-mood-kakao-card-'+Date.now()+'.png','카카오톡용 포토카드가 저장됐어요')})}
+function shareImg(){if(!rdData){toast('심층 리포트 후 저장할 수 있어요');return}buildCanvas(true).then(function(cv){try{downloadCanvas(cv,'haji-mood-premium-card-'+Date.now()+'.png','프리미엄 포토카드가 저장됐어요')}catch(e){buildCanvas(false).then(function(cv2){downloadCanvas(cv2,'haji-mood-premium-card-'+Date.now()+'.png','프리미엄 포토카드가 저장됐어요')})}})}
+function shareText(){if(!rdData){toast('심층 리포트 후 명언 카드를 만들 수 있어요');return}buildQuoteCanvas().then(function(cv){downloadCanvas(cv,'haji-mood-quote-card-'+Date.now()+'.png','명언 조언 포토카드가 저장됐어요')})}
+document.querySelectorAll('.langbtn').forEach(function(b){b.onclick=function(){setLang(this.getAttribute('data-lang')||'KO')}});applyLang();
 </script>
 </body>
 </html>
